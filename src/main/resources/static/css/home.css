@@ -1,0 +1,33 @@
+.footer {
+  background-color: #E6FAF8;
+  color: #0F076A;
+  width:100%;
+}
+
+
+.home {
+  background-image: url(../img/plane.jpg);
+  height: 970px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /*opacity: 0.5;*/
+}
+
+
+.form-check-label{
+  color: white;
+  font-size: 25px;
+}
+
+.form-check-input{
+  width: 20px;
+  height: 20px;
+}
+
+
+.modal-header{
+  color: #D2FEFA;
+  background-color: #D6D7D7;
+}
