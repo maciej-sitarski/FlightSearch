@@ -9,7 +9,9 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.IOException;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLocalisationApi.CurrenciesList;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLocalisationApi.MarketsList;
+import org.springframework.stereotype.Service;
 
+@Service
 public class LocalisationParser {
 
   private ObjectMapper objectMapper = new ObjectMapper();

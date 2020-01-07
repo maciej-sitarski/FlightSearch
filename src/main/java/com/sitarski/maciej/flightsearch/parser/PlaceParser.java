@@ -8,7 +8,9 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.IOException;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonPlacesApi.PlaceList;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PlaceParser {
 
   private ObjectMapper objectMapper = new ObjectMapper();

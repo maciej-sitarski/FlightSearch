@@ -5,21 +5,22 @@ import java.util.List;
 
 public class MarketsList {
 
-  @JsonProperty("Places")
-  private List<Market> markets;
+  @JsonProperty("Countries")
+  private List<List<Market>> markets;
 
   public MarketsList() {
   }
 
-  public MarketsList(List<Market> markets) {
+  public MarketsList(List<List<Market>> markets) {
     this.markets = markets;
   }
 
-  public List<Market> getMarkets() {
+  public List<List<Market>> getMarkets() {
     return markets;
   }
 
-  public void setMarkets(List<Market> markets) {
+  public void setMarkets(
+      List<List<Market>> markets) {
     this.markets = markets;
   }
 }
