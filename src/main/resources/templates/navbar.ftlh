@@ -41,10 +41,10 @@
   <div class="collapse navbar-collapse" id="mainmenu">
     <ul class="navbar-nav" style="margin-left: auto; margin-right: 7%">
       <li class="nav-item mr-5">
-        <a class="nav-link" href="/home"> <strong>Strona główna </strong></a>
+        <a class="nav-link" href="/home"> <strong>Main site </strong></a>
       </li>
       <li class="nav-item" >
-        <a class="nav-link" data-toggle="modal" data-target="#loginModal"><strong>Zaloguj się</strong></a>
+        <a class="nav-link" data-toggle="modal" data-target="#loginModal"><strong>Log in</strong></a>
       </li>
     </ul>
   </div>
