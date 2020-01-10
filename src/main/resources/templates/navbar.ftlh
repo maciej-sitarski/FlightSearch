@@ -11,6 +11,7 @@
   <!-- Our CSS -->
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/searchList.css">
   <title>FlightSearch</title>
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Tonto">

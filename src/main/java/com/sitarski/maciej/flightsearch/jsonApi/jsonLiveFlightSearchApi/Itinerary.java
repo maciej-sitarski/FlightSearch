@@ -1,5 +1,6 @@
 package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ public class Itinerary {
   @JsonProperty("Status")
   private String status;
 
-  @JsonProperty("SessionKey")
+  @JsonProperty("Query")
   private Query query;
 
   @JsonProperty("Itineraries")

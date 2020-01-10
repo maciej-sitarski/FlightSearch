@@ -8,12 +8,12 @@ public class FlightNumber {
   private String flightNumber;
 
   @JsonProperty("CarrierId")
-  private String carrierId;
+  private Long carrierId;
 
   public FlightNumber() {
   }
 
-  public FlightNumber(String flightNumber, String carrierId) {
+  public FlightNumber(String flightNumber, Long carrierId) {
     this.flightNumber = flightNumber;
     this.carrierId = carrierId;
   }
@@ -26,11 +26,11 @@ public class FlightNumber {
     this.flightNumber = flightNumber;
   }
 
-  public String getCarrierId() {
+  public Long getCarrierId() {
     return carrierId;
   }
 
-  public void setCarrierId(String carrierId) {
+  public void setCarrierId(Long carrierId) {
     this.carrierId = carrierId;
   }
 }
