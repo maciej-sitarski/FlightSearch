@@ -5,12 +5,19 @@
 }
 
 .logo{
-  margin-top: 45%;
+  margin-top: 30%;
   text-align: center;
 
 }
 
 .logoInscription{
-  margin-top: 60%;
+  margin-top: 40%;
   text-align: center;
+}
+
+.resultFlightHeading{
+  height: 250px;
+  margin-top: 30px;
+  background-color: #0006A2;
+  color: white;
 }

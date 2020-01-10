@@ -42,7 +42,7 @@ public class LiveFlightSearchParser {
       throws UnirestException, IOException, InterruptedException {
     String sessionKey = createSessionKey(itineraryInquiry);
 
-    HttpResponse<String> response = Unirest.get(String.format("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/%s?sortType=outbounddeparttime", sessionKey))
+    HttpResponse<String> response = Unirest.get(String.format("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/%s?sortType=outbounddeparttime&sortOrder=asc", sessionKey))
         .header(sessionNameFirst, sessionValueFirst)
         .header(sessionNameSecond, sessionValueSecond)
         .asString();

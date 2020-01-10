@@ -6,7 +6,7 @@
           Where do you want to fly?
         </strong></h1>
     </div>
-    <form action="/searchList?from=from&to=to&outboundDate=outboundDate&inboundDate=inboundDate&class=class&numberOfAdults=numberOfAdults&numberOfChildren=numberOfChildren&numberOfInfants=numberOfInfants" method="get" class="col-md-11 rounded" style="margin-left: auto; margin-right: auto;height: 330px; background-color: #03002E">
+    <form action="/searchList?from=from&to=to&outboundDate=outboundDate&inboundDate=inboundDate&class=class&numberOfAdults=numberOfAdults&numberOfChildren=numberOfChildren&numberOfInfants=numberOfInfants" method="get" class="col-md-11 rounded-lg" style="margin-left: auto; margin-right: auto;height: 330px; background-color: #03002E">
       <div class="form-check form-check-inline" style="margin-top: 25px; margin-left: 40px; margin-right: 30px">
         <input class="form-check-input" type="radio"  value="option1" id="oneWay" name="inlineRadioOptions" checked="checked" onclick="secondCheckOneWayFlight(this)">
         <label class="form-check-label" for="oneWay">One way</label>

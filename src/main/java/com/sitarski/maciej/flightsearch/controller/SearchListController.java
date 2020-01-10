@@ -32,6 +32,8 @@ public class SearchListController {
   @GetMapping("/searchList")
   public ModelAndView getMain(HttpServletRequest req, HttpServletResponse resp)
       throws IOException, UnirestException, ParseException, InterruptedException {
+    Map<String, Object> params = new HashMap<>();
+
     String originPlace = stringFormatService.formatStringPlaceToParse(req.getParameter("from"));
     String destinationPlace = stringFormatService.formatStringPlaceToParse(req.getParameter("to"));
     String outboundDate = req.getParameter("outboundDate");
@@ -40,6 +42,17 @@ public class SearchListController {
     String numOfAdults = req.getParameter("numberOfAdults");
     String numOfChildren = req.getParameter("numberOfChildren");
     String numOfInfants = req.getParameter("numberOfInfants");
+
+    params.put("originPlace", req.getParameter("from"));
+    params.put("destinationPlace", req.getParameter("to"));
+    params.put("outboundDate", outboundDate);
+    if(inboundDate != null){
+      params.put("inboundDate", inboundDate);
+    }
+    params.put("transportClass", transportClass);
+    params.put("numOfAdults", numOfAdults);
+    params.put("numOfChildren", numOfChildren);
+    params.put("numOfInfants", numOfInfants);
 
     ItineraryInquiry itineraryInquiry = new ItineraryInquiry.Builder()
         .originPlace(originPlace)
@@ -51,8 +64,6 @@ public class SearchListController {
         .numOfChildren(numOfChildren)
         .numOfInfants(numOfInfants)
         .build();
-
-    Map<String, Object> params = new HashMap<>();
 
     Itinerary itinerary = liveFlightSearchParser.parseItinerary(itineraryInquiry);
     params.put("itineraries", itinerary);
