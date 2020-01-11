@@ -10,6 +10,8 @@ import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.Itinerar
 import com.sitarski.maciej.flightsearch.service.StringFormatService;
 import java.io.IOException;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -20,14 +22,13 @@ import org.springframework.web.context.WebApplicationContext;
 @Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class LiveFlightSearchParser {
 
-  private final StringFormatService stringFormatService;
-
   @Autowired
   public LiveFlightSearchParser(StringFormatService stringFormatService) {
     this.stringFormatService = stringFormatService;
   }
 
-
+  private final StringFormatService stringFormatService;
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
   private ObjectMapper objectMapper = new ObjectMapper();
   private final String sessionNameFirst = "x-rapidapi-host";
   private final String sessionNameSecond = "x-rapidapi-key";
@@ -36,6 +37,9 @@ public class LiveFlightSearchParser {
 
   public String createSessionKey(ItineraryInquiry itineraryInquiry)
       throws UnirestException, InterruptedException {
+
+    logger.info("Get session key");
+
     HttpResponse<String> response = createSession(itineraryInquiry);
     Headers headers = response.getHeaders();
     List<String> headerLocation = headers.get("Location");
@@ -45,6 +49,9 @@ public class LiveFlightSearchParser {
 
   public Itinerary parseItinerary(ItineraryInquiry itineraryInquiry)
       throws UnirestException, IOException, InterruptedException {
+
+    logger.info("Parse response to objects");
+
     String sessionKey = createSessionKey(itineraryInquiry);
 
     HttpResponse<String> response = Unirest.get(String.format(
@@ -58,6 +65,9 @@ public class LiveFlightSearchParser {
 
   private HttpResponse<String> createSession(ItineraryInquiry itineraryInquiry)
       throws UnirestException, InterruptedException {
+
+    logger.info("Create session to get live flight search");
+
     String sessionNameThird = "content-type";
     String sessionValueThird = "application/x-www-form-urlencoded";
     String bodyContent = itineraryInquiry.toString();
@@ -75,7 +85,6 @@ public class LiveFlightSearchParser {
           .body(bodyContent)
           .asString();
     } while (response.getStatus() < 200 || response.getStatus() > 300);
-
     return response;
   }
 }
