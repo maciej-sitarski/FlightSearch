@@ -20,8 +20,13 @@ import org.springframework.web.context.WebApplicationContext;
 @Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class LiveFlightSearchParser {
 
+  private final StringFormatService stringFormatService;
+
   @Autowired
-  StringFormatService stringFormatService;
+  public LiveFlightSearchParser(StringFormatService stringFormatService) {
+    this.stringFormatService = stringFormatService;
+  }
+
 
   private ObjectMapper objectMapper = new ObjectMapper();
   private final String sessionNameFirst = "x-rapidapi-host";
@@ -42,7 +47,9 @@ public class LiveFlightSearchParser {
       throws UnirestException, IOException, InterruptedException {
     String sessionKey = createSessionKey(itineraryInquiry);
 
-    HttpResponse<String> response = Unirest.get(String.format("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/%s?sortType=outbounddeparttime&sortOrder=asc", sessionKey))
+    HttpResponse<String> response = Unirest.get(String.format(
+        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/%s?sortType=outbounddeparttime&sortOrder=asc",
+        sessionKey))
         .header(sessionNameFirst, sessionValueFirst)
         .header(sessionNameSecond, sessionValueSecond)
         .asString();
@@ -57,7 +64,7 @@ public class LiveFlightSearchParser {
 
     HttpResponse<String> response = null;
     do {
-      if(response != null) {
+      if (response != null) {
         Thread.sleep(5000);
       }
       response = Unirest.post(

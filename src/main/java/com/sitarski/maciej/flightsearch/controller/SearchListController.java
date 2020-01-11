@@ -4,7 +4,6 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import com.sitarski.maciej.flightsearch.entity.ItineraryInquiry;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.Itinerary;
 import com.sitarski.maciej.flightsearch.parser.LiveFlightSearchParser;
-import com.sitarski.maciej.flightsearch.parser.LocalisationParser;
 import com.sitarski.maciej.flightsearch.service.StringFormatService;
 import java.io.IOException;
 import java.text.ParseException;
@@ -20,14 +19,15 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SearchListController {
 
-  @Autowired
-  LiveFlightSearchParser liveFlightSearchParser;
+  private final LiveFlightSearchParser liveFlightSearchParser;
+  private final StringFormatService stringFormatService;
 
   @Autowired
-  StringFormatService stringFormatService;
-
-  @Autowired
-  LocalisationParser localisationParser;
+  public SearchListController(LiveFlightSearchParser liveFlightSearchParser,
+      StringFormatService stringFormatService) {
+    this.liveFlightSearchParser = liveFlightSearchParser;
+    this.stringFormatService = stringFormatService;
+  }
 
   @GetMapping("/searchList")
   public ModelAndView getMain(HttpServletRequest req, HttpServletResponse resp)
@@ -46,7 +46,7 @@ public class SearchListController {
     params.put("originPlace", req.getParameter("from"));
     params.put("destinationPlace", req.getParameter("to"));
     params.put("outboundDate", outboundDate);
-    if(inboundDate != null){
+    if (inboundDate != null) {
       params.put("inboundDate", inboundDate);
     }
     params.put("transportClass", transportClass);
@@ -68,6 +68,10 @@ public class SearchListController {
     Itinerary itinerary = liveFlightSearchParser.parseItinerary(itineraryInquiry);
     params.put("itineraries", itinerary);
 
-    return new ModelAndView("searchList", params);
+    if(inboundDate != null){
+      return new ModelAndView("searchListReturnFlight", params);
+    } else{
+      return new ModelAndView("searchList", params);
+    }
   }
 }
