@@ -35,7 +35,8 @@ public class LiveFlightSearchParser {
   private final String sessionValueFirst = "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com";
   private final String sessionValueSecond = "4a11ecaf22msh48198c7c39b5dc7p12193ejsn07edf2594542";
 
-  public String createSessionKey(ItineraryInquiry itineraryInquiry)
+
+  private String createSessionKey(ItineraryInquiry itineraryInquiry)
       throws UnirestException, InterruptedException {
 
     logger.info("Get session key");

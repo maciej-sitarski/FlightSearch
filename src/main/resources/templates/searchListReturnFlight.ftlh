@@ -11,7 +11,7 @@
       </h3>
 
       <h3>
-        Date: ${outboundDate}
+        Outbound date: ${outboundDate} | Inbound date: ${inboundDate}
       </h3>
       <h4>
         Class: ${transportClass} |
