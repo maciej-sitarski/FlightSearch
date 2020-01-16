@@ -8,6 +8,7 @@ import com.sitarski.maciej.flightsearch.jsonApi.jsonPlacesApi.PlaceList;
 import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
@@ -22,7 +23,9 @@ public class PlaceParser {
   private final String firstHeaderName = "x-rapidapi-host";
   private final String secondHeaderName = "x-rapidapi-key";
   private final String firstHeaderValue = "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com";
-  private final String secondHeaderValue = "4a11ecaf22msh48198c7c39b5dc7p12193ejsn07edf2594542";
+
+  @Value("${API_Key}")
+  private String API_Key;
 
   public PlaceList parsePlaces(String city, String currency) throws UnirestException, IOException {
 
@@ -32,7 +35,7 @@ public class PlaceParser {
         "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/PL/%s/en-PL/?query=%s",
         currency, city))
         .header(firstHeaderName, firstHeaderValue)
-        .header(secondHeaderName, secondHeaderValue)
+        .header(secondHeaderName, API_Key)
         .asString();
 
     return objectMapper.readValue(response.getBody(), PlaceList.class);

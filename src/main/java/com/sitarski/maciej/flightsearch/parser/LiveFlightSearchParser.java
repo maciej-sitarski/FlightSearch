@@ -13,6 +13,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
@@ -33,8 +34,9 @@ public class LiveFlightSearchParser {
   private final String sessionNameFirst = "x-rapidapi-host";
   private final String sessionNameSecond = "x-rapidapi-key";
   private final String sessionValueFirst = "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com";
-  private final String sessionValueSecond = "4a11ecaf22msh48198c7c39b5dc7p12193ejsn07edf2594542";
 
+  @Value("${API_Key}")
+  private String API_Key;
 
   private String createSessionKey(ItineraryInquiry itineraryInquiry)
       throws UnirestException, InterruptedException {
@@ -59,7 +61,7 @@ public class LiveFlightSearchParser {
         "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/uk2/v1.0/%s?sortType=outbounddeparttime&sortOrder=asc",
         sessionKey))
         .header(sessionNameFirst, sessionValueFirst)
-        .header(sessionNameSecond, sessionValueSecond)
+        .header(sessionNameSecond, API_Key)
         .asString();
     return objectMapper.readValue(response.getBody(), Itinerary.class);
   }
@@ -76,12 +78,12 @@ public class LiveFlightSearchParser {
     HttpResponse<String> response = null;
     do {
       if (response != null) {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
       }
       response = Unirest.post(
           "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0")
           .header(sessionNameFirst, sessionValueFirst)
-          .header(sessionNameSecond, sessionValueSecond)
+          .header(sessionNameSecond, API_Key)
           .header(sessionNameThird, sessionValueThird)
           .body(bodyContent)
           .asString();

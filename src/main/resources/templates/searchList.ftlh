@@ -11,10 +11,10 @@
       </h3>
 
       <h3>
-          Date: ${outboundDate}
+        Date: ${outboundDate}
       </h3>
       <h4>
-          Class: ${transportClass} |
+        Class: ${transportClass} |
         Number of adults: ${numOfAdults}
           <#if numOfChildren != "0">
             | Number of adults: ${numOfChildren}
@@ -109,14 +109,16 @@
                         </#list>
                     </div>
                     <div class="col-md-3 text-center">
-                      <p style="margin-top: 20%; margin-bottom: 0; color: dimgrey">${intineraryDetail.priceOptions?size} deals from</p>
+                      <p style="margin-top: 20%; margin-bottom: 0; color: dimgrey">${intineraryDetail.priceOptions?size}
+                        deals from</p>
                       <h3><strong>
-                            <#if intineraryDetail.outboundLegId == leg.legId>
-                              ${intineraryDetail.priceOptions[0].price}
-                            </#if>
+                              <#if intineraryDetail.outboundLegId == leg.legId>
+                                  ${intineraryDetail.priceOptions[0].price}
+                              </#if>
                         </strong> zł
                       </h3>
-                      <a href="#" class="btn btn-success btn-lg" style="font-size: 25px"> Select </a>
+                      <a href="#" class="btn btn-success btn-lg" style="font-size: 25px">
+                        Select </a>
                     </div>
                   </div>
                 </div>
@@ -125,6 +127,5 @@
           </#list>
       </#list>
   </div>
-
 </div>
 <#include "footer.ftlh">

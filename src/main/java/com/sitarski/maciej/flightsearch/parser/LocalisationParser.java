@@ -9,6 +9,7 @@ import com.sitarski.maciej.flightsearch.jsonApi.jsonLocalisationApi.MarketsList;
 import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,9 @@ public class LocalisationParser {
   private final String firstHeaderName = "x-rapidapi-host";
   private final String secondHeaderName = "x-rapidapi-key";
   private final String firstHeaderValue = "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com";
-  private final String secondHeaderValue = "4a11ecaf22msh48198c7c39b5dc7p12193ejsn07edf2594542";
+
+  @Value("${API_Key}")
+  private String API_Key;
 
 
   public MarketsList parseMarkets() throws UnirestException, IOException {
@@ -34,7 +37,7 @@ public class LocalisationParser {
     HttpResponse<String> response = Unirest.get(
         "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US")
         .header(firstHeaderName, firstHeaderValue)
-        .header(secondHeaderName, secondHeaderValue)
+        .header(secondHeaderName, API_Key)
         .asString();
 
     return objectMapper.readValue(response.getBody(), MarketsList.class);
@@ -47,7 +50,7 @@ public class LocalisationParser {
     HttpResponse<String> response = Unirest.get(
         "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/currencies")
         .header(firstHeaderName, firstHeaderValue)
-        .header(secondHeaderName, secondHeaderValue)
+        .header(secondHeaderName, API_Key)
         .asString();
 
     return objectMapper.readValue(response.getBody(), CurrenciesList.class);
