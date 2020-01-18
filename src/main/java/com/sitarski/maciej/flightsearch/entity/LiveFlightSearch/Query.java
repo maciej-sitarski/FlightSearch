@@ -1,45 +1,79 @@
-package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
+package com.sitarski.maciej.flightsearch.entity.LiveFlightSearch;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@JsonIgnoreProperties({"LocationSchema", "GroupPricing"})
+@Entity
+@Table(name = "query")
 public class Query {
 
-  @JsonProperty("Country")
+  @Id
+  @Column(name = "id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
+  @Column(name = "country")
   private String country;
 
-  @JsonProperty("Currency")
+  @Column(name = "currency")
   private String currency;
 
-  @JsonProperty("Locale")
+  @Column(name = "locale")
   private String locale;
 
-  @JsonProperty("Adults")
+  @Column(name = "adults")
   private Long adults;
 
-  @JsonProperty("Children")
+  @Column(name = "children")
   private Long children;
 
-  @JsonProperty("Infants")
+  @Column(name = "infants")
   private Long infants;
 
-  @JsonProperty("OriginPlace")
+  @Column(name = "originPlace")
   private String originPlace;
 
-  @JsonProperty("DestinationPlace")
+  @Column(name = "destinationPlace")
   private String destinationPlace;
 
-  @JsonProperty("OutboundDate")
+  @Column(name = "outboundDate")
   private String outboundDate;
 
-  @JsonProperty("InboundDate")
+  @Column(name = "inboundDate")
   private String inboundDate;
 
-  @JsonProperty("CabinClass")
+  @Column(name = "cabinClass")
   private String cabinClass;
 
   public Query() {
+  }
+
+  public Query(String country, String currency, String locale, Long adults, Long children,
+      Long infants, String originPlace, String destinationPlace, String outboundDate,
+      String inboundDate, String cabinClass) {
+    this.country = country;
+    this.currency = currency;
+    this.locale = locale;
+    this.adults = adults;
+    this.children = children;
+    this.infants = infants;
+    this.originPlace = originPlace;
+    this.destinationPlace = destinationPlace;
+    this.outboundDate = outboundDate;
+    this.inboundDate = inboundDate;
+    this.cabinClass = cabinClass;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public String getCountry() {
@@ -56,6 +90,14 @@ public class Query {
 
   public void setCurrency(String currency) {
     this.currency = currency;
+  }
+
+  public String getLocale() {
+    return locale;
+  }
+
+  public void setLocale(String locale) {
+    this.locale = locale;
   }
 
   public Long getAdults() {
