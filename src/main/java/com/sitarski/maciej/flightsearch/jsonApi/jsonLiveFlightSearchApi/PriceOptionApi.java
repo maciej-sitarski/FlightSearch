@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 @JsonIgnoreProperties({"QuoteAgeInMinutes"})
-public class PriceOption {
+public class PriceOptionApi {
 
   @JsonProperty("Agents")
   private List<Long> agents;
@@ -16,10 +16,10 @@ public class PriceOption {
   @JsonProperty("DeeplinkUrl")
   private String linkUrl;
 
-  public PriceOption() {
+  public PriceOptionApi() {
   }
 
-  public PriceOption(List<Long> agents, Float price, String linkUrl) {
+  public PriceOptionApi(List<Long> agents, Float price, String linkUrl) {
     this.agents = agents;
     this.price = price;
     this.linkUrl = linkUrl;

@@ -2,7 +2,7 @@ package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Carrier {
+public class CarrierApi {
 
   @JsonProperty("Id")
   private Long id;
@@ -19,10 +19,10 @@ public class Carrier {
   @JsonProperty("DisplayCode")
   private String displayCode;
 
-  public Carrier() {
+  public CarrierApi() {
   }
 
-  public Carrier(Long id, String code, String name, String imageUrl, String displayCode) {
+  public CarrierApi(Long id, String code, String name, String imageUrl, String displayCode) {
     this.id = id;
     this.code = code;
     this.name = name;

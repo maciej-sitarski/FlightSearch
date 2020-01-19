@@ -1,11 +1,16 @@
 package com.sitarski.maciej.flightsearch.entity.LiveFlightSearch;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -19,7 +24,7 @@ public class Carrier {
   private Long id;
 
   @Column(name = "carrier_id")
-  private Long carrier_id;
+  private Long carrierId;
 
   @Column(name = "code")
   private String code;
@@ -37,12 +42,18 @@ public class Carrier {
   @JoinColumn(name = "itinerary_id")
   private Itinerary itinerary;
 
+  @ManyToMany(cascade = CascadeType.ALL)
+  @JoinTable(name = "carrier_leg",
+      joinColumns = @JoinColumn(name = "id_carrier", referencedColumnName = "id"),
+      inverseJoinColumns = @JoinColumn(name = "id_leg", referencedColumnName = "id"))
+  List<Leg> legs = new ArrayList<>();
+
   public Carrier() {
   }
 
-  public Carrier(Long carrier_id, String code, String name, String imageUrl,
+  public Carrier(Long carrierId, String code, String name, String imageUrl,
       String displayCode) {
-    this.carrier_id = carrier_id;
+    this.carrierId = carrierId;
     this.code = code;
     this.name = name;
     this.imageUrl = imageUrl;
@@ -57,12 +68,12 @@ public class Carrier {
     this.id = id;
   }
 
-  public Long getCarrier_id() {
-    return carrier_id;
+  public Long getCarrierId() {
+    return carrierId;
   }
 
-  public void setCarrier_id(Long carrier_id) {
-    this.carrier_id = carrier_id;
+  public void setCarrierId(Long carrierId) {
+    this.carrierId = carrierId;
   }
 
   public String getCode() {
@@ -103,5 +114,13 @@ public class Carrier {
 
   public void setItinerary(Itinerary itinerary) {
     this.itinerary = itinerary;
+  }
+
+  public List<Leg> getLegs() {
+    return legs;
+  }
+
+  public void setLegs(List<Leg> legs) {
+    this.legs = legs;
   }
 }

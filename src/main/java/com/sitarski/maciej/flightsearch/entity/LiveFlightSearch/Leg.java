@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -49,11 +50,11 @@ public class Leg {
   @OneToMany(mappedBy = "leg", cascade = CascadeType.ALL)
   private List<FlightNumber> flightNumbers = new ArrayList<>();
 
-  @Column(name = "legCarriers")
-  private List<Long> legCarriers = new ArrayList<>();
+  @ManyToMany(mappedBy = "legs")
+  private List<Carrier> legCarriers;
 
-  @Column(name = "stops")
-  private List<Long> stops = new ArrayList<>();
+  @ManyToMany(mappedBy = "legs")
+  private List<Place> stops;
 
   @ManyToOne
   @JoinColumn(name = "itinerary_id")
@@ -155,27 +156,29 @@ public class Leg {
     this.flightNumbers = flightNumbers;
   }
 
-  public List<Long> getLegCarriers() {
-    return legCarriers;
-  }
-
-  public void setLegCarriers(List<Long> legCarriers) {
-    this.legCarriers = legCarriers;
-  }
-
-  public List<Long> getStops() {
-    return stops;
-  }
-
-  public void setStops(List<Long> stops) {
-    this.stops = stops;
-  }
-
   public Itinerary getItinerary() {
     return itinerary;
   }
 
   public void setItinerary(Itinerary itinerary) {
     this.itinerary = itinerary;
+  }
+
+  public List<Carrier> getLegCarriers() {
+    return legCarriers;
+  }
+
+  public void setLegCarriers(
+      List<Carrier> legCarriers) {
+    this.legCarriers = legCarriers;
+  }
+
+  public List<Place> getStops() {
+    return stops;
+  }
+
+  public void setStops(
+      List<Place> stops) {
+    this.stops = stops;
   }
 }

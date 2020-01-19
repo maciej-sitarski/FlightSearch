@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties({"ThousandsSeparator", "DecimalSeparator", "SymbolOnLeft", "SpaceBetweenAmountAndSymbol", "RoundingCoefficient", "DecimalDigits"})
-public class Currency {
+public class CurrencyApi {
 
   @JsonProperty("Code")
   private String code;
@@ -12,10 +12,10 @@ public class Currency {
   @JsonProperty("Symbol")
   private String symbol;
 
-  public Currency() {
+  public CurrencyApi() {
   }
 
-  public Currency(String code, String symbol) {
+  public CurrencyApi(String code, String symbol) {
     this.code = code;
     this.symbol = symbol;
   }

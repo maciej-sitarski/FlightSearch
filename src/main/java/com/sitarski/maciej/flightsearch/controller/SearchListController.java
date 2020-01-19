@@ -1,8 +1,9 @@
 package com.sitarski.maciej.flightsearch.controller;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
+import com.sitarski.maciej.flightsearch.dao.ItineraryRepository;
 import com.sitarski.maciej.flightsearch.entity.ItineraryInquiry;
-import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.Itinerary;
+import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.ItineraryApi;
 import com.sitarski.maciej.flightsearch.parser.LiveFlightSearchParser;
 import com.sitarski.maciej.flightsearch.service.StringFormatService;
 import java.io.IOException;
@@ -21,12 +22,14 @@ public class SearchListController {
 
   private final LiveFlightSearchParser liveFlightSearchParser;
   private final StringFormatService stringFormatService;
+  private final ItineraryRepository itineraryRepository;
 
   @Autowired
   public SearchListController(LiveFlightSearchParser liveFlightSearchParser,
-      StringFormatService stringFormatService) {
+      StringFormatService stringFormatService, ItineraryRepository itineraryRepository) {
     this.liveFlightSearchParser = liveFlightSearchParser;
     this.stringFormatService = stringFormatService;
+    this.itineraryRepository = itineraryRepository;
   }
 
   @GetMapping("/searchList")
@@ -65,8 +68,9 @@ public class SearchListController {
         .numOfInfants(numOfInfants)
         .build();
 
-    Itinerary itinerary = liveFlightSearchParser.parseItinerary(itineraryInquiry);
-    params.put("itineraries", itinerary);
+    ItineraryApi itineraryApi = liveFlightSearchParser.parseItinerary(itineraryInquiry);
+
+    params.put("itineraries", itineraryApi);
 
     if(inboundDate != null){
       return new ModelAndView("searchListReturnFlight", params);

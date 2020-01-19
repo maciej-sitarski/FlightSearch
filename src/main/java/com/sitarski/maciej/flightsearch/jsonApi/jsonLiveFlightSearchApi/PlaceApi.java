@@ -2,7 +2,7 @@ package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Place {
+public class PlaceApi {
 
   @JsonProperty("Id")
   private Long id;
@@ -19,10 +19,10 @@ public class Place {
   @JsonProperty("Name")
   private String name;
 
-  public Place() {
+  public PlaceApi() {
   }
 
-  public Place(Long id, Long parentId, String code, String type, String name) {
+  public PlaceApi(Long id, Long parentId, String code, String type, String name) {
     this.id = id;
     this.parentId = parentId;
     this.code = code;

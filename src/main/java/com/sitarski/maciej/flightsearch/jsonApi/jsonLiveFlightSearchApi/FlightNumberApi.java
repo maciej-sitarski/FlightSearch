@@ -2,7 +2,7 @@ package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class FlightNumber {
+public class FlightNumberApi {
 
   @JsonProperty("FlightNumber")
   private String flightNumber;
@@ -10,10 +10,10 @@ public class FlightNumber {
   @JsonProperty("CarrierId")
   private Long carrierId;
 
-  public FlightNumber() {
+  public FlightNumberApi() {
   }
 
-  public FlightNumber(String flightNumber, Long carrierId) {
+  public FlightNumberApi(String flightNumber, Long carrierId) {
     this.flightNumber = flightNumber;
     this.carrierId = carrierId;
   }

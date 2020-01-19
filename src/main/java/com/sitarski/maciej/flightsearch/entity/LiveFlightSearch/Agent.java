@@ -1,11 +1,16 @@
 package com.sitarski.maciej.flightsearch.entity.LiveFlightSearch;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -19,7 +24,7 @@ public class Agent {
   private Long id;
 
   @Column(name = "agent_id")
-  private Long agent_id;
+  private Long agentId;
 
   @Column(name = "name")
   private String name;
@@ -40,12 +45,18 @@ public class Agent {
   @JoinColumn(name = "itinerary_id")
   private Itinerary itinerary;
 
+  @ManyToMany(cascade = CascadeType.ALL)
+  @JoinTable(name = "agent_priceOption",
+      joinColumns = @JoinColumn(name = "id_agent", referencedColumnName = "id"),
+      inverseJoinColumns = @JoinColumn(name = "id_priceOption", referencedColumnName = "id"))
+  List<PriceOption> priceOptions = new ArrayList<>();
+
   public Agent() {
   }
 
-  public Agent(Long agent_id, String name, String imageUrl, String status,
+  public Agent(Long agentId, String name, String imageUrl, String status,
       Boolean optimisedForMobile, String type) {
-    this.agent_id = agent_id;
+    this.agentId = agentId;
     this.name = name;
     this.imageUrl = imageUrl;
     this.status = status;
@@ -61,12 +72,12 @@ public class Agent {
     this.id = id;
   }
 
-  public Long getAgent_id() {
-    return agent_id;
+  public Long getAgentId() {
+    return agentId;
   }
 
-  public void setAgent_id(Long agent_id) {
-    this.agent_id = agent_id;
+  public void setAgentId(Long agentId) {
+    this.agentId = agentId;
   }
 
   public String getName() {
@@ -115,5 +126,14 @@ public class Agent {
 
   public void setItinerary(Itinerary itinerary) {
     this.itinerary = itinerary;
+  }
+
+  public List<PriceOption> getPriceOptions() {
+    return priceOptions;
+  }
+
+  public void setPriceOptions(
+      List<PriceOption> priceOptions) {
+    this.priceOptions = priceOptions;
   }
 }

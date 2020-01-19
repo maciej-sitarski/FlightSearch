@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties({"LocationSchema", "GroupPricing"})
-public class Query {
+public class QueryApi {
 
   @JsonProperty("Country")
   private String country;
@@ -39,7 +39,7 @@ public class Query {
   @JsonProperty("CabinClass")
   private String cabinClass;
 
-  public Query() {
+  public QueryApi() {
   }
 
   public String getCountry() {
@@ -120,5 +120,13 @@ public class Query {
 
   public void setCabinClass(String cabinClass) {
     this.cabinClass = cabinClass;
+  }
+
+  public String getLocale() {
+    return locale;
+  }
+
+  public void setLocale(String locale) {
+    this.locale = locale;
   }
 }

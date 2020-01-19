@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties({"JourneyMode"})
-public class Segment {
+public class SegmentApi {
 
   @JsonProperty("Id")
   private Long id;
@@ -36,10 +36,10 @@ public class Segment {
   @JsonProperty("Directionality")
   private String directionality;
 
-  public Segment() {
+  public SegmentApi() {
   }
 
-  public Segment(Long id, Long originStation, Long destinationStation,
+  public SegmentApi(Long id, Long originStation, Long destinationStation,
       String departureDateTime, String arrivalDateTime, Long carrierId,
       Long operatingCarrierId, Long duration, String flightNumber, String directionality) {
     this.id = id;

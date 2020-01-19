@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 @JsonIgnoreProperties({"SegmentIds","OperatingCarriers"})
-public class Leg {
+public class LegApi {
 
   @JsonProperty("Id")
   private String legId;
@@ -32,7 +32,7 @@ public class Leg {
   private String directionality;
 
   @JsonProperty("FlightNumbers")
-  private List<FlightNumber> flightNumbers;
+  private List<FlightNumberApi> flightNumberApis;
 
   @JsonProperty("Carriers")
   private List<Long> legCarriers;
@@ -40,12 +40,12 @@ public class Leg {
   @JsonProperty("Stops")
   private List<Long> stops;
 
-  public Leg() {
+  public LegApi() {
   }
 
-  public Leg(String legId, Long originStation, Long destinationStation, String departure,
+  public LegApi(String legId, Long originStation, Long destinationStation, String departure,
       String arrival, Long duration, String journeyMode, String directionality,
-      List<FlightNumber> flightNumbers, List<Long> legCarriers, List<Long> stops) {
+      List<FlightNumberApi> flightNumberApis, List<Long> legCarriers, List<Long> stops) {
     this.legId = legId;
     this.originStation = originStation;
     this.destinationStation = destinationStation;
@@ -54,7 +54,7 @@ public class Leg {
     this.duration = duration;
     this.journeyMode = journeyMode;
     this.directionality = directionality;
-    this.flightNumbers = flightNumbers;
+    this.flightNumberApis = flightNumberApis;
     this.legCarriers = legCarriers;
     this.stops = stops;
   }
@@ -123,12 +123,12 @@ public class Leg {
     this.directionality = directionality;
   }
 
-  public List<FlightNumber> getFlightNumbers() {
-    return flightNumbers;
+  public List<FlightNumberApi> getFlightNumberApis() {
+    return flightNumberApis;
   }
 
-  public void setFlightNumbers(List<FlightNumber> flightNumbers) {
-    this.flightNumbers = flightNumbers;
+  public void setFlightNumberApis(List<FlightNumberApi> flightNumberApis) {
+    this.flightNumberApis = flightNumberApis;
   }
 
   public List<Long> getLegCarriers() {

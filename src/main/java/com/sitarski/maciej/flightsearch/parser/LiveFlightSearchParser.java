@@ -6,7 +6,7 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.sitarski.maciej.flightsearch.entity.ItineraryInquiry;
-import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.Itinerary;
+import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.ItineraryApi;
 import com.sitarski.maciej.flightsearch.service.StringFormatService;
 import java.io.IOException;
 import java.util.List;
@@ -50,7 +50,7 @@ public class LiveFlightSearchParser {
     return stringFormatService.formatStringLocationHeaderToParse(headerLocationValue);
   }
 
-  public Itinerary parseItinerary(ItineraryInquiry itineraryInquiry)
+  public ItineraryApi parseItinerary(ItineraryInquiry itineraryInquiry)
       throws UnirestException, IOException, InterruptedException {
 
     logger.info("Parse response to objects");
@@ -63,7 +63,7 @@ public class LiveFlightSearchParser {
         .header(sessionNameFirst, sessionValueFirst)
         .header(sessionNameSecond, API_Key)
         .asString();
-    return objectMapper.readValue(response.getBody(), Itinerary.class);
+    return objectMapper.readValue(response.getBody(), ItineraryApi.class);
   }
 
   private HttpResponse<String> createSession(ItineraryInquiry itineraryInquiry)

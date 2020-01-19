@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-class PlaceParserTest {
+class PlaceApiParserTest {
 
   @Test
   void parsePlaces() throws IOException, UnirestException {

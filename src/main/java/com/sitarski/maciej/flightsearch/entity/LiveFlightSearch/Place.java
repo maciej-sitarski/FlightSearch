@@ -1,11 +1,16 @@
 package com.sitarski.maciej.flightsearch.entity.LiveFlightSearch;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -19,7 +24,7 @@ public class Place {
   private Long id;
 
   @Column(name = "place_id")
-  private Long place_id;
+  private Long placeId;
 
   @Column(name = "parentId")
   private Long parentId;
@@ -37,11 +42,17 @@ public class Place {
   @JoinColumn(name = "itinerary_id")
   private Itinerary itinerary;
 
+  @ManyToMany(cascade = CascadeType.ALL)
+  @JoinTable(name = "place_leg",
+      joinColumns = @JoinColumn(name = "id_place", referencedColumnName = "id"),
+      inverseJoinColumns = @JoinColumn(name = "id_leg", referencedColumnName = "id"))
+  List<Leg> legs = new ArrayList<>();
+
   public Place() {
   }
 
-  public Place(Long place_id, Long parentId, String code, String type, String name) {
-    this.place_id = place_id;
+  public Place(Long placeId, Long parentId, String code, String type, String name) {
+    this.placeId = placeId;
     this.parentId = parentId;
     this.code = code;
     this.type = type;
@@ -56,12 +67,12 @@ public class Place {
     this.id = id;
   }
 
-  public Long getPlace_id() {
-    return place_id;
+  public Long getPlaceId() {
+    return placeId;
   }
 
-  public void setPlace_id(Long place_id) {
-    this.place_id = place_id;
+  public void setPlaceId(Long placeId) {
+    this.placeId = placeId;
   }
 
   public Long getParentId() {
@@ -102,5 +113,13 @@ public class Place {
 
   public void setItinerary(Itinerary itinerary) {
     this.itinerary = itinerary;
+  }
+
+  public List<Leg> getLegs() {
+    return legs;
+  }
+
+  public void setLegs(List<Leg> legs) {
+    this.legs = legs;
   }
 }
