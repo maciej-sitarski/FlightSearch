@@ -2,6 +2,7 @@ package com.sitarski.maciej.flightsearch.entity.LiveFlightSearch;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,10 +25,10 @@ public class PriceOption {
   @Column(name = "price")
   private Float price;
 
-  @Column(name = "linkUrl")
+  @Column(name = "linkUrl", length = 1200)
   private String linkUrl;
 
-  @ManyToMany(mappedBy = "priceOptions")
+  @ManyToMany(mappedBy = "priceOptions", cascade = CascadeType.ALL)
   private List<Agent> agents;
 
   @ManyToOne

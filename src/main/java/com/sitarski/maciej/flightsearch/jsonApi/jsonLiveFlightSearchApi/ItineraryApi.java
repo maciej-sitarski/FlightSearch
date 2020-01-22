@@ -1,8 +1,10 @@
 package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
+@JsonIgnoreProperties({"ValidationErrors"})
 public class ItineraryApi {
 
   @JsonProperty("SessionKey")

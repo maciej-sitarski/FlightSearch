@@ -19,7 +19,7 @@ public class Segment {
   private Long id;
 
   @Column(name = "segment_id")
-  private Long segment_id;
+  private Long segmentId;
 
   @Column(name = "originStation")
   private Long originStation;
@@ -55,10 +55,10 @@ public class Segment {
   public Segment() {
   }
 
-  public Segment(Long segment_id, Long originStation, Long destinationStation,
+  public Segment(Long segmentId, Long originStation, Long destinationStation,
       String departureDateTime, String arrivalDateTime, Long carrierId,
       Long operatingCarrierId, Long duration, String flightNumber, String directionality) {
-    this.segment_id = segment_id;
+    this.segmentId = segmentId;
     this.originStation = originStation;
     this.destinationStation = destinationStation;
     this.departureDateTime = departureDateTime;
@@ -78,12 +78,12 @@ public class Segment {
     this.id = id;
   }
 
-  public Long getSegment_id() {
-    return segment_id;
+  public Long getSegmentId() {
+    return segmentId;
   }
 
-  public void setSegment_id(Long segment_id) {
-    this.segment_id = segment_id;
+  public void setSegmentId(Long segmentId) {
+    this.segmentId = segmentId;
   }
 
   public Long getOriginStation() {

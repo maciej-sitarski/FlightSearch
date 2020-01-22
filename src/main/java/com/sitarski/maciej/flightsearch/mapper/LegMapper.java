@@ -62,18 +62,27 @@ public class LegMapper {
         .stream()
         .map(flightNumberApi -> flightNumberMapper.mapFlightNumberApiToEntity(flightNumberApi))
         .collect(Collectors.toList());
+    flightNumbers.forEach(flightNumber -> flightNumber.setLeg(leg));
     leg.setFlightNumbers(flightNumbers);
 
     List<Carrier> carriers = legApiOptional
         .map(LegApi::getLegCarriers)
-        .map(carrierRepository::findAllByCarrierId)
-        .orElse(Collections.emptyList());
+        .orElse(Collections.emptyList())
+        .stream()
+        .map(carrierRepository::findByCarrierId)
+        .map(e->e.orElse(null))
+        .collect(Collectors.toList());
+    carriers.forEach(carrier -> carrier.getLegs().add(leg));
     leg.setLegCarriers(carriers);
 
     List<Place> places = legApiOptional
         .map(LegApi::getStops)
-        .map(placeRepository::findAllByPlaceId)
-        .orElse(Collections.emptyList());
+        .orElse(Collections.emptyList())
+        .stream()
+        .map(placeRepository::findByPlaceId)
+        .map(e->e.orElse(null))
+        .collect(Collectors.toList());
+    places.forEach(place -> place.getLegs().add(leg));
     leg.setStops(places);
 
     return leg;

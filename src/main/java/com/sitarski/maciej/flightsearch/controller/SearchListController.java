@@ -1,10 +1,10 @@
 package com.sitarski.maciej.flightsearch.controller;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
-import com.sitarski.maciej.flightsearch.dao.ItineraryRepository;
 import com.sitarski.maciej.flightsearch.entity.ItineraryInquiry;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.ItineraryApi;
 import com.sitarski.maciej.flightsearch.parser.LiveFlightSearchParser;
+import com.sitarski.maciej.flightsearch.service.ClientAttributionService;
 import com.sitarski.maciej.flightsearch.service.StringFormatService;
 import java.io.IOException;
 import java.text.ParseException;
@@ -22,14 +22,15 @@ public class SearchListController {
 
   private final LiveFlightSearchParser liveFlightSearchParser;
   private final StringFormatService stringFormatService;
-  private final ItineraryRepository itineraryRepository;
+  private final ClientAttributionService clientAttributionService;
 
   @Autowired
   public SearchListController(LiveFlightSearchParser liveFlightSearchParser,
-      StringFormatService stringFormatService, ItineraryRepository itineraryRepository) {
+      StringFormatService stringFormatService,
+      ClientAttributionService clientAttributionService) {
     this.liveFlightSearchParser = liveFlightSearchParser;
     this.stringFormatService = stringFormatService;
-    this.itineraryRepository = itineraryRepository;
+    this.clientAttributionService = clientAttributionService;
   }
 
   @GetMapping("/searchList")
@@ -69,8 +70,10 @@ public class SearchListController {
         .build();
 
     ItineraryApi itineraryApi = liveFlightSearchParser.parseItinerary(itineraryInquiry);
-
     params.put("itineraries", itineraryApi);
+
+    String clientNumber = (String)req.getSession().getAttribute("clientNumber");
+    clientAttributionService.saveItineraryToDataBase(itineraryApi,clientNumber);
 
     if(inboundDate != null){
       return new ModelAndView("searchListReturnFlight", params);

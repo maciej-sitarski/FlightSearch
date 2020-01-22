@@ -34,6 +34,7 @@ public class ItineraryDetailMapper {
         .stream()
         .map(priceOptionMapper::mapPriceOptionApiToEntity)
         .collect(Collectors.toList());
+    priceOptions.forEach(priceOption -> priceOption.setItineraryDetail(itineraryDetail));
     itineraryDetail.setPriceOptions(priceOptions);
 
     return itineraryDetail;

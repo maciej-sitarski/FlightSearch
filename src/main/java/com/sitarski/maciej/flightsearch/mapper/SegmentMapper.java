@@ -13,7 +13,7 @@ public class SegmentMapper {
     Optional<SegmentApi> segmentApiOptional = Optional.ofNullable(segmentApi);
     Segment segment = new Segment();
 
-    segment.setSegment_id(segmentApiOptional
+    segment.setSegmentId(segmentApiOptional
         .map(SegmentApi::getId)
         .orElse(null));
     segment.setArrivalDateTime(segmentApiOptional

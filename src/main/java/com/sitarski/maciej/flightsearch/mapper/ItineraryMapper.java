@@ -69,6 +69,7 @@ public class ItineraryMapper {
         .stream()
         .map(itineraryDetailMapper::mapItineraryDetailApiToEntity)
         .collect(Collectors.toList());
+    itineraryDetails.forEach(itineraryDetail -> itineraryDetail.setItinerary(itinerary));
     itinerary.setItineraryDetail(itineraryDetails);
 
     List<Agent> agents = itineraryApiOptional
@@ -77,6 +78,7 @@ public class ItineraryMapper {
         .stream()
         .map(agentMapper::mapAgentApiToEntity)
         .collect(Collectors.toList());
+    agents.forEach(agent -> agent.setItinerary(itinerary));
     itinerary.setAgent(agents);
 
     List<Carrier> carriers = itineraryApiOptional
@@ -85,6 +87,7 @@ public class ItineraryMapper {
         .stream()
         .map(carrierMapper::mapCarrierApiToEntity)
         .collect(Collectors.toList());
+    carriers.forEach(carrier -> carrier.setItinerary(itinerary));
     itinerary.setCarrier(carriers);
 
     List<Currency> currencies = itineraryApiOptional
@@ -93,6 +96,7 @@ public class ItineraryMapper {
         .stream()
         .map(currencyMapper::mapCurrencyApiToEntity)
         .collect(Collectors.toList());
+    currencies.forEach(currency -> currency.setItinerary(itinerary));
     itinerary.setCurrency(currencies);
 
     List<Leg> legs = itineraryApiOptional
@@ -101,6 +105,7 @@ public class ItineraryMapper {
         .stream()
         .map(legMapper::mapLegApiToEntity)
         .collect(Collectors.toList());
+    legs.forEach(leg -> leg.setItinerary(itinerary));
     itinerary.setLeg(legs);
 
     List<Place> places = itineraryApiOptional
@@ -109,6 +114,7 @@ public class ItineraryMapper {
         .stream()
         .map(placeMapper::mapPlaceApiToEntity)
         .collect(Collectors.toList());
+    places.forEach(place -> place.setItinerary(itinerary));
     itinerary.setPlace(places);
 
     List<Segment> segments = itineraryApiOptional
@@ -117,6 +123,7 @@ public class ItineraryMapper {
         .stream()
         .map(segmentMapper::mapSegmentApiToEntity)
         .collect(Collectors.toList());
+    segments.forEach(segment -> segment.setItinerary(itinerary));
     itinerary.setSegment(segments);
 
     return itinerary;

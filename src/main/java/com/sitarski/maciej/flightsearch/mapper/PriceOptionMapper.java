@@ -8,6 +8,7 @@ import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.PriceOpt
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -32,8 +33,12 @@ public class PriceOptionMapper {
 
     List<Agent> agents = priceOptionApiOptional
         .map(PriceOptionApi::getAgents)
-        .map(agentRepository::findAllByAgentId)
-        .orElse(Collections.emptyList());
+        .orElse(Collections.emptyList())
+        .stream()
+        .map(agentRepository::findByAgentId)
+        .map(e->e.orElse(null))
+        .collect(Collectors.toList());
+    agents.forEach(agent -> agent.getPriceOptions().add(priceOption));
     priceOption.setAgents(agents);
 
     return priceOption;

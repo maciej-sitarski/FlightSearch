@@ -50,10 +50,10 @@ public class Leg {
   @OneToMany(mappedBy = "leg", cascade = CascadeType.ALL)
   private List<FlightNumber> flightNumbers = new ArrayList<>();
 
-  @ManyToMany(mappedBy = "legs")
+  @ManyToMany(mappedBy = "legs", cascade = CascadeType.ALL)
   private List<Carrier> legCarriers;
 
-  @ManyToMany(mappedBy = "legs")
+  @ManyToMany(mappedBy = "legs", cascade = CascadeType.ALL)
   private List<Place> stops;
 
   @ManyToOne

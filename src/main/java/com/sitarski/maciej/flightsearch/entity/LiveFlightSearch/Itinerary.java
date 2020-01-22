@@ -1,6 +1,8 @@
 package com.sitarski.maciej.flightsearch.entity.LiveFlightSearch;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -53,6 +55,12 @@ public class Itinerary {
 
   @OneToMany(mappedBy = "itinerary", cascade = CascadeType.ALL)
   private List<Currency> currency = new ArrayList<>();
+
+  @Column(name = "clientNumber")
+  private Long clientNumber;
+
+  @Column(name = "accessTime")
+  private LocalDateTime time;
 
   public Itinerary() {
   }
@@ -154,5 +162,21 @@ public class Itinerary {
   public void setCurrency(
       List<Currency> currency) {
     this.currency = currency;
+  }
+
+  public Long getClientNumber() {
+    return clientNumber;
+  }
+
+  public void setClientNumber(Long clientNumber) {
+    this.clientNumber = clientNumber;
+  }
+
+  public LocalDateTime getTime() {
+    return time;
+  }
+
+  public void setTime(LocalDateTime time) {
+    this.time = time;
   }
 }
