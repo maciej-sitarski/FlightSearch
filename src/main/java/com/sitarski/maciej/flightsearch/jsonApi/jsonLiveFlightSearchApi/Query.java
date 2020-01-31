@@ -3,7 +3,7 @@ package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonIgnoreProperties({"Locale", "LocationSchema"})
+@JsonIgnoreProperties({"LocationSchema"})
 public class Query {
 
   @JsonProperty("Country")
@@ -11,6 +11,9 @@ public class Query {
 
   @JsonProperty("Currency")
   private String currency;
+
+  @JsonProperty("Locale")
+  private String locale;
 
   @JsonProperty("Adults")
   private Long adults;

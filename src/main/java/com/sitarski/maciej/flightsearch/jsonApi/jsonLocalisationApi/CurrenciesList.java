@@ -6,20 +6,20 @@ import java.util.List;
 public class CurrenciesList {
 
   @JsonProperty("Currencies")
-  private List<Currency> currencies;
+  private List<List<Currency>> currencies;
 
   public CurrenciesList() {
   }
 
-  public CurrenciesList(List<Currency> currencies) {
+  public CurrenciesList(List<List<Currency>> currencies) {
     this.currencies = currencies;
   }
 
-  public List<Currency> getCurrencies() {
+  public List<List<Currency>> getCurrencies() {
     return currencies;
   }
 
-  public void setCurrencies(List<Currency> currencies) {
+  public void setCurrencies(List<List<Currency>> currencies) {
     this.currencies = currencies;
   }
 }

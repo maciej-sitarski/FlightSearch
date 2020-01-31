@@ -2,8 +2,9 @@ package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
-@JsonIgnoreProperties({"PricingOptions", "BookingDetailsLink"})
+@JsonIgnoreProperties({"BookingDetailsLink"})
 public class ItineraryDetail {
 
   @JsonProperty("OutboundLegId")
@@ -12,12 +13,16 @@ public class ItineraryDetail {
   @JsonProperty("InboundLegId")
   private String inboundLegId;
 
+  @JsonProperty("PricingOptions")
+  private List<PriceOption> priceOptions;
+
   public ItineraryDetail() {
   }
 
-  public ItineraryDetail(String outboundLegId, String inboundLegId) {
+  public ItineraryDetail(String outboundLegId, String inboundLegId, List<PriceOption> priceOptions) {
     this.outboundLegId = outboundLegId;
     this.inboundLegId = inboundLegId;
+    this.priceOptions = priceOptions;
   }
 
   public String getOutboundLegId() {
@@ -34,5 +39,14 @@ public class ItineraryDetail {
 
   public void setInboundLegId(String inboundLegId) {
     this.inboundLegId = inboundLegId;
+  }
+
+  public List<PriceOption> getPriceOptions() {
+    return priceOptions;
+  }
+
+  public void setPriceOptions(
+      List<PriceOption> priceOptions) {
+    this.priceOptions = priceOptions;
   }
 }

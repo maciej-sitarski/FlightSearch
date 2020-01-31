@@ -14,18 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
-//  @Autowired
-//  private PlaceParser placeParser;
-
   @RequestMapping("/home")
   public ModelAndView getMain() throws IOException, UnirestException {
     Map<String,Object> params = new HashMap<>();
     params.put("content", "main");
-//    PlaceList placeList = placeParser.parsePlaces("GDN","PLN");
-//
-//    params.put("placeList", "placeList");
-
     return new ModelAndView("home", params);
   }
-
 }

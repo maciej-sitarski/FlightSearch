@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-@JsonIgnoreProperties({"SegmentIds", "Stops", "Carriers", "OperatingCarriers"})
+@JsonIgnoreProperties({"SegmentIds","OperatingCarriers"})
 public class Leg {
 
   @JsonProperty("Id")
@@ -34,12 +34,18 @@ public class Leg {
   @JsonProperty("FlightNumbers")
   private List<FlightNumber> flightNumbers;
 
+  @JsonProperty("Carriers")
+  private List<Long> legCarriers;
+
+  @JsonProperty("Stops")
+  private List<Long> stops;
+
   public Leg() {
   }
 
   public Leg(String legId, Long originStation, Long destinationStation, String departure,
       String arrival, Long duration, String journeyMode, String directionality,
-      List<FlightNumber> flightNumbers) {
+      List<FlightNumber> flightNumbers, List<Long> legCarriers, List<Long> stops) {
     this.legId = legId;
     this.originStation = originStation;
     this.destinationStation = destinationStation;
@@ -49,6 +55,8 @@ public class Leg {
     this.journeyMode = journeyMode;
     this.directionality = directionality;
     this.flightNumbers = flightNumbers;
+    this.legCarriers = legCarriers;
+    this.stops = stops;
   }
 
   public String getLegId() {
@@ -121,5 +129,22 @@ public class Leg {
 
   public void setFlightNumbers(List<FlightNumber> flightNumbers) {
     this.flightNumbers = flightNumbers;
+  }
+
+  public List<Long> getLegCarriers() {
+    return legCarriers;
+  }
+
+  public void setLegCarriers(
+      List<Long> legCarriers) {
+    this.legCarriers = legCarriers;
+  }
+
+  public List<Long> getStops() {
+    return stops;
+  }
+
+  public void setStops(List<Long> stops) {
+    this.stops = stops;
   }
 }

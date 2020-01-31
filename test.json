@@ -1,0 +1,1871 @@
+{
+  "SessionKey": "d291bb03-7c45-4749-b86a-e836ef9f0ef7",
+  "Query": {
+    "Country": "PL",
+    "Currency": "PLN",
+    "Locale": "pl-PL",
+    "Adults": 1,
+    "Children": 0,
+    "Infants": 0,
+    "OriginPlace": "11758",
+    "DestinationPlace": "17648",
+    "OutboundDate": "2020-01-16",
+    "LocationSchema": "Default",
+    "CabinClass": "economy",
+    "GroupPricing": false
+  },
+  "Status": "UpdatesPending",
+  "Itineraries": [
+    {
+      "OutboundLegId": "11758-2001160705--32090-1-17648-2001161355",
+      "PricingOptions": [
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 1502.83,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32090%7c1379%7c11758%7c2020-01-16T07%3a05%7c11616%7c2020-01-16T08%3a50%7c105%7cQEUCLSP0%7cQ%7c-%3bflight%7c-32090%7c1348%7c11616%7c2020-01-16T12%3a20%7c17648%7c2020-01-16T13%3a55%7c95%7cVEUCLSP0%7cV%7c-%26carriers%3d-32090%26operators%3d-32089%3b-32090%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d1502.83%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c-4245562744611089001%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001160705--32090-1-17648-2001161355&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001161815--32093-0-17648-2001161920",
+      "PricingOptions": [
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 585.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3816%7c11758%7c2020-01-16T18%3a15%7c17648%7c2020-01-16T19%3a20%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d585.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c1697907141687167528%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3503644
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 595.78,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2foppl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3816%7c11758%7c2020-01-16T18%3a15%7c17648%7c2020-01-16T19%3a20%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d595.78%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3doppl.11758.17648.200116..1..E%7c1697907141687167528%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3169745
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 599.78,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2flota%2f1%2f11758.17648.2020-01-16%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32093%7c3816%7c11758%7c2020-01-16T18%3a15%7c17648%7c2020-01-16T19%3a20%7c65%7cM1SAV0%7cM%7cECONOMY+SAVER%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d599.78%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dlota.11758.17648.200116..1..E%7c73250723617544888%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2185756
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 600.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fctpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3816%7c11758%7c2020-01-16T18%3a15%7c17648%7c2020-01-16T19%3a20%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d600.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dctpl.11758.17648.200116..1..E%7c1697907141687167528%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 603.48,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3816%7c11758%7c2020-01-16T18%3a15%7c17648%7c2020-01-16T19%3a20%7c65%7cM1SAV0%7cM%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d603.48%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c7689994118930831331%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2045212
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 617.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fbgpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3816%7c11758%7c2020-01-16T18%3a15%7c17648%7c2020-01-16T19%3a20%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d617.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dbgpl.11758.17648.200116..1..E%7c1697907141687167528%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 636.89,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3816%7c11758%7c2020-01-16T18%3a15%7c17648%7c2020-01-16T19%3a20%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d636.89%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c1697907141687167528%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            4075036
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 639.28,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2ftxpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3816%7c11758%7c2020-01-16T18%3a15%7c17648%7c2020-01-16T19%3a20%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d639.28%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dtxpl.11758.17648.200116..1..E%7c1697907141687167528%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001161815--32093-0-17648-2001161920&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001160600--31901-1-17648-2001160925",
+      "PricingOptions": [
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 954.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31901%7c1758%7c11758%7c2020-01-16T06%3a00%7c10694%7c2020-01-16T07%3a05%7c65%7c-%7c-%7c-%3bflight%7c-31901%7c751%7c10694%7c2020-01-16T08%3a05%7c17648%7c2020-01-16T09%3a25%7c80%7c-%7c-%7c-%26carriers%3d-31901%26operators%3d-32639%3b-31901%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d954.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c-4657255565534878696%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 975.75,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31901%7c1758%7c11758%7c2020-01-16T06%3a00%7c10694%7c2020-01-16T07%3a05%7c65%7cKLERGHT%7cK%7c-%3bflight%7c-31901%7c751%7c10694%7c2020-01-16T08%3a05%7c17648%7c2020-01-16T09%3a25%7c80%7cKLERGHT%7cK%7c-%26carriers%3d-31901%26operators%3d-32639%3b-31901%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d975.75%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c8608657175279056666%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 1001.71,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31901%7c1758%7c11758%7c2020-01-16T06%3a00%7c10694%7c2020-01-16T07%3a05%7c65%7c-%7c-%7c-%3bflight%7c-31901%7c751%7c10694%7c2020-01-16T08%3a05%7c17648%7c2020-01-16T09%3a25%7c80%7c-%7c-%7c-%26carriers%3d-31901%26operators%3d-32639%3b-31901%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d1001.71%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c-4657255565534878696%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001160600--31901-1-17648-2001160925&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001161850--32093-1-17648-2001170635",
+      "PricingOptions": [
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 322.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3501%7c11758%7c2020-01-16T18%3a50%7c13235%7c2020-01-16T20%3a10%7c80%7c-%7c-%7c-%3bflight%7c-32093%7c3910%7c13235%7c2020-01-17T05%3a40%7c17648%7c2020-01-17T06%3a35%7c55%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d322.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c-788985986335626252%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 325.59,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3501%7c11758%7c2020-01-16T18%3a50%7c13235%7c2020-01-16T20%3a10%7c80%7cWSAVP0%7cW%7c-%3bflight%7c-32093%7c3910%7c13235%7c2020-01-17T05%3a40%7c17648%7c2020-01-17T06%3a35%7c55%7cWSAVC0%7cW%7c-%26carriers%3d-32093%26operators%3d-32093%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d325.59%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c-8467448322984956892%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3503644
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 333.82,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2foppl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3501%7c11758%7c2020-01-16T18%3a50%7c13235%7c2020-01-16T20%3a10%7c80%7c-%7c-%7c-%3bflight%7c-32093%7c3910%7c13235%7c2020-01-17T05%3a40%7c17648%7c2020-01-17T06%3a35%7c55%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d333.82%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3doppl.11758.17648.200116..1..E%7c-788985986335626252%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3169745
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 337.82,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2flota%2f1%2f11758.17648.2020-01-16%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32093%7c3501%7c11758%7c2020-01-16T18%3a50%7c13235%7c2020-01-16T20%3a10%7c80%7cWSAVP0%7cW%7cECONOMY+SAVER%3bflight%7c-32093%7c3910%7c13235%7c2020-01-17T05%3a40%7c17648%7c2020-01-17T06%3a35%7c55%7cWSAVC0%7cW%7cECONOMY+SAVER%26carriers%3d-32093%26operators%3d-32093%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d337.82%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dlota.11758.17648.200116..1..E%7c-2494359491041928478%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2045212
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 339.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fbgpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3501%7c11758%7c2020-01-16T18%3a50%7c13235%7c2020-01-16T20%3a10%7c80%7c-%7c-%7c-%3bflight%7c-32093%7c3910%7c13235%7c2020-01-17T05%3a40%7c17648%7c2020-01-17T06%3a35%7c55%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d339.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dbgpl.11758.17648.200116..1..E%7c-788985986335626252%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 355.34,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3501%7c11758%7c2020-01-16T18%3a50%7c13235%7c2020-01-16T20%3a10%7c80%7c-%7c-%7c-%3bflight%7c-32093%7c3910%7c13235%7c2020-01-17T05%3a40%7c17648%7c2020-01-17T06%3a35%7c55%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d355.34%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c-788985986335626252%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            4075036
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 368.31,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2ftxpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3501%7c11758%7c2020-01-16T18%3a50%7c13235%7c2020-01-16T20%3a10%7c80%7c-%7c-%7c-%3bflight%7c-32093%7c3910%7c13235%7c2020-01-17T05%3a40%7c17648%7c2020-01-17T06%3a35%7c55%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d368.31%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dtxpl.11758.17648.200116..1..E%7c-788985986335626252%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001161850--32093-1-17648-2001170635&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001160530--32093-0-17648-2001160635",
+      "PricingOptions": [
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 585.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3828%7c11758%7c2020-01-16T05%3a30%7c17648%7c2020-01-16T06%3a35%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d585.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c7757272669798053629%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3503644
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 595.78,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2foppl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3828%7c11758%7c2020-01-16T05%3a30%7c17648%7c2020-01-16T06%3a35%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d595.78%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3doppl.11758.17648.200116..1..E%7c7757272669798053629%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3169745
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 599.78,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2flota%2f1%2f11758.17648.2020-01-16%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32093%7c3828%7c11758%7c2020-01-16T05%3a30%7c17648%7c2020-01-16T06%3a35%7c65%7cM1SAV0%7cM%7cECONOMY+SAVER%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d599.78%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dlota.11758.17648.200116..1..E%7c-6449648128281932253%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2185756
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 600.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fctpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3828%7c11758%7c2020-01-16T05%3a30%7c17648%7c2020-01-16T06%3a35%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d600.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dctpl.11758.17648.200116..1..E%7c7757272669798053629%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 603.48,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3828%7c11758%7c2020-01-16T05%3a30%7c17648%7c2020-01-16T06%3a35%7c65%7cM1SAV0%7cM%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d603.48%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c5939833957833230860%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2045212
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 617.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fbgpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3828%7c11758%7c2020-01-16T05%3a30%7c17648%7c2020-01-16T06%3a35%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d617.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dbgpl.11758.17648.200116..1..E%7c7757272669798053629%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 637.74,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3828%7c11758%7c2020-01-16T05%3a30%7c17648%7c2020-01-16T06%3a35%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d637.74%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c7757272669798053629%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            4075036
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 639.28,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2ftxpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3828%7c11758%7c2020-01-16T05%3a30%7c17648%7c2020-01-16T06%3a35%7c65%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d639.28%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dtxpl.11758.17648.200116..1..E%7c7757272669798053629%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001160530--32093-0-17648-2001160635&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001161805--32132-1-17648-2001162325",
+      "PricingOptions": [
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 2161.72,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32132%7c1922%7c11758%7c2020-01-16T18%3a05%7c9451%7c2020-01-16T20%3a00%7c115%7cPWKPL%7cP%7c-%3bflight%7c-32132%7c1369%7c9451%7c2020-01-16T21%3a25%7c17648%7c2020-01-16T23%3a25%7c120%7cMWKPL%7cM%7c-%26carriers%3d-32132%26operators%3d-32131%3b-32131%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d2161.72%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c1823947806820730862%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001161805--32132-1-17648-2001162325&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001160845--32093-0-17648-2001160945",
+      "PricingOptions": [
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 503.88,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3832%7c11758%7c2020-01-16T08%3a45%7c17648%7c2020-01-16T09%3a45%7c60%7cH1SAV0%7cH%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d503.88%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c-4179350235023284312%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 585.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3832%7c11758%7c2020-01-16T08%3a45%7c17648%7c2020-01-16T09%3a45%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d585.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c-6082073796605080035%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3503644
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 595.78,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2foppl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3832%7c11758%7c2020-01-16T08%3a45%7c17648%7c2020-01-16T09%3a45%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d595.78%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3doppl.11758.17648.200116..1..E%7c-6082073796605080035%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3169745
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 599.78,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2flota%2f1%2f11758.17648.2020-01-16%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32093%7c3832%7c11758%7c2020-01-16T08%3a45%7c17648%7c2020-01-16T09%3a45%7c60%7cM1SAV0%7cM%7cECONOMY+SAVER%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d599.78%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dlota.11758.17648.200116..1..E%7c8837139874339387805%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2185756
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 600.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fctpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3832%7c11758%7c2020-01-16T08%3a45%7c17648%7c2020-01-16T09%3a45%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d600.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dctpl.11758.17648.200116..1..E%7c-6082073796605080035%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            2045212
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 617.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fbgpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3832%7c11758%7c2020-01-16T08%3a45%7c17648%7c2020-01-16T09%3a45%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d617.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dbgpl.11758.17648.200116..1..E%7c-6082073796605080035%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 636.89,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3832%7c11758%7c2020-01-16T08%3a45%7c17648%7c2020-01-16T09%3a45%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d636.89%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c-6082073796605080035%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            4075036
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 639.28,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2ftxpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3832%7c11758%7c2020-01-16T08%3a45%7c17648%7c2020-01-16T09%3a45%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d639.28%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dtxpl.11758.17648.200116..1..E%7c-6082073796605080035%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001160845--32093-0-17648-2001160945&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001161510--31901,-32093-1-17648-2001162115",
+      "PricingOptions": [
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 4104.64,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31901%7c760%7c11758%7c2020-01-16T15%3a10%7c10694%7c2020-01-16T16%3a10%7c60%7c-%7c-%7c-%3bflight%7c-32093%7c462%7c10694%7c2020-01-16T19%3a50%7c17648%7c2020-01-16T21%3a15%7c85%7c-%7c-%7c-%26carriers%3d-31901%2c-32093%26operators%3d-32639%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d4104.64%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c-3262104787571702656%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 4186.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31901%7c760%7c11758%7c2020-01-16T15%3a10%7c10694%7c2020-01-16T16%3a10%7c60%7c-%7c-%7c-%3bflight%7c-32093%7c462%7c10694%7c2020-01-16T19%3a50%7c17648%7c2020-01-16T21%3a15%7c85%7c-%7c-%7c-%26carriers%3d-31901%2c-32093%26operators%3d-32639%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d4186.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c-3262104787571702656%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001161510--31901,-32093-1-17648-2001162115&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001161205--32093-0-17648-2001161305",
+      "PricingOptions": [
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 585.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3836%7c11758%7c2020-01-16T12%3a05%7c17648%7c2020-01-16T13%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d585.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c-4674982187605789057%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3503644
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 595.78,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2foppl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3836%7c11758%7c2020-01-16T12%3a05%7c17648%7c2020-01-16T13%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d595.78%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3doppl.11758.17648.200116..1..E%7c-4674982187605789057%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3169745
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 599.78,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2flota%2f1%2f11758.17648.2020-01-16%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32093%7c3836%7c11758%7c2020-01-16T12%3a05%7c17648%7c2020-01-16T13%3a05%7c60%7cM1SAV0%7cM%7cECONOMY+SAVER%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d599.78%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dlota.11758.17648.200116..1..E%7c-166433834314511233%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2185756
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 600.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fctpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3836%7c11758%7c2020-01-16T12%3a05%7c17648%7c2020-01-16T13%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d600.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dctpl.11758.17648.200116..1..E%7c-4674982187605789057%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 603.48,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3836%7c11758%7c2020-01-16T12%3a05%7c17648%7c2020-01-16T13%3a05%7c60%7cM1SAV0%7cM%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d603.48%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c-8776883810216109921%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2045212
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 617.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fbgpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3836%7c11758%7c2020-01-16T12%3a05%7c17648%7c2020-01-16T13%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d617.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dbgpl.11758.17648.200116..1..E%7c-4674982187605789057%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 636.89,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3836%7c11758%7c2020-01-16T12%3a05%7c17648%7c2020-01-16T13%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d636.89%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c-4674982187605789057%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            4075036
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 639.28,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2ftxpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3836%7c11758%7c2020-01-16T12%3a05%7c17648%7c2020-01-16T13%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d639.28%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dtxpl.11758.17648.200116..1..E%7c-4674982187605789057%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001161205--32093-0-17648-2001161305&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001162105--32093-0-17648-2001162205",
+      "PricingOptions": [
+        {
+          "Agents": [
+            2185756
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 129.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fctpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3826%7c11758%7c2020-01-16T21%3a05%7c17648%7c2020-01-16T22%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d129.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dctpl.11758.17648.200116..1..E%7c-8762186251141347331%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            3503644
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 145.42,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2foppl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3826%7c11758%7c2020-01-16T21%3a05%7c17648%7c2020-01-16T22%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d145.42%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3doppl.11758.17648.200116..1..E%7c-8762186251141347331%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3169745
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 149.42,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2flota%2f1%2f11758.17648.2020-01-16%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32093%7c3826%7c11758%7c2020-01-16T21%3a05%7c17648%7c2020-01-16T22%3a05%7c60%7cO1SAV0%7cO%7cECONOMY+SAVER%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d149.42%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dlota.11758.17648.200116..1..E%7c2133218676763411287%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 150.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3826%7c11758%7c2020-01-16T21%3a05%7c17648%7c2020-01-16T22%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d150.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c-8762186251141347331%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 155.23,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3826%7c11758%7c2020-01-16T21%3a05%7c17648%7c2020-01-16T22%3a05%7c60%7cO1SAV0%7cO%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d155.23%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c-8487020026758236758%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2045212
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 166.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fbgpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3826%7c11758%7c2020-01-16T21%3a05%7c17648%7c2020-01-16T22%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d166.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dbgpl.11758.17648.200116..1..E%7c-8762186251141347331%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 182.81,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3826%7c11758%7c2020-01-16T21%3a05%7c17648%7c2020-01-16T22%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d182.81%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c-8762186251141347331%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            4075036
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 194.72,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2ftxpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3826%7c11758%7c2020-01-16T21%3a05%7c17648%7c2020-01-16T22%3a05%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d194.72%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dtxpl.11758.17648.200116..1..E%7c-8762186251141347331%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001162105--32093-0-17648-2001162205&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001160630--32132-1-17648-2001161200",
+      "PricingOptions": [
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 1884.64,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32132%7c1916%7c11758%7c2020-01-16T06%3a30%7c9451%7c2020-01-16T08%3a30%7c120%7cPWKPL%7cP%7c-%3bflight%7c-32132%7c1363%7c9451%7c2020-01-16T10%3a05%7c17648%7c2020-01-16T12%3a00%7c115%7cFWKPL%7cF%7c-%26carriers%3d-32132%26operators%3d-32131%3b-32132%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d1884.64%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c-8255409974286783707%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001160630--32132-1-17648-2001161200&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001160600--31901,-32093-1-17648-2001161155",
+      "PricingOptions": [
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 4104.64,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31901%7c1758%7c11758%7c2020-01-16T06%3a00%7c10694%7c2020-01-16T07%3a05%7c65%7c-%7c-%7c-%3bflight%7c-32093%7c464%7c10694%7c2020-01-16T10%3a30%7c17648%7c2020-01-16T11%3a55%7c85%7c-%7c-%7c-%26carriers%3d-31901%2c-32093%26operators%3d-32639%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d4104.64%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c-1894222446126243851%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 4186.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31901%7c1758%7c11758%7c2020-01-16T06%3a00%7c10694%7c2020-01-16T07%3a05%7c65%7c-%7c-%7c-%3bflight%7c-32093%7c464%7c10694%7c2020-01-16T10%3a30%7c17648%7c2020-01-16T11%3a55%7c85%7c-%7c-%7c-%26carriers%3d-31901%2c-32093%26operators%3d-32639%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d4186.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c-1894222446126243851%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001160600--31901,-32093-1-17648-2001161155&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001161410--32090-1-17648-2001161815",
+      "PricingOptions": [
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 1502.83,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32090%7c1377%7c11758%7c2020-01-16T14%3a10%7c11616%7c2020-01-16T15%3a50%7c100%7cQEUCLSP0%7cQ%7c-%3bflight%7c-32090%7c1350%7c11616%7c2020-01-16T16%3a40%7c17648%7c2020-01-16T18%3a15%7c95%7cVEUCLSP0%7cV%7c-%26carriers%3d-32090%26operators%3d-32089%3b-32090%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d1502.83%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c2253951223290648744%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001161410--32090-1-17648-2001161815&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001160940--31901-1-17648-2001161725",
+      "PricingOptions": [
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 954.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31901%7c756%7c11758%7c2020-01-16T09%3a40%7c10694%7c2020-01-16T10%3a40%7c60%7c-%7c-%7c-%3bflight%7c-31901%7c2751%7c10694%7c2020-01-16T16%3a05%7c17648%7c2020-01-16T17%3a25%7c80%7c-%7c-%7c-%26carriers%3d-31901%26operators%3d-32430%3b-31901%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d954.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c8674624752832742661%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 975.75,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31901%7c756%7c11758%7c2020-01-16T09%3a40%7c10694%7c2020-01-16T10%3a40%7c60%7cKLERGHT%7cK%7c-%3bflight%7c-31901%7c2751%7c10694%7c2020-01-16T16%3a05%7c17648%7c2020-01-16T17%3a25%7c80%7cKLERGHT%7cK%7c-%26carriers%3d-31901%26operators%3d-32430%3b-31901%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d975.75%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c4085755704064532827%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 1001.46,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-31901%7c756%7c11758%7c2020-01-16T09%3a40%7c10694%7c2020-01-16T10%3a40%7c60%7c-%7c-%7c-%3bflight%7c-31901%7c2751%7c10694%7c2020-01-16T16%3a05%7c17648%7c2020-01-16T17%3a25%7c80%7c-%7c-%7c-%26carriers%3d-31901%26operators%3d-32430%3b-31901%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d1001.46%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c8674624752832742661%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001160940--31901-1-17648-2001161725&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001161455--32093-0-17648-2001161555",
+      "PricingOptions": [
+        {
+          "Agents": [
+            2627446
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 585.99,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fgtbf%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3838%7c11758%7c2020-01-16T14%3a55%7c17648%7c2020-01-16T15%3a55%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d585.99%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dgtbf.11758.17648.200116..1..E%7c-4294113878750656721%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3503644
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 595.78,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2foppl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3838%7c11758%7c2020-01-16T14%3a55%7c17648%7c2020-01-16T15%3a55%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d595.78%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3doppl.11758.17648.200116..1..E%7c-4294113878750656721%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            3169745
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 599.78,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2flota%2f1%2f11758.17648.2020-01-16%2fair%2fairli%2fflights%3fitinerary%3dflight%7c-32093%7c3838%7c11758%7c2020-01-16T14%3a55%7c17648%7c2020-01-16T15%3a55%7c60%7cM1SAV0%7cM%7cECONOMY+SAVER%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d599.78%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dlota.11758.17648.200116..1..E%7c738915119832495238%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2185756
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 600.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fctpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3838%7c11758%7c2020-01-16T14%3a55%7c17648%7c2020-01-16T15%3a55%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d600.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dctpl.11758.17648.200116..1..E%7c-4294113878750656721%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 603.48,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3838%7c11758%7c2020-01-16T14%3a55%7c17648%7c2020-01-16T15%3a55%7c60%7cM1SAV0%7cM%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d603.48%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c420394031602336743%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            2045212
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 617.00,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fbgpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3838%7c11758%7c2020-01-16T14%3a55%7c17648%7c2020-01-16T15%3a55%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d617.00%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dbgpl.11758.17648.200116..1..E%7c-4294113878750656721%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dtrue"
+        },
+        {
+          "Agents": [
+            1963108
+          ],
+          "QuoteAgeInMinutes": 140,
+          "Price": 636.89,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fat24%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3838%7c11758%7c2020-01-16T14%3a55%7c17648%7c2020-01-16T15%3a55%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d636.89%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dat24.11758.17648.200116..1..E%7c-4294113878750656721%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T10%3a10%3a00%26pqid%3dfalse"
+        },
+        {
+          "Agents": [
+            4075036
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 639.28,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2ftxpl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32093%7c3838%7c11758%7c2020-01-16T14%3a55%7c17648%7c2020-01-16T15%3a55%7c60%7c-%7c-%7c-%26carriers%3d-32093%26operators%3d-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d639.28%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dtxpl.11758.17648.200116..1..E%7c-4294113878750656721%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001161455--32093-0-17648-2001161555&InboundLegId=",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "11758-2001160630--32132,-32093-1-17648-2001161225",
+      "PricingOptions": [
+        {
+          "Agents": [
+            3588892
+          ],
+          "QuoteAgeInMinutes": 24,
+          "Price": 3832.79,
+          "DeeplinkUrl": "http://partners.api.skyscanner.net/apiservices/deeplink/v2?_cje=NqagL4PVt5peZGMG189S4zg4dm39CEoR%2bV8UrnEXQEuJZ36mI8cG9Fi4G8qRAMyN&url=https%3a%2f%2fwww.skyscanner.net%2ftransport_deeplink%2f4.0%2fPL%2fpl-PL%2fPLN%2fpepl%2f1%2f11758.17648.2020-01-16%2fair%2ftrava%2fflights%3fitinerary%3dflight%7c-32132%7c1916%7c11758%7c2020-01-16T06%3a30%7c9451%7c2020-01-16T08%3a30%7c120%7cYFF%7cY%7c-%3bflight%7c-32093%7c266%7c9451%7c2020-01-16T10%3a30%7c17648%7c2020-01-16T12%3a25%7c115%7cESAVP0%7cE%7c-%26carriers%3d-32132%2c-32093%26operators%3d-32131%3b-32093%26passengers%3d1%26channel%3ddataapi%26cabin_class%3deconomy%26facilitated%3dfalse%26ticket_price%3d3832.79%26is_npt%3dfalse%26is_multipart%3dfalse%26client_id%3dskyscanner_b2b%26q_ids%3dpepl.11758.17648.200116..1..E%7c2271920300966736829%26q_sources%3dJACQUARD%26commercial_filters%3dfalse%26q_datetime_utc%3d2020-01-09T12%3a06%3a00%26pqid%3dfalse"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "/apiservices/pricing/v1.0/d291bb03-7c45-4749-b86a-e836ef9f0ef7/booking",
+        "Body": "OutboundLegId=11758-2001160630--32132,-32093-1-17648-2001161225&InboundLegId=",
+        "Method": "PUT"
+      }
+    }
+  ],
+  "Legs": [
+    {
+      "Id": "11758-2001160705--32090-1-17648-2001161355",
+      "SegmentIds": [
+        0,
+        1
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T07:05:00",
+      "Arrival": "2020-01-16T13:55:00",
+      "Duration": 410,
+      "JourneyMode": "Flight",
+      "Stops": [
+        11616
+      ],
+      "Carriers": [
+        1368
+      ],
+      "OperatingCarriers": [
+        940,
+        1368
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1379",
+          "CarrierId": 1368
+        },
+        {
+          "FlightNumber": "1348",
+          "CarrierId": 1368
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001161815--32093-0-17648-2001161920",
+      "SegmentIds": [
+        2
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T18:15:00",
+      "Arrival": "2020-01-16T19:20:00",
+      "Duration": 65,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        1375
+      ],
+      "OperatingCarriers": [
+        1375
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "3816",
+          "CarrierId": 1375
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001160600--31901-1-17648-2001160925",
+      "SegmentIds": [
+        3,
+        4
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T06:00:00",
+      "Arrival": "2020-01-16T09:25:00",
+      "Duration": 205,
+      "JourneyMode": "Flight",
+      "Stops": [
+        10694
+      ],
+      "Carriers": [
+        1707
+      ],
+      "OperatingCarriers": [
+        2007,
+        1707
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1758",
+          "CarrierId": 1707
+        },
+        {
+          "FlightNumber": "751",
+          "CarrierId": 1707
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001161850--32093-1-17648-2001170635",
+      "SegmentIds": [
+        5,
+        6
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T18:50:00",
+      "Arrival": "2020-01-17T06:35:00",
+      "Duration": 705,
+      "JourneyMode": "Flight",
+      "Stops": [
+        13235
+      ],
+      "Carriers": [
+        1375
+      ],
+      "OperatingCarriers": [
+        1375
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "3501",
+          "CarrierId": 1375
+        },
+        {
+          "FlightNumber": "3910",
+          "CarrierId": 1375
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001160530--32093-0-17648-2001160635",
+      "SegmentIds": [
+        7
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T05:30:00",
+      "Arrival": "2020-01-16T06:35:00",
+      "Duration": 65,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        1375
+      ],
+      "OperatingCarriers": [
+        1375
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "3828",
+          "CarrierId": 1375
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001161805--32132-1-17648-2001162325",
+      "SegmentIds": [
+        8,
+        9
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T18:05:00",
+      "Arrival": "2020-01-16T23:25:00",
+      "Duration": 320,
+      "JourneyMode": "Flight",
+      "Stops": [
+        9451
+      ],
+      "Carriers": [
+        1324
+      ],
+      "OperatingCarriers": [
+        1889
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1922",
+          "CarrierId": 1324
+        },
+        {
+          "FlightNumber": "1369",
+          "CarrierId": 1324
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001160845--32093-0-17648-2001160945",
+      "SegmentIds": [
+        10
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T08:45:00",
+      "Arrival": "2020-01-16T09:45:00",
+      "Duration": 60,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        1375
+      ],
+      "OperatingCarriers": [
+        1375
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "3832",
+          "CarrierId": 1375
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001161510--31901,-32093-1-17648-2001162115",
+      "SegmentIds": [
+        11,
+        12
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T15:10:00",
+      "Arrival": "2020-01-16T21:15:00",
+      "Duration": 365,
+      "JourneyMode": "Flight",
+      "Stops": [
+        10694
+      ],
+      "Carriers": [
+        1707,
+        1375
+      ],
+      "OperatingCarriers": [
+        2007,
+        1375
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "760",
+          "CarrierId": 1707
+        },
+        {
+          "FlightNumber": "462",
+          "CarrierId": 1375
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001161205--32093-0-17648-2001161305",
+      "SegmentIds": [
+        13
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T12:05:00",
+      "Arrival": "2020-01-16T13:05:00",
+      "Duration": 60,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        1375
+      ],
+      "OperatingCarriers": [
+        1375
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "3836",
+          "CarrierId": 1375
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001162105--32093-0-17648-2001162205",
+      "SegmentIds": [
+        14
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T21:05:00",
+      "Arrival": "2020-01-16T22:05:00",
+      "Duration": 60,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        1375
+      ],
+      "OperatingCarriers": [
+        1375
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "3826",
+          "CarrierId": 1375
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001160630--32132-1-17648-2001161200",
+      "SegmentIds": [
+        15,
+        16
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T06:30:00",
+      "Arrival": "2020-01-16T12:00:00",
+      "Duration": 330,
+      "JourneyMode": "Flight",
+      "Stops": [
+        9451
+      ],
+      "Carriers": [
+        1324
+      ],
+      "OperatingCarriers": [
+        1889,
+        1324
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1916",
+          "CarrierId": 1324
+        },
+        {
+          "FlightNumber": "1363",
+          "CarrierId": 1324
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001160600--31901,-32093-1-17648-2001161155",
+      "SegmentIds": [
+        3,
+        17
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T06:00:00",
+      "Arrival": "2020-01-16T11:55:00",
+      "Duration": 355,
+      "JourneyMode": "Flight",
+      "Stops": [
+        10694
+      ],
+      "Carriers": [
+        1707,
+        1375
+      ],
+      "OperatingCarriers": [
+        2007,
+        1375
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1758",
+          "CarrierId": 1707
+        },
+        {
+          "FlightNumber": "464",
+          "CarrierId": 1375
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001161410--32090-1-17648-2001161815",
+      "SegmentIds": [
+        18,
+        19
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T14:10:00",
+      "Arrival": "2020-01-16T18:15:00",
+      "Duration": 245,
+      "JourneyMode": "Flight",
+      "Stops": [
+        11616
+      ],
+      "Carriers": [
+        1368
+      ],
+      "OperatingCarriers": [
+        940,
+        1368
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1377",
+          "CarrierId": 1368
+        },
+        {
+          "FlightNumber": "1350",
+          "CarrierId": 1368
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001160940--31901-1-17648-2001161725",
+      "SegmentIds": [
+        20,
+        21
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T09:40:00",
+      "Arrival": "2020-01-16T17:25:00",
+      "Duration": 465,
+      "JourneyMode": "Flight",
+      "Stops": [
+        10694
+      ],
+      "Carriers": [
+        1707
+      ],
+      "OperatingCarriers": [
+        1912,
+        1707
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "756",
+          "CarrierId": 1707
+        },
+        {
+          "FlightNumber": "2751",
+          "CarrierId": 1707
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001161455--32093-0-17648-2001161555",
+      "SegmentIds": [
+        22
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T14:55:00",
+      "Arrival": "2020-01-16T15:55:00",
+      "Duration": 60,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        1375
+      ],
+      "OperatingCarriers": [
+        1375
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "3838",
+          "CarrierId": 1375
+        }
+      ]
+    },
+    {
+      "Id": "11758-2001160630--32132,-32093-1-17648-2001161225",
+      "SegmentIds": [
+        15,
+        23
+      ],
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "Departure": "2020-01-16T06:30:00",
+      "Arrival": "2020-01-16T12:25:00",
+      "Duration": 355,
+      "JourneyMode": "Flight",
+      "Stops": [
+        9451
+      ],
+      "Carriers": [
+        1324,
+        1375
+      ],
+      "OperatingCarriers": [
+        1889,
+        1375
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1916",
+          "CarrierId": 1324
+        },
+        {
+          "FlightNumber": "266",
+          "CarrierId": 1375
+        }
+      ]
+    }
+  ],
+  "Segments": [
+    {
+      "Id": 0,
+      "OriginStation": 11758,
+      "DestinationStation": 11616,
+      "DepartureDateTime": "2020-01-16T07:05:00",
+      "ArrivalDateTime": "2020-01-16T08:50:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 940,
+      "Duration": 105,
+      "FlightNumber": "1379",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 1,
+      "OriginStation": 11616,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T12:20:00",
+      "ArrivalDateTime": "2020-01-16T13:55:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 95,
+      "FlightNumber": "1348",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 2,
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T18:15:00",
+      "ArrivalDateTime": "2020-01-16T19:20:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 65,
+      "FlightNumber": "3816",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 3,
+      "OriginStation": 11758,
+      "DestinationStation": 10694,
+      "DepartureDateTime": "2020-01-16T06:00:00",
+      "ArrivalDateTime": "2020-01-16T07:05:00",
+      "Carrier": 1707,
+      "OperatingCarrier": 2007,
+      "Duration": 65,
+      "FlightNumber": "1758",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 4,
+      "OriginStation": 10694,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T08:05:00",
+      "ArrivalDateTime": "2020-01-16T09:25:00",
+      "Carrier": 1707,
+      "OperatingCarrier": 1707,
+      "Duration": 80,
+      "FlightNumber": "751",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 5,
+      "OriginStation": 11758,
+      "DestinationStation": 13235,
+      "DepartureDateTime": "2020-01-16T18:50:00",
+      "ArrivalDateTime": "2020-01-16T20:10:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 80,
+      "FlightNumber": "3501",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 6,
+      "OriginStation": 13235,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-17T05:40:00",
+      "ArrivalDateTime": "2020-01-17T06:35:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 55,
+      "FlightNumber": "3910",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 7,
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T05:30:00",
+      "ArrivalDateTime": "2020-01-16T06:35:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 65,
+      "FlightNumber": "3828",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 8,
+      "OriginStation": 11758,
+      "DestinationStation": 9451,
+      "DepartureDateTime": "2020-01-16T18:05:00",
+      "ArrivalDateTime": "2020-01-16T20:00:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1889,
+      "Duration": 115,
+      "FlightNumber": "1922",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 9,
+      "OriginStation": 9451,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T21:25:00",
+      "ArrivalDateTime": "2020-01-16T23:25:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1889,
+      "Duration": 120,
+      "FlightNumber": "1369",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 10,
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T08:45:00",
+      "ArrivalDateTime": "2020-01-16T09:45:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 60,
+      "FlightNumber": "3832",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 11,
+      "OriginStation": 11758,
+      "DestinationStation": 10694,
+      "DepartureDateTime": "2020-01-16T15:10:00",
+      "ArrivalDateTime": "2020-01-16T16:10:00",
+      "Carrier": 1707,
+      "OperatingCarrier": 2007,
+      "Duration": 60,
+      "FlightNumber": "760",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 12,
+      "OriginStation": 10694,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T19:50:00",
+      "ArrivalDateTime": "2020-01-16T21:15:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 85,
+      "FlightNumber": "462",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 13,
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T12:05:00",
+      "ArrivalDateTime": "2020-01-16T13:05:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 60,
+      "FlightNumber": "3836",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 14,
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T21:05:00",
+      "ArrivalDateTime": "2020-01-16T22:05:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 60,
+      "FlightNumber": "3826",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 15,
+      "OriginStation": 11758,
+      "DestinationStation": 9451,
+      "DepartureDateTime": "2020-01-16T06:30:00",
+      "ArrivalDateTime": "2020-01-16T08:30:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1889,
+      "Duration": 120,
+      "FlightNumber": "1916",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 16,
+      "OriginStation": 9451,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T10:05:00",
+      "ArrivalDateTime": "2020-01-16T12:00:00",
+      "Carrier": 1324,
+      "OperatingCarrier": 1324,
+      "Duration": 115,
+      "FlightNumber": "1363",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 17,
+      "OriginStation": 10694,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T10:30:00",
+      "ArrivalDateTime": "2020-01-16T11:55:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 85,
+      "FlightNumber": "464",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 18,
+      "OriginStation": 11758,
+      "DestinationStation": 11616,
+      "DepartureDateTime": "2020-01-16T14:10:00",
+      "ArrivalDateTime": "2020-01-16T15:50:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 940,
+      "Duration": 100,
+      "FlightNumber": "1377",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 19,
+      "OriginStation": 11616,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T16:40:00",
+      "ArrivalDateTime": "2020-01-16T18:15:00",
+      "Carrier": 1368,
+      "OperatingCarrier": 1368,
+      "Duration": 95,
+      "FlightNumber": "1350",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 20,
+      "OriginStation": 11758,
+      "DestinationStation": 10694,
+      "DepartureDateTime": "2020-01-16T09:40:00",
+      "ArrivalDateTime": "2020-01-16T10:40:00",
+      "Carrier": 1707,
+      "OperatingCarrier": 1912,
+      "Duration": 60,
+      "FlightNumber": "756",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 21,
+      "OriginStation": 10694,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T16:05:00",
+      "ArrivalDateTime": "2020-01-16T17:25:00",
+      "Carrier": 1707,
+      "OperatingCarrier": 1707,
+      "Duration": 80,
+      "FlightNumber": "2751",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 22,
+      "OriginStation": 11758,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T14:55:00",
+      "ArrivalDateTime": "2020-01-16T15:55:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 60,
+      "FlightNumber": "3838",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 23,
+      "OriginStation": 9451,
+      "DestinationStation": 17648,
+      "DepartureDateTime": "2020-01-16T10:30:00",
+      "ArrivalDateTime": "2020-01-16T12:25:00",
+      "Carrier": 1375,
+      "OperatingCarrier": 1375,
+      "Duration": 115,
+      "FlightNumber": "266",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    }
+  ],
+  "Carriers": [
+    {
+      "Id": 940,
+      "Code": "CL",
+      "Name": "Lufthansa CityLine",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/CL.png",
+      "DisplayCode": "CL"
+    },
+    {
+      "Id": 1368,
+      "Code": "LH",
+      "Name": "Lufthansa",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/LH.png",
+      "DisplayCode": "LH"
+    },
+    {
+      "Id": 1375,
+      "Code": "LO",
+      "Name": "LOT",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/LO.png",
+      "DisplayCode": "LO"
+    },
+    {
+      "Id": 2007,
+      "Code": "YW",
+      "Name": "Air Nostrum",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/YW.png",
+      "DisplayCode": "YW"
+    },
+    {
+      "Id": 1707,
+      "Code": "SK",
+      "Name": "SAS",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/SK.png",
+      "DisplayCode": "SK"
+    },
+    {
+      "Id": 1889,
+      "Code": "WA",
+      "Name": "KLM Cityhopper",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/WA.png",
+      "DisplayCode": "WA"
+    },
+    {
+      "Id": 1324,
+      "Code": "KL",
+      "Name": "KLM",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/KL.png",
+      "DisplayCode": "KL"
+    },
+    {
+      "Id": 1912,
+      "Code": "WX",
+      "Name": "CityJet",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/WX.png",
+      "DisplayCode": "WX"
+    }
+  ],
+  "Agents": [
+    {
+      "Id": 2045212,
+      "Name": "BudgetAir",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/bgpl.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3390855,
+      "Name": "Norwegian",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/norw.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    },
+    {
+      "Id": 4372746,
+      "Name": "Wizz Air",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/wizz.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    },
+    {
+      "Id": 2489155,
+      "Name": "Flyhacks",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/fhac.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 2185756,
+      "Name": "Trip.com",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/ctpl.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3934928,
+      "Name": "Kiwi.com",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/skyp.png",
+      "Status": "UpdatesPending",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 4075036,
+      "Name": "Flighttix.pl",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/txpl.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 4035868,
+      "Name": "Travelgenio",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/tgpl.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3503644,
+      "Name": "Opodo",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/oppl.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3987484,
+      "Name": "Travel2Be",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/t2pl.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3588892,
+      "Name": "Tripair(PL)",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/pepl.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3169745,
+      "Name": "LOT",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/lota.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    },
+    {
+      "Id": 1963108,
+      "Name": "Mytrip",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/at24.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 2627446,
+      "Name": "GotoGate",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/gtbf.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": false,
+      "Type": "TravelAgent"
+    },
+    {
+      "Id": 3182916,
+      "Name": "Lufthansa",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/luft.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    },
+    {
+      "Id": 3911585,
+      "Name": "SAS",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/sasa.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    },
+    {
+      "Id": 3051889,
+      "Name": "KLM",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/klm1.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    }
+  ],
+  "Places": [
+    {
+      "Id": 11616,
+      "ParentId": 2687,
+      "Code": "FRA",
+      "Type": "Airport",
+      "Name": "Frankfurt nad Menem"
+    },
+    {
+      "Id": 2754,
+      "ParentId": 194,
+      "Code": "GDN",
+      "Type": "City",
+      "Name": "Gdańsk"
+    },
+    {
+      "Id": 194,
+      "Code": "PL",
+      "Type": "Country",
+      "Name": "Polska"
+    },
+    {
+      "Id": 10694,
+      "ParentId": 1783,
+      "Code": "CPH",
+      "Type": "Airport",
+      "Name": "Kopenhaga"
+    },
+    {
+      "Id": 9451,
+      "ParentId": 509,
+      "Code": "AMS",
+      "Type": "Airport",
+      "Name": "Amsterdam Schiphol"
+    },
+    {
+      "Id": 235,
+      "Code": "NL",
+      "Type": "Country",
+      "Name": "Holandia"
+    },
+    {
+      "Id": 11758,
+      "ParentId": 2754,
+      "Code": "GDN",
+      "Type": "Airport",
+      "Name": "Gdańsk"
+    },
+    {
+      "Id": 206,
+      "Code": "DK",
+      "Type": "Country",
+      "Name": "Dania"
+    },
+    {
+      "Id": 17648,
+      "ParentId": 8336,
+      "Code": "WAW",
+      "Type": "Airport",
+      "Name": "Warszawa Chopina"
+    },
+    {
+      "Id": 8336,
+      "ParentId": 194,
+      "Code": "WAW",
+      "Type": "City",
+      "Name": "Warszawa"
+    },
+    {
+      "Id": 13235,
+      "ParentId": 4281,
+      "Code": "KRK",
+      "Type": "Airport",
+      "Name": "Kraków"
+    },
+    {
+      "Id": 1783,
+      "ParentId": 206,
+      "Code": "CPH",
+      "Type": "City",
+      "Name": "Kopenhaga"
+    },
+    {
+      "Id": 4281,
+      "ParentId": 194,
+      "Code": "KRK",
+      "Type": "City",
+      "Name": "Kraków"
+    },
+    {
+      "Id": 252,
+      "Code": "DE",
+      "Type": "Country",
+      "Name": "Niemcy"
+    },
+    {
+      "Id": 509,
+      "ParentId": 235,
+      "Code": "AMS",
+      "Type": "City",
+      "Name": "Amsterdam"
+    },
+    {
+      "Id": 2687,
+      "ParentId": 252,
+      "Code": "FRA",
+      "Type": "City",
+      "Name": "Frankfurt nad Menem"
+    }
+  ],
+  "Currencies": [
+    {
+      "Code": "PLN",
+      "Symbol": "zł",
+      "ThousandsSeparator": " ",
+      "DecimalSeparator": ",",
+      "SymbolOnLeft": false,
+      "SpaceBetweenAmountAndSymbol": true,
+      "RoundingCoefficient": 0,
+      "DecimalDigits": 2
+    }
+  ]
+}
