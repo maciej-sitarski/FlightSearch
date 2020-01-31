@@ -87,7 +87,7 @@ public class LiveFlightSearchParser {
           .header(sessionNameThird, sessionValueThird)
           .body(bodyContent)
           .asString();
-    } while (response.getStatus() < 200 || response.getStatus() > 300);
+    } while (response.getStatus() < 200 || response.getStatus() > 300 || response.getBody().isEmpty());
     return response;
   }
 }

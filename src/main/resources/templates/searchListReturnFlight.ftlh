@@ -17,44 +17,44 @@
         Class: ${transportClass} |
         Number of adults: ${numOfAdults}
           <#if numOfChildren != "0">
-            | Number of adults: ${numOfChildren}
+            | Number of children: ${numOfChildren}
           </#if>
           <#if numOfInfants != "0">
-            | Number of adults: ${numOfInfants}
+            | Number of infants: ${numOfInfants}
           </#if>
       </h4>
       <a href="/home" class="btn btn-light btn-lg"> Return </a>
     </div>
   </div>
   <div class="row">
-      <#list itineraries.itineraryDetailApi as intineraryDetail>
-          <#list itineraries.legApi as legApi>
-              <#if intineraryDetail.outboundLegId == legApi.legId>
+      <#list itineraries.itineraryDetail as intineraryDetail>
+          <#list itineraries.leg as leg>
+              <#if intineraryDetail.outboundLegId == leg.legId>
                 <div class="col-md-6 offset-md-3 resultFlightReturn rounded-lg">
                   <div class="row" style="height: 200px;">
-                    <div class="col-md-3">
-                        <#if legApi.legCarriers?size == 1>
-                            <#list itineraries.carrierApi as carrierApi>
-                                <#if legApi.legCarriers[0] == carrierApi.id>
-                                  <div class="logo ">
-                                    <img alt="" src="${carrierApi.imageUrl}">
+                    <div class="col-md-2">
+                        <#if leg.legCarriers?size == 1>
+                            <#list itineraries.carrier as carrier>
+                                <#if leg.legCarriers[0].carrierId == carrier.carrierId>
+                                  <div class="logo " style="margin-top: 45%">
+                                    <img alt="" src="${carrier.imageUrl}">
                                   </div>
                                 </#if>
                             </#list>
                         <#else>
-                          <div class="logoInscription ">
-                              <#list legApi.legCarriers as legCarrier>
-                                  <#list itineraries.carrierApi as carrierApi>
-                                      <#if legCarrier == carrierApi.id>
+                          <div class="logoInscription " style="margin-top: 55%">
+                              <#list leg.legCarriers as legCarrier>
+                                  <#list itineraries.carrier as carrier>
+                                      <#if legCarrier.carrierId == carrier.carrierId>
                                           <#if !(legCarrier_has_next)>
                                             <h5 class="d-inline"
                                                 style="font-family: 'Tonto', serif;">
-                                                ${carrierApi.name}
+                                                ${carrier.name}
                                             </h5>
                                           <#else>
                                             <h5 class="d-inline"
                                                 style="font-family: 'Tonto', serif;">
-                                                ${carrierApi.name} +
+                                                ${carrier.name} +
                                             </h5>
                                           </#if>
                                       </#if>
@@ -65,55 +65,53 @@
                     </div>
                     <div class="col-md-2 text-center">
                       <h1 style="margin-top: 50%; font-family: 'Tonto', serif;">
-                          ${legApi.departure?substring(11,16)}
+                          ${leg.departure?substring(11,16)}
                       </h1>
-                        <#list itineraries.placeApi as placeApi>
-                            <#if placeApi.id == legApi.originStation>
+                        <#list itineraries.place as place>
+                            <#if place.placeId == leg.originStation>
                               <h5 style="margin-top: 5%; font-family: 'Tonto', serif;">
-                                  ${placeApi.code}
-                              </h5>
-                            </#if>
-                        </#list>
-                    </div>
-                    <div class="col-md-2 text-center">
-                      <h5 style="margin-top: 50%; font-family: 'Tonto', serif;">
-                          ${(legApi.duration/60)?int} h ${legApi.duration%60} min
-                      </h5>
-                      <h2>
-                        ----------->
-                      </h2>
-                        <#if legApi.stops?size == 0>
-                          <h5 style="font-family: 'Tonto', serif; color: green">
-                            Direct
-                          </h5>
-                        <#elseif legApi.stops?size == 1>
-                          <h5 style="font-family: 'Tonto', serif; color: red">
-                            1 stop
-                          </h5>
-                        <#else>
-                          <h5 style="font-family: 'Tonto', serif; color: red">
-                              ${legApi.stops?size} stops
-                          </h5>
-                        </#if>
-                    </div>
-                    <div class="col-md-2 text-center">
-                      <h1 style="margin-top: 50%; font-family: 'Tonto', serif;">
-                          ${legApi.arrival?substring(11,16)}
-                      </h1>
-                        <#list itineraries.placeApi as placeApi>
-                            <#if placeApi.id == legApi.destinationStation>
-                              <h5 style="margin-top: 5%; font-family: 'Tonto', serif;">
-                                  ${placeApi.code}
+                                  ${place.code}
                               </h5>
                             </#if>
                         </#list>
                     </div>
                     <div class="col-md-3 text-center">
-                      <p style="margin-top: 60%; margin-bottom: 0; color: dimgrey">${intineraryDetail.priceOptionApis?size}
+                      <h4 style="margin-top: 20%; font-family: 'Tonto', serif;">
+                          ${(leg.duration/60)?int} h ${leg.duration%60} min
+                      </h4>
+                      <img alt="" src="img/arrow.png" class="img-fluid">
+                        <#if leg.stops?size == 0>
+                          <h4 style="font-family: 'Tonto', serif; color: green">
+                            Direct
+                          </h4>
+                        <#elseif leg.stops?size == 1>
+                          <h4 style="font-family: 'Tonto', serif; color: red">
+                            1 stop
+                          </h4>
+                        <#else>
+                          <h4 style="font-family: 'Tonto', serif; color: red">
+                              ${leg.stops?size} stops
+                          </h4>
+                        </#if>
+                    </div>
+                    <div class="col-md-2 text-center">
+                      <h1 style="margin-top: 50%; font-family: 'Tonto', serif;">
+                          ${leg.arrival?substring(11,16)}
+                      </h1>
+                        <#list itineraries.place as place>
+                            <#if place.placeId == leg.destinationStation>
+                              <h5 style="margin-top: 5%; font-family: 'Tonto', serif;">
+                                  ${place.code}
+                              </h5>
+                            </#if>
+                        </#list>
+                    </div>
+                    <div class="col-md-3 text-center">
+                      <p style="margin-top: 60%; margin-bottom: 0; color: dimgrey">${intineraryDetail.priceOptions?size}
                         deals from</p>
                       <h3><strong>
-                              <#if intineraryDetail.outboundLegId == legApi.legId>
-                                  ${intineraryDetail.priceOptionApis[0].price}
+                              <#if intineraryDetail.outboundLegId == leg.legId>
+                                  ${intineraryDetail.priceOptions[0].price}
                               </#if>
                         </strong> zł
                       </h3>
@@ -121,32 +119,32 @@
                   </div>
                 </div>
                 <div class="w-100"></div>
-              <#elseif intineraryDetail.inboundLegId == legApi.legId>
+              <#elseif intineraryDetail.inboundLegId == leg.legId>
                 <div class="col-md-6 offset-md-3 resultFlightReturn2 rounded-lg">
                   <div class="row" style="height: 200px;">
-                    <div class="col-md-3">
-                        <#if legApi.legCarriers?size == 1>
-                            <#list itineraries.carrierApi as carrierApi>
-                                <#if legApi.legCarriers[0] == carrierApi.id>
-                                  <div class="logo ">
-                                    <img alt="" src="${carrierApi.imageUrl}">
+                    <div class="col-md-2">
+                        <#if leg.legCarriers?size == 1>
+                            <#list itineraries.carrier as carrier>
+                                <#if leg.legCarriers[0].carrierId == carrier.carrierId>
+                                  <div class="logo" style="margin-top: 45%">
+                                    <img alt="" src="${carrier.imageUrl}">
                                   </div>
                                 </#if>
                             </#list>
                         <#else>
-                          <div class="logoInscription ">
-                              <#list legApi.legCarriers as legCarrier>
-                                  <#list itineraries.carrierApi as carrierApi>
-                                      <#if legCarrier == carrierApi.id>
+                          <div class="logoInscription " style="margin-top: 55%">
+                              <#list leg.legCarriers as legCarrier>
+                                  <#list itineraries.carrier as carrier>
+                                      <#if legCarrier.carrierId == carrier.carrierId>
                                           <#if !(legCarrier_has_next)>
                                             <h5 class="d-inline"
                                                 style="font-family: 'Tonto', serif;">
-                                                ${carrierApi.name}
+                                                ${carrier.name}
                                             </h5>
                                           <#else>
                                             <h5 class="d-inline"
                                                 style="font-family: 'Tonto', serif;">
-                                                ${carrierApi.name} +
+                                                ${carrier.name} +
                                             </h5>
                                           </#if>
                                       </#if>
@@ -157,45 +155,43 @@
                     </div>
                     <div class="col-md-2 text-center">
                       <h1 style="margin-top: 50%; font-family: 'Tonto', serif;">
-                          ${legApi.departure?substring(11,16)}
+                          ${leg.departure?substring(11,16)}
                       </h1>
-                        <#list itineraries.placeApi as placeApi>
-                            <#if placeApi.id == legApi.originStation>
+                        <#list itineraries.place as place>
+                            <#if place.placeId == leg.originStation>
                               <h5 style="margin-top: 5%; font-family: 'Tonto', serif;">
-                                  ${placeApi.code}
+                                  ${place.code}
                               </h5>
                             </#if>
                         </#list>
                     </div>
-                    <div class="col-md-2 text-center">
-                      <h5 style="margin-top: 50%; font-family: 'Tonto', serif;">
-                          ${(legApi.duration/60)?int} h ${legApi.duration%60} min
-                      </h5>
-                      <h2>
-                        ----------->
-                      </h2>
-                        <#if legApi.stops?size == 0>
-                          <h5 style="font-family: 'Tonto', serif; color: green">
+                    <div class="col-md-3 text-center">
+                      <h4 style="margin-top: 20%; font-family: 'Tonto', serif;">
+                          ${(leg.duration/60)?int} h ${leg.duration%60} min
+                      </h4>
+                      <img alt="" src="img/arrow.png" class="img-fluid">
+                        <#if leg.stops?size == 0>
+                          <h4 style="font-family: 'Tonto', serif; color: green">
                             Direct
-                          </h5>
-                        <#elseif legApi.stops?size == 1>
-                          <h5 style="font-family: 'Tonto', serif; color: red">
+                          </h4>
+                        <#elseif leg.stops?size == 1>
+                          <h4 style="font-family: 'Tonto', serif; color: red">
                             1 stop
-                          </h5>
+                          </h4>
                         <#else>
-                          <h5 style="font-family: 'Tonto', serif; color: red">
-                              ${legApi.stops?size} stops
-                          </h5>
+                          <h4 style="font-family: 'Tonto', serif; color: red">
+                              ${leg.stops?size} stops
+                          </h4>
                         </#if>
                     </div>
                     <div class="col-md-2 text-center">
                       <h1 style="margin-top: 50%; font-family: 'Tonto', serif;">
-                          ${legApi.arrival?substring(11,16)}
+                          ${leg.arrival?substring(11,16)}
                       </h1>
-                        <#list itineraries.placeApi as placeApi>
-                            <#if placeApi.id == legApi.destinationStation>
+                        <#list itineraries.place as place>
+                            <#if place.placeId == leg.destinationStation>
                               <h5 style="margin-top: 5%; font-family: 'Tonto', serif;">
-                                  ${placeApi.code}
+                                  ${place.code}
                               </h5>
                             </#if>
                         </#list>

@@ -102,7 +102,6 @@ public class ClientAttributionService {
     agentRepository.saveAll(agents);
     carrierRepository.saveAll(carriers);
     placeRepository.saveAll(places);
-
     Itinerary itinerary = itineraryMapper.mapItineraryApiToEntity(itineraryApi);
     itinerary.setClientNumber(Long.valueOf(clientNumber));
 

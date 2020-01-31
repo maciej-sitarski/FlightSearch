@@ -2,9 +2,11 @@ package com.sitarski.maciej.flightsearch.controller;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.sitarski.maciej.flightsearch.entity.ItineraryInquiry;
+import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Itinerary;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.ItineraryApi;
 import com.sitarski.maciej.flightsearch.parser.LiveFlightSearchParser;
 import com.sitarski.maciej.flightsearch.service.ClientAttributionService;
+import com.sitarski.maciej.flightsearch.service.ItineraryService;
 import com.sitarski.maciej.flightsearch.service.StringFormatService;
 import java.io.IOException;
 import java.text.ParseException;
@@ -23,14 +25,17 @@ public class SearchListController {
   private final LiveFlightSearchParser liveFlightSearchParser;
   private final StringFormatService stringFormatService;
   private final ClientAttributionService clientAttributionService;
+  private final ItineraryService itineraryService;
 
   @Autowired
   public SearchListController(LiveFlightSearchParser liveFlightSearchParser,
       StringFormatService stringFormatService,
-      ClientAttributionService clientAttributionService) {
+      ClientAttributionService clientAttributionService,
+      ItineraryService itineraryService) {
     this.liveFlightSearchParser = liveFlightSearchParser;
     this.stringFormatService = stringFormatService;
     this.clientAttributionService = clientAttributionService;
+    this.itineraryService = itineraryService;
   }
 
   @GetMapping("/searchList")
@@ -70,10 +75,14 @@ public class SearchListController {
         .build();
 
     ItineraryApi itineraryApi = liveFlightSearchParser.parseItinerary(itineraryInquiry);
-    params.put("itineraries", itineraryApi);
+//    params.put("itineraries", itineraryApi);
 
     String clientNumber = (String)req.getSession().getAttribute("clientNumber");
     clientAttributionService.saveItineraryToDataBase(itineraryApi,clientNumber);
+
+    Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
+    params.put("itineraries", itinerary);
+
 
     if(inboundDate != null){
       return new ModelAndView("searchListReturnFlight", params);
