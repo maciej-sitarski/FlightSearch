@@ -2,7 +2,7 @@ package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Agent {
+public class AgentApi {
 
   @JsonProperty("Id")
   private Long id;
@@ -22,10 +22,10 @@ public class Agent {
   @JsonProperty("Type")
   private String type;
 
-  public Agent() {
+  public AgentApi() {
   }
 
-  public Agent(Long id, String name, String imageUrl, String status,
+  public AgentApi(Long id, String name, String imageUrl, String status,
       Boolean optimisedForMobile, String type) {
     this.id = id;
     this.name = name;

@@ -1,51 +1,70 @@
-package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
+package com.sitarski.maciej.flightsearch.entity.LiveFlightSearch;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-@JsonIgnoreProperties({"SegmentIds","OperatingCarriers"})
+@Entity
+@Table(name = "leg")
 public class Leg {
 
-  @JsonProperty("Id")
+  @Id
+  @Column(name = "id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
+  @Column(name = "legId")
   private String legId;
 
-  @JsonProperty("OriginStation")
+  @Column(name = "originStation")
   private Long originStation;
 
-  @JsonProperty("DestinationStation")
+  @Column(name = "destinationStation")
   private Long destinationStation;
 
-  @JsonProperty("Departure")
+  @Column(name = "departure")
   private String departure;
 
-  @JsonProperty("Arrival")
+  @Column(name = "arrival")
   private String arrival;
 
-  @JsonProperty("Duration")
+  @Column(name = "duration")
   private Long duration;
 
-  @JsonProperty("JourneyMode")
+  @Column(name = "journeyMode")
   private String journeyMode;
 
-  @JsonProperty("Directionality")
+  @Column(name = "directionality")
   private String directionality;
 
-  @JsonProperty("FlightNumbers")
-  private List<FlightNumber> flightNumbers;
+  @OneToMany(mappedBy = "leg", cascade = CascadeType.ALL)
+  private List<FlightNumber> flightNumbers = new ArrayList<>();
 
-  @JsonProperty("Carriers")
-  private List<Long> legCarriers;
+  @ManyToMany(mappedBy = "legs", cascade = CascadeType.ALL)
+  private List<Carrier> legCarriers;
 
-  @JsonProperty("Stops")
-  private List<Long> stops;
+  @ManyToMany(mappedBy = "legs", cascade = CascadeType.ALL)
+  private List<Place> stops;
+
+  @ManyToOne
+  @JoinColumn(name = "itinerary_id")
+  private Itinerary itinerary;
 
   public Leg() {
   }
 
   public Leg(String legId, Long originStation, Long destinationStation, String departure,
-      String arrival, Long duration, String journeyMode, String directionality,
-      List<FlightNumber> flightNumbers, List<Long> legCarriers, List<Long> stops) {
+      String arrival, Long duration, String journeyMode, String directionality) {
     this.legId = legId;
     this.originStation = originStation;
     this.destinationStation = destinationStation;
@@ -54,9 +73,14 @@ public class Leg {
     this.duration = duration;
     this.journeyMode = journeyMode;
     this.directionality = directionality;
-    this.flightNumbers = flightNumbers;
-    this.legCarriers = legCarriers;
-    this.stops = stops;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public String getLegId() {
@@ -127,24 +151,34 @@ public class Leg {
     return flightNumbers;
   }
 
-  public void setFlightNumbers(List<FlightNumber> flightNumbers) {
+  public void setFlightNumbers(
+      List<FlightNumber> flightNumbers) {
     this.flightNumbers = flightNumbers;
   }
 
-  public List<Long> getLegCarriers() {
+  public Itinerary getItinerary() {
+    return itinerary;
+  }
+
+  public void setItinerary(Itinerary itinerary) {
+    this.itinerary = itinerary;
+  }
+
+  public List<Carrier> getLegCarriers() {
     return legCarriers;
   }
 
   public void setLegCarriers(
-      List<Long> legCarriers) {
+      List<Carrier> legCarriers) {
     this.legCarriers = legCarriers;
   }
 
-  public List<Long> getStops() {
+  public List<Place> getStops() {
     return stops;
   }
 
-  public void setStops(List<Long> stops) {
+  public void setStops(
+      List<Place> stops) {
     this.stops = stops;
   }
 }

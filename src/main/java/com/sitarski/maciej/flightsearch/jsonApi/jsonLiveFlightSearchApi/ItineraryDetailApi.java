@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 @JsonIgnoreProperties({"BookingDetailsLink"})
-public class ItineraryDetail {
+public class ItineraryDetailApi {
 
   @JsonProperty("OutboundLegId")
   private String outboundLegId;
@@ -14,15 +14,15 @@ public class ItineraryDetail {
   private String inboundLegId;
 
   @JsonProperty("PricingOptions")
-  private List<PriceOption> priceOptions;
+  private List<PriceOptionApi> priceOptionApis;
 
-  public ItineraryDetail() {
+  public ItineraryDetailApi() {
   }
 
-  public ItineraryDetail(String outboundLegId, String inboundLegId, List<PriceOption> priceOptions) {
+  public ItineraryDetailApi(String outboundLegId, String inboundLegId, List<PriceOptionApi> priceOptionApis) {
     this.outboundLegId = outboundLegId;
     this.inboundLegId = inboundLegId;
-    this.priceOptions = priceOptions;
+    this.priceOptionApis = priceOptionApis;
   }
 
   public String getOutboundLegId() {
@@ -41,12 +41,12 @@ public class ItineraryDetail {
     this.inboundLegId = inboundLegId;
   }
 
-  public List<PriceOption> getPriceOptions() {
-    return priceOptions;
+  public List<PriceOptionApi> getPriceOptionApis() {
+    return priceOptionApis;
   }
 
-  public void setPriceOptions(
-      List<PriceOption> priceOptions) {
-    this.priceOptions = priceOptions;
+  public void setPriceOptionApis(
+      List<PriceOptionApi> priceOptionApis) {
+    this.priceOptionApis = priceOptionApis;
   }
 }

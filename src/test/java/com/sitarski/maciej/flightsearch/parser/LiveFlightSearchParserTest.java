@@ -2,7 +2,7 @@ package com.sitarski.maciej.flightsearch.parser;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.sitarski.maciej.flightsearch.entity.ItineraryInquiry;
-import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.Itinerary;
+import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.ItineraryApi;
 import com.sitarski.maciej.flightsearch.service.StringFormatService;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -31,11 +31,11 @@ class LiveFlightSearchParserTest {
     LiveFlightSearchParser liveFlightSearchParser = new LiveFlightSearchParser(stringFormatService);
 
     //when
-    Itinerary itinerary = liveFlightSearchParser.parseItinerary(itineraryInquiry);
+    ItineraryApi itineraryApi = liveFlightSearchParser.parseItinerary(itineraryInquiry);
 
     //then
-    Assert.assertEquals("1", itinerary.getQuery().getAdults().toString());
-    Assert.assertEquals("economy", itinerary.getQuery().getCabinClass());
-    Assert.assertEquals(tomorrow, itinerary.getQuery().getOutboundDate());
+    Assert.assertEquals("1", itineraryApi.getQueryApi().getAdults().toString());
+    Assert.assertEquals("economy", itineraryApi.getQueryApi().getCabinClass());
+    Assert.assertEquals(tomorrow, itineraryApi.getQueryApi().getOutboundDate());
   }
 }

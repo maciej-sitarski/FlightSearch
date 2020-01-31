@@ -35,7 +35,7 @@
         </div>
         <div class="col-md-2">
           <label style="color: white">Class</label>
-          <input type="text" class="form-control" placeholder="Economy" name="class" style="height: 50px; font-size: 25px">
+          <input type="text" class="form-control" placeholder="economy" name="class" style="height: 50px; font-size: 25px" required>
         </div>
       </div>
       <div class="form-row" style="margin-left: 35px; margin-top: 35px">

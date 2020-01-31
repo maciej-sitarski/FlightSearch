@@ -1,48 +1,64 @@
-package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
+package com.sitarski.maciej.flightsearch.entity.LiveFlightSearch;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-@JsonIgnoreProperties({"JourneyMode"})
+@Entity
+@Table(name = "segment")
 public class Segment {
 
-  @JsonProperty("Id")
+  @Id
+  @Column(name = "id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @JsonProperty("OriginStation")
+  @Column(name = "segment_id")
+  private Long segmentId;
+
+  @Column(name = "originStation")
   private Long originStation;
 
-  @JsonProperty("DestinationStation")
+  @Column(name = "destinationStation")
   private Long destinationStation;
 
-  @JsonProperty("DepartureDateTime")
-  private String  departureDateTime;
+  @Column(name = "departureDateTime")
+  private String departureDateTime;
 
-  @JsonProperty("ArrivalDateTime")
+  @Column(name = "arrivalDateTime")
   private String arrivalDateTime;
 
-  @JsonProperty("Carrier")
+  @Column(name = "carrierId")
   private Long carrierId;
 
-  @JsonProperty("OperatingCarrier")
+  @Column(name = "operatingCarrierId")
   private Long operatingCarrierId;
 
-  @JsonProperty("Duration")
+  @Column(name = "duration")
   private Long duration;
 
-  @JsonProperty("FlightNumber")
+  @Column(name = "flightNumber")
   private String flightNumber;
 
-  @JsonProperty("Directionality")
+  @Column(name = "directionality")
   private String directionality;
+
+  @ManyToOne
+  @JoinColumn(name = "itinerary_id")
+  private Itinerary itinerary;
 
   public Segment() {
   }
 
-  public Segment(Long id, Long originStation, Long destinationStation,
+  public Segment(Long segmentId, Long originStation, Long destinationStation,
       String departureDateTime, String arrivalDateTime, Long carrierId,
       Long operatingCarrierId, Long duration, String flightNumber, String directionality) {
-    this.id = id;
+    this.segmentId = segmentId;
     this.originStation = originStation;
     this.destinationStation = destinationStation;
     this.departureDateTime = departureDateTime;
@@ -60,6 +76,14 @@ public class Segment {
 
   public void setId(Long id) {
     this.id = id;
+  }
+
+  public Long getSegmentId() {
+    return segmentId;
+  }
+
+  public void setSegmentId(Long segmentId) {
+    this.segmentId = segmentId;
   }
 
   public Long getOriginStation() {
@@ -132,5 +156,13 @@ public class Segment {
 
   public void setDirectionality(String directionality) {
     this.directionality = directionality;
+  }
+
+  public Itinerary getItinerary() {
+    return itinerary;
+  }
+
+  public void setItinerary(Itinerary itinerary) {
+    this.itinerary = itinerary;
   }
 }
