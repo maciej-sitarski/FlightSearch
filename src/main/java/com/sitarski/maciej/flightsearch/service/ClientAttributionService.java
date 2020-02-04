@@ -52,7 +52,7 @@ public class ClientAttributionService {
     this.itineraryMapper = itineraryMapper;
   }
 
-  public void assignClientNumber(HttpServletRequest req) {
+  public String assignClientNumber(HttpServletRequest req) {
     logger.info("Client number assigned");
     String clientNumber;
     if (req.getSession().getAttribute("clientNumber") != null) {
@@ -67,7 +67,7 @@ public class ClientAttributionService {
         List<Agent> agentNullToDelete = agentRepository.findAllByItinerary(null);
         agentNullToDelete.forEach(agentRepository::delete);
 
-        List<Place> placeToDelete =  placeRepository.findAllByItinerary(itineraryToDelete);
+        List<Place> placeToDelete = placeRepository.findAllByItinerary(itineraryToDelete);
         placeToDelete.forEach(placeRepository::delete);
 
         List<Place> placeNullToDelete = placeRepository.findAllByItinerary(null);
@@ -80,12 +80,20 @@ public class ClientAttributionService {
         carriersNullToDelete.forEach(carrierRepository::delete);
 
         itineraryRepository.delete(itineraryToDelete);
+        return clientNumber;
       }
+      return clientNumber;
     } else {
-      int randomNumber = (int)(Math.random() * 10000) + 1;
-      String randomNumberString = String.valueOf(randomNumber);
-      req.getSession().setAttribute("clientNumber", randomNumberString);
+      long randomNumber = 0;
+      do {
+        randomNumber = (long) (Math.random() * 20000) + 1;
+      } while (itineraryRepository.findByClientNumber(randomNumber).isPresent());
+      req.getSession().setAttribute("clientNumber", randomNumber);
+      return String.valueOf(randomNumber);
+
     }
+
+
   }
 
   public void saveItineraryToDataBase(ItineraryApi itineraryApi, String clientNumber) {

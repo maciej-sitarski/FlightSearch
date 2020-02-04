@@ -63,6 +63,7 @@ public class LiveFlightSearchParser {
         .header(sessionNameFirst, sessionValueFirst)
         .header(sessionNameSecond, API_Key)
         .asString();
+    logger.info(response.getBody());
     return objectMapper.readValue(response.getBody(), ItineraryApi.class);
   }
 

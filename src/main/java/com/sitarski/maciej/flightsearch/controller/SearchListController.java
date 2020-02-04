@@ -74,19 +74,23 @@ public class SearchListController {
         .numOfInfants(numOfInfants)
         .build();
 
-    ItineraryApi itineraryApi = liveFlightSearchParser.parseItinerary(itineraryInquiry);
-//    params.put("itineraries", itineraryApi);
+    ItineraryApi itineraryApi = null;
+    do {
+      if (itineraryApi != null) {
+        Thread.sleep(1000);
+      }
+      itineraryApi = liveFlightSearchParser.parseItinerary(itineraryInquiry);
+    } while (itineraryApi.getItineraryDetailApi().isEmpty());
 
-    String clientNumber = (String)req.getSession().getAttribute("clientNumber");
-    clientAttributionService.saveItineraryToDataBase(itineraryApi,clientNumber);
+    String clientNumber = clientAttributionService.assignClientNumber(req);
+    clientAttributionService.saveItineraryToDataBase(itineraryApi, clientNumber);
 
     Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
     params.put("itineraries", itinerary);
 
-
-    if(inboundDate != null){
+    if (inboundDate != null) {
       return new ModelAndView("searchListReturnFlight", params);
-    } else{
+    } else {
       return new ModelAndView("searchList", params);
     }
   }

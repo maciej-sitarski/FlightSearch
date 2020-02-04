@@ -1,32 +1,39 @@
-.resultFlight{
+.resultFlight {
   height: 200px;
   margin-top: 30px;
   background-color: #B2D6FB;
 }
 
-.resultFlightReturn{
+.resultFlightReturn {
   height: 200px;
   margin-top: 30px;
   background-color: #B2D6FB;
 }
 
-.resultFlightReturn2{
+.resultFlightReturn2 {
   height: 200px;
   background-color: #B2D6FB;
 }
 
-.logo{
+.logo {
   text-align: center;
 
 }
 
-.logoInscription{
+.logoInscription {
   text-align: center;
 }
 
-.resultFlightHeading{
-  height: 250px;
+.resultFlightHeading {
+  height: 380px;
   margin-top: 30px;
-  background-color: #0006A2;
+  background-color: #00046F;
   color: white;
+}
+
+.resultFlightFilters {
+  height: 380px;
+  margin-top: 30px;
+  background-color: #005E32;
+  color: black;
 }
