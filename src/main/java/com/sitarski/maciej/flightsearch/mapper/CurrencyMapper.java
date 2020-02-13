@@ -13,12 +13,16 @@ public class CurrencyMapper {
     Optional<CurrencyApi> currencyApiOptional = Optional.ofNullable(currencyApi);
     Currency currency = new Currency();
 
-    currency.setCode(currencyApiOptional
+    String code = currencyApiOptional
         .map(CurrencyApi::getCode)
-        .orElse(null));
-    currency.setSymbol(currencyApiOptional
+        .orElse(null);
+
+    String symbol = currencyApiOptional
         .map(CurrencyApi::getSymbol)
-        .orElse(null));
+        .orElse(null);
+
+    currency.setCode(code);
+    currency.setSymbol(symbol);
 
     return currency;
   }

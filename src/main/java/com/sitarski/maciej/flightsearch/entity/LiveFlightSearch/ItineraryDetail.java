@@ -12,8 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "itinerary_detail")
 public class ItineraryDetail {
 
@@ -22,11 +24,13 @@ public class ItineraryDetail {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "outboundLegId")
-  private String outboundLegId;
+  @ManyToOne
+  @JoinColumn(name = "outboundLeg_id")
+  private Leg outboundLeg;
 
-  @Column(name = "inboundLegId")
-  private String inboundLegId;
+  @ManyToOne
+  @JoinColumn(name = "inboundLeg_id")
+  private Leg inboundLeg;
 
   @OneToMany(mappedBy = "itineraryDetail", cascade = CascadeType.ALL)
   private List<PriceOption> priceOptions = new ArrayList<>();
@@ -35,54 +39,8 @@ public class ItineraryDetail {
   @JoinColumn(name = "itinerary_id")
   private Itinerary itinerary;
 
-  public ItineraryDetail() {
-  }
-
-  public ItineraryDetail(String outboundLegId, String inboundLegId) {
-    this.outboundLegId = outboundLegId;
-    this.inboundLegId = inboundLegId;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getOutboundLegId() {
-    return outboundLegId;
-  }
-
-  public void setOutboundLegId(String outboundLegId) {
-    this.outboundLegId = outboundLegId;
-  }
-
-  public String getInboundLegId() {
-    return inboundLegId;
-  }
-
-  public void setInboundLegId(String inboundLegId) {
-    this.inboundLegId = inboundLegId;
-  }
-
-  public List<PriceOption> getPriceOptions() {
-    return priceOptions;
-  }
-
-  public void setPriceOptions(
-      List<PriceOption> priceOptions) {
-    this.priceOptions = priceOptions;
-  }
-
-  public Itinerary getItinerary() {
-    return itinerary;
-  }
-
-  public void setItinerary(Itinerary itinerary) {
-    this.itinerary = itinerary;
-  }
+  @Column(name = "clientNumber")
+  private String clientNumber;
 
 
 }

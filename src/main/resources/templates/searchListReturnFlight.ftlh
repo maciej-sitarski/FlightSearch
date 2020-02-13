@@ -11,18 +11,18 @@
       </h2>
 
       <h2 style="margin-top: 20px">
-        Outbound date: ${outboundDate} | Inbound date: ${inboundDate}
+        Outbound date: ${itineraries.query.outboundDate} | Inbound date: ${itineraries.query.inboundDate}
       </h2>
       <h2 style="margin-top: 20px">
-        Class: ${transportClass}
+        Class: ${itineraries.query.cabinClass}
       </h2>
       <h4 style="margin-top: 20px">
-        Number of adults: ${numOfAdults}
-          <#if numOfChildren != "0">
-            | Number of children: ${numOfChildren}
+        Number of adults: ${itineraries.query.adults}
+          <#if itineraries.query.children != 0>
+            | Number of children: ${itineraries.query.children}
           </#if>
-          <#if numOfInfants != "0">
-            | Number of infants: ${numOfInfants}
+          <#if itineraries.query.infants != 0>
+            | Number of infants: ${itineraries.query.infants}
           </#if>
       </h4>
       <a href="/home" class="btn btn-light btn-lg" style="margin-top: 15px"> Return </a>

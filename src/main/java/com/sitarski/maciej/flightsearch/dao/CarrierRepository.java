@@ -9,5 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface CarrierRepository extends JpaRepository<Carrier, Long> {
 
   Optional<Carrier> findByCarrierId(Long id);
-  List<Carrier> findAllByItinerary(Itinerary itinerary);
+
+  List<Carrier> findAllByClientNumber(String clientNumber);
 }

@@ -13,39 +13,61 @@ public class QueryMapper {
     Optional<QueryApi> queryApiOptional = Optional.ofNullable(queryApi);
     Query query = new Query();
 
-    query.setAdults(queryApiOptional
+    Long adults = queryApiOptional
         .map(QueryApi::getAdults)
-        .orElse(null));
-    query.setCabinClass(queryApiOptional
+        .orElse(null);
+
+    String cabinClass = queryApiOptional
         .map(QueryApi::getCabinClass)
-        .orElse(null));
-    query.setChildren(queryApiOptional
+        .orElse(null);
+
+    Long children = queryApiOptional
         .map(QueryApi::getChildren)
-        .orElse(null));
-    query.setCountry(queryApiOptional
+        .orElse(null);
+
+    String country = queryApiOptional
         .map(QueryApi::getCountry)
-        .orElse(null));
-    query.setCurrency(queryApiOptional
+        .orElse(null);
+
+    String currency = queryApiOptional
         .map(QueryApi::getCurrency)
-        .orElse(null));
-    query.setDestinationPlace(queryApiOptional
+        .orElse(null);
+
+    String destinationPlace = queryApiOptional
         .map(QueryApi::getDestinationPlace)
-        .orElse(null));
-    query.setInboundDate(queryApiOptional
+        .orElse(null);
+
+    String inboundDate = queryApiOptional
         .map(QueryApi::getInboundDate)
-        .orElse(null));
-    query.setOutboundDate(queryApiOptional
+        .orElse(null);
+
+    String outboundDate = queryApiOptional
         .map(QueryApi::getOutboundDate)
-        .orElse(null));
-    query.setInfants(queryApiOptional
+        .orElse(null);
+
+    Long infants = queryApiOptional
         .map(QueryApi::getInfants)
-        .orElse(null));
-    query.setOriginPlace(queryApiOptional
+        .orElse(null);
+
+    String originPlace = queryApiOptional
         .map(QueryApi::getOriginPlace)
-        .orElse(null));
-    query.setLocale(queryApiOptional
+        .orElse(null);
+
+    String locale = queryApiOptional
         .map(QueryApi::getLocale)
-        .orElse(null));
+        .orElse(null);
+
+    query.setAdults(adults);
+    query.setCabinClass(cabinClass);
+    query.setChildren(children);
+    query.setCountry(country);
+    query.setCurrency(currency);
+    query.setDestinationPlace(destinationPlace);
+    query.setInboundDate(inboundDate);
+    query.setOutboundDate(outboundDate);
+    query.setInfants(infants);
+    query.setOriginPlace(originPlace);
+    query.setLocale(locale);
 
     return query;
   }

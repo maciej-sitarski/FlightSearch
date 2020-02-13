@@ -2,7 +2,9 @@ package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 @JsonIgnoreProperties({"LocationSchema", "GroupPricing"})
 public class QueryApi {
 
@@ -38,95 +40,4 @@ public class QueryApi {
 
   @JsonProperty("CabinClass")
   private String cabinClass;
-
-  public QueryApi() {
-  }
-
-  public String getCountry() {
-    return country;
-  }
-
-  public void setCountry(String country) {
-    this.country = country;
-  }
-
-  public String getCurrency() {
-    return currency;
-  }
-
-  public void setCurrency(String currency) {
-    this.currency = currency;
-  }
-
-  public Long getAdults() {
-    return adults;
-  }
-
-  public void setAdults(Long adults) {
-    this.adults = adults;
-  }
-
-  public Long getChildren() {
-    return children;
-  }
-
-  public void setChildren(Long children) {
-    this.children = children;
-  }
-
-  public Long getInfants() {
-    return infants;
-  }
-
-  public void setInfants(Long infants) {
-    this.infants = infants;
-  }
-
-  public String getOriginPlace() {
-    return originPlace;
-  }
-
-  public void setOriginPlace(String originPlace) {
-    this.originPlace = originPlace;
-  }
-
-  public String getDestinationPlace() {
-    return destinationPlace;
-  }
-
-  public void setDestinationPlace(String destinationPlace) {
-    this.destinationPlace = destinationPlace;
-  }
-
-  public String getOutboundDate() {
-    return outboundDate;
-  }
-
-  public void setOutboundDate(String outboundDate) {
-    this.outboundDate = outboundDate;
-  }
-
-  public String getInboundDate() {
-    return inboundDate;
-  }
-
-  public void setInboundDate(String inboundDate) {
-    this.inboundDate = inboundDate;
-  }
-
-  public String getCabinClass() {
-    return cabinClass;
-  }
-
-  public void setCabinClass(String cabinClass) {
-    this.cabinClass = cabinClass;
-  }
-
-  public String getLocale() {
-    return locale;
-  }
-
-  public void setLocale(String locale) {
-    this.locale = locale;
-  }
 }

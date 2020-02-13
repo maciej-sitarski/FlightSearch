@@ -59,3 +59,37 @@ function dynInputOutbound(cbox) {
     document.getElementById(cbox.name).remove();
   }
 }
+
+$(function () {
+  $(document).ready(function () {
+    $("#dupa").click(function (event) {
+      alert($(this).attr('data-id-client'));
+      $.ajax({
+        url: '/filter/' + $(this).attr('data-id-client'),
+        type: "GET",
+        success: function () {
+
+          location.replace("/searchList");
+        },
+        error: function(){
+
+        }
+      })
+    })
+  })
+});
+// $("#dupa").click("click", function () {
+//   alert("dsdsads");
+//       // $.ajax({
+//       //   url: '/filter/' + $(this).attr('data-id-client'),
+//       //   type: "GET",
+//       //   success: function () {
+//       //     location.replace("/searchList");
+//       //   }
+//       // })
+// });
+
+
+
+
+

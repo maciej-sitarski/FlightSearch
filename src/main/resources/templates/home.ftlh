@@ -7,7 +7,7 @@
         </strong></h1>
     </div>
     <form
-        action="/searchList?from=from&to=to&outboundDate=outboundDate&inboundDate=inboundDate&class=class&numberOfAdults=numberOfAdults&numberOfChildren=numberOfChildren&numberOfInfants=numberOfInfants"
+        action="/searchList"
         method="get" class="col-md-11 rounded-lg"
         style="margin-left: auto; margin-right: auto;height: 330px; background-color: #03002E">
       <div class="form-check form-check-inline"
@@ -24,12 +24,12 @@
       <div class="form-row" style="margin-left: 35px; margin-top: 25px">
         <div class="col-md-3">
           <label style="color: white">From</label>
-          <input type="text" placeholder="Gdańsk(GDN)" class="form-control" name="from"
-                 style="height: 50px; font-size: 25px">
+          <input type="text" placeholder="Gdańsk(GDN)" class="form-control"  name="originPlace"
+                 style="height: 50px; font-size: 25px" required>
         </div>
         <div class="col-md-3">
           <label style="color: white">To</label>
-          <input type="text" placeholder="Warszawa(WAW)" class="form-control" name="to"
+          <input type="text" placeholder="Warszawa(WAW)" class="form-control" name="destinationPlace"
                  style="height: 50px; font-size: 25px" required>
         </div>
         <div class="col-md-2">
@@ -45,7 +45,7 @@
         </div>
         <div class="col-md-2">
           <label style="color: white">Class</label>
-          <select class="form-control" id="class" name="class" style="font-size: 24px; ">
+          <select class="form-control" id="class" name="transportClass" style="font-size: 24px; ">
             <option selected>economy</option>
             <option>business</option>
             <option>first</option>

@@ -13,21 +13,31 @@ public class PlaceMapper {
     Optional<PlaceApi> placeApiOptional = Optional.ofNullable(placeApi);
     Place place = new Place();
 
-    place.setCode(placeApiOptional
+    String code = placeApiOptional
         .map(PlaceApi::getCode)
-        .orElse(null));
-    place.setPlaceId(placeApiOptional
+        .orElse(null);
+
+    Long placeId = placeApiOptional
         .map(PlaceApi::getId)
-        .orElse(null));
-    place.setParentId(placeApiOptional
+        .orElse(null);
+
+    Long parentId = placeApiOptional
         .map(PlaceApi::getParentId)
-        .orElse(null));
-    place.setName(placeApiOptional
+        .orElse(null);
+
+    String name = placeApiOptional
         .map(PlaceApi::getName)
-        .orElse(null));
-    place.setType(placeApiOptional
+        .orElse(null);
+
+    String type = placeApiOptional
         .map(PlaceApi::getType)
-        .orElse(null));
+        .orElse(null);
+
+    place.setCode(code);
+    place.setPlaceId(placeId);
+    place.setParentId(parentId);
+    place.setName(name);
+    place.setType(type);
 
     return place;
   }

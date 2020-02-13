@@ -12,7 +12,6 @@ public class MainController {
   @GetMapping("/home")
   public ModelAndView getMain() {
     Map<String, Object> params = new HashMap<>();
-    params.put("content", "main");
     return new ModelAndView("home", params);
   }
 }

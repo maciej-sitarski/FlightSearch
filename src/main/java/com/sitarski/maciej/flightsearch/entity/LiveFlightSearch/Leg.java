@@ -13,8 +13,11 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "leg")
 public class Leg {
 
@@ -26,11 +29,13 @@ public class Leg {
   @Column(name = "legId")
   private String legId;
 
-  @Column(name = "originStation")
-  private Long originStation;
+  @ManyToOne
+  @JoinColumn(name = "originStation_id")
+  private Place originStation;
 
-  @Column(name = "destinationStation")
-  private Long destinationStation;
+  @ManyToOne
+  @JoinColumn(name = "destinationStation_id")
+  private Place destinationStation;
 
   @Column(name = "departure")
   private String departure;
@@ -51,7 +56,7 @@ public class Leg {
   private List<FlightNumber> flightNumbers = new ArrayList<>();
 
   @ManyToMany(mappedBy = "legs", cascade = CascadeType.ALL)
-  private List<Carrier> legCarriers;
+  private List<Carrier> carriers;
 
   @ManyToMany(mappedBy = "legs", cascade = CascadeType.ALL)
   private List<Place> stops;
@@ -60,125 +65,12 @@ public class Leg {
   @JoinColumn(name = "itinerary_id")
   private Itinerary itinerary;
 
-  public Leg() {
-  }
+  @OneToMany(mappedBy = "outboundLeg", cascade = CascadeType.ALL)
+  private List<ItineraryDetail> outboundLegs = new ArrayList<>();
 
-  public Leg(String legId, Long originStation, Long destinationStation, String departure,
-      String arrival, Long duration, String journeyMode, String directionality) {
-    this.legId = legId;
-    this.originStation = originStation;
-    this.destinationStation = destinationStation;
-    this.departure = departure;
-    this.arrival = arrival;
-    this.duration = duration;
-    this.journeyMode = journeyMode;
-    this.directionality = directionality;
-  }
+  @OneToMany(mappedBy = "inboundLeg", cascade = CascadeType.ALL)
+  private List<ItineraryDetail> inboundLegs = new ArrayList<>();
 
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getLegId() {
-    return legId;
-  }
-
-  public void setLegId(String legId) {
-    this.legId = legId;
-  }
-
-  public Long getOriginStation() {
-    return originStation;
-  }
-
-  public void setOriginStation(Long originStation) {
-    this.originStation = originStation;
-  }
-
-  public Long getDestinationStation() {
-    return destinationStation;
-  }
-
-  public void setDestinationStation(Long destinationStation) {
-    this.destinationStation = destinationStation;
-  }
-
-  public String getDeparture() {
-    return departure;
-  }
-
-  public void setDeparture(String departure) {
-    this.departure = departure;
-  }
-
-  public String getArrival() {
-    return arrival;
-  }
-
-  public void setArrival(String arrival) {
-    this.arrival = arrival;
-  }
-
-  public Long getDuration() {
-    return duration;
-  }
-
-  public void setDuration(Long duration) {
-    this.duration = duration;
-  }
-
-  public String getJourneyMode() {
-    return journeyMode;
-  }
-
-  public void setJourneyMode(String journeyMode) {
-    this.journeyMode = journeyMode;
-  }
-
-  public String getDirectionality() {
-    return directionality;
-  }
-
-  public void setDirectionality(String directionality) {
-    this.directionality = directionality;
-  }
-
-  public List<FlightNumber> getFlightNumbers() {
-    return flightNumbers;
-  }
-
-  public void setFlightNumbers(
-      List<FlightNumber> flightNumbers) {
-    this.flightNumbers = flightNumbers;
-  }
-
-  public Itinerary getItinerary() {
-    return itinerary;
-  }
-
-  public void setItinerary(Itinerary itinerary) {
-    this.itinerary = itinerary;
-  }
-
-  public List<Carrier> getLegCarriers() {
-    return legCarriers;
-  }
-
-  public void setLegCarriers(
-      List<Carrier> legCarriers) {
-    this.legCarriers = legCarriers;
-  }
-
-  public List<Place> getStops() {
-    return stops;
-  }
-
-  public void setStops(
-      List<Place> stops) {
-    this.stops = stops;
-  }
+  @Column(name = "clientNumber")
+  private String clientNumber;
 }

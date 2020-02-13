@@ -46,30 +46,21 @@ public class ItineraryStatusService {
         .map(Itinerary::getTime).collect(
             Collectors.toList());
     for (int i = 0; i < itineraryTimes.size(); i++) {
-      LocalDateTime itineraryzTime = itineraryTimes.get(i);
       Duration duration = Duration.between(itineraryTimes.get(i), now);
-      Long duration1 = duration.getSeconds();
       if (duration.getSeconds() > 300) {
         Itinerary itineraryToDelete = itineraryRepository.findByTime(itineraryTimes.get(i))
             .orElse(null);
 
-        List<Agent> agentToDelete = agentRepository.findAllByItinerary(itineraryToDelete);
+        String clientNumber = itineraryToDelete.getClientNumber().toString();
+
+        List<Agent> agentToDelete = agentRepository.findAllByClientNumber(clientNumber);
         agentToDelete.forEach(agentRepository::delete);
 
-        List<Agent> agentNullToDelete = agentRepository.findAllByItinerary(null);
-        agentNullToDelete.forEach(agentRepository::delete);
-
-        List<Place> placeToDelete = placeRepository.findAllByItinerary(itineraryToDelete);
+        List<Place> placeToDelete = placeRepository.findAllByClientNumber(clientNumber);
         placeToDelete.forEach(placeRepository::delete);
 
-        List<Place> placeNullToDelete = placeRepository.findAllByItinerary(null);
-        placeNullToDelete.forEach(placeRepository::delete);
-
-        List<Carrier> carriersToDelete = carrierRepository.findAllByItinerary(itineraryToDelete);
+        List<Carrier> carriersToDelete = carrierRepository.findAllByClientNumber(clientNumber);
         carriersToDelete.forEach(carrierRepository::delete);
-
-        List<Carrier> carriersNullToDelete = carrierRepository.findAllByItinerary(null);
-        carriersNullToDelete.forEach(carrierRepository::delete);
 
         itineraryRepository.delete(itineraryToDelete);
       }

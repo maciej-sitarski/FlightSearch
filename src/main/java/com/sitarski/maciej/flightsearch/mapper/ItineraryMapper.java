@@ -1,5 +1,10 @@
 package com.sitarski.maciej.flightsearch.mapper;
 
+import com.sitarski.maciej.flightsearch.dao.AgentRepository;
+import com.sitarski.maciej.flightsearch.dao.CarrierRepository;
+import com.sitarski.maciej.flightsearch.dao.ItineraryDetailsRepository;
+import com.sitarski.maciej.flightsearch.dao.LegRepository;
+import com.sitarski.maciej.flightsearch.dao.PlaceRepository;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Agent;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Carrier;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Currency;
@@ -8,9 +13,7 @@ import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.ItineraryDetail;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Leg;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Place;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Query;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Segment;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.ItineraryApi;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -21,74 +24,66 @@ import org.springframework.stereotype.Component;
 @Component
 public class ItineraryMapper {
 
-  @Autowired
-  QueryMapper queryMapper;
+  private final QueryMapper queryMapper;
+  private final ItineraryDetailMapper itineraryDetailMapper;
+  private final AgentMapper agentMapper;
+  private final CarrierMapper carrierMapper;
+  private final CurrencyMapper currencyMapper;
+  private final LegMapper legMapper;
+  private final PlaceMapper placeMapper;
+  private final AgentRepository agentRepository;
+  private final CarrierRepository carrierRepository;
+  private final PlaceRepository placeRepository;
+  private final ItineraryDetailsRepository itineraryDetailsRepository;
+  private final LegRepository legRepository;
 
   @Autowired
-  ItineraryDetailMapper itineraryDetailMapper;
+  public ItineraryMapper(QueryMapper queryMapper,
+      ItineraryDetailMapper itineraryDetailMapper,
+      AgentMapper agentMapper, CarrierMapper carrierMapper,
+      CurrencyMapper currencyMapper, LegMapper legMapper,
+      PlaceMapper placeMapper,
+      AgentRepository agentRepository,
+      CarrierRepository carrierRepository,
+      PlaceRepository placeRepository,
+      ItineraryDetailsRepository itineraryDetailsRepository,
+      LegRepository legRepository) {
+    this.queryMapper = queryMapper;
+    this.itineraryDetailMapper = itineraryDetailMapper;
+    this.agentMapper = agentMapper;
+    this.carrierMapper = carrierMapper;
+    this.currencyMapper = currencyMapper;
+    this.legMapper = legMapper;
+    this.placeMapper = placeMapper;
+    this.agentRepository = agentRepository;
+    this.carrierRepository = carrierRepository;
+    this.placeRepository = placeRepository;
+    this.itineraryDetailsRepository = itineraryDetailsRepository;
+    this.legRepository = legRepository;
+  }
 
-  @Autowired
-  AgentMapper agentMapper;
-
-  @Autowired
-  CarrierMapper carrierMapper;
-
-  @Autowired
-  CurrencyMapper currencyMapper;
-
-  @Autowired
-  LegMapper legMapper;
-
-  @Autowired
-  PlaceMapper placeMapper;
-
-  @Autowired
-  SegmentMapper segmentMapper;
-
-  public Itinerary mapItineraryApiToEntity(ItineraryApi itineraryApi) {
+  public Itinerary mapItineraryApiToEntity(ItineraryApi itineraryApi, String clientNumber) {
 
     Optional<ItineraryApi> itineraryApiOptional = Optional.ofNullable(itineraryApi);
     Itinerary itinerary = new Itinerary();
 
-    itinerary.setSessionKey(itineraryApiOptional
+    String sessionKey = itineraryApiOptional
         .map(ItineraryApi::getSessionKey)
-        .orElse(null));
+        .orElse(null);
 
-    itinerary.setStatus(itineraryApiOptional
+    String status = itineraryApiOptional
         .map(ItineraryApi::getStatus)
-        .orElse(null));
+        .orElse(null);
 
     Query query = queryMapper.mapQueryApiToEntity(itineraryApiOptional
         .map(ItineraryApi::getQueryApi)
         .orElse(null));
-    itinerary.setQuery(query);
 
-    List<ItineraryDetail> itineraryDetails = itineraryApiOptional
-        .map(ItineraryApi::getItineraryDetailApi)
-        .orElse(Collections.emptyList())
-        .stream()
-        .map(itineraryDetailMapper::mapItineraryDetailApiToEntity)
-        .collect(Collectors.toList());
+    List<Leg> legs = legRepository.findAllByClientNumber(clientNumber);
+    legs.forEach(leg -> leg.setItinerary(itinerary));
+
+    List<ItineraryDetail> itineraryDetails = itineraryDetailsRepository.findAllByClientNumber(clientNumber);
     itineraryDetails.forEach(itineraryDetail -> itineraryDetail.setItinerary(itinerary));
-    itinerary.setItineraryDetail(itineraryDetails);
-
-    List<Agent> agents = itineraryApiOptional
-        .map(ItineraryApi::getAgentApi)
-        .orElse(Collections.emptyList())
-        .stream()
-        .map(agentMapper::mapAgentApiToEntity)
-        .collect(Collectors.toList());
-    agents.forEach(agent -> agent.setItinerary(itinerary));
-    itinerary.setAgent(agents);
-
-    List<Carrier> carriers = itineraryApiOptional
-        .map(ItineraryApi::getCarrierApi)
-        .orElse(Collections.emptyList())
-        .stream()
-        .map(carrierMapper::mapCarrierApiToEntity)
-        .collect(Collectors.toList());
-    carriers.forEach(carrier -> carrier.setItinerary(itinerary));
-    itinerary.setCarrier(carriers);
 
     List<Currency> currencies = itineraryApiOptional
         .map(ItineraryApi::getCurrencyApi)
@@ -97,34 +92,13 @@ public class ItineraryMapper {
         .map(currencyMapper::mapCurrencyApiToEntity)
         .collect(Collectors.toList());
     currencies.forEach(currency -> currency.setItinerary(itinerary));
+
+    itinerary.setSessionKey(sessionKey);
+    itinerary.setStatus(status);
+    itinerary.setQuery(query);
+    itinerary.setItineraryDetail(itineraryDetails);
     itinerary.setCurrency(currencies);
-
-    List<Leg> legs = itineraryApiOptional
-        .map(ItineraryApi::getLegApi)
-        .orElse(Collections.emptyList())
-        .stream()
-        .map(legMapper::mapLegApiToEntity)
-        .collect(Collectors.toList());
-    legs.forEach(leg -> leg.setItinerary(itinerary));
     itinerary.setLeg(legs);
-
-    List<Place> places = itineraryApiOptional
-        .map(ItineraryApi::getPlaceApi)
-        .orElse(Collections.emptyList())
-        .stream()
-        .map(placeMapper::mapPlaceApiToEntity)
-        .collect(Collectors.toList());
-    places.forEach(place -> place.setItinerary(itinerary));
-    itinerary.setPlace(places);
-
-    List<Segment> segments = itineraryApiOptional
-        .map(ItineraryApi::getSegmentApi)
-        .orElse(Collections.emptyList())
-        .stream()
-        .map(segmentMapper::mapSegmentApiToEntity)
-        .collect(Collectors.toList());
-    segments.forEach(segment -> segment.setItinerary(itinerary));
-    itinerary.setSegment(segments);
 
     return itinerary;
   }
