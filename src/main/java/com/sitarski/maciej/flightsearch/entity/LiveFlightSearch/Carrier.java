@@ -12,9 +12,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "carrier")
 public class Carrier {
 
@@ -38,89 +42,15 @@ public class Carrier {
   @Column(name = "displayCode")
   private String displayCode;
 
-  @ManyToOne
-  @JoinColumn(name = "itinerary_id")
-  private Itinerary itinerary;
-
   @ManyToMany(cascade = CascadeType.ALL)
   @JoinTable(name = "carrier_leg",
       joinColumns = @JoinColumn(name = "id_carrier", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "id_leg", referencedColumnName = "id"))
-  List<Leg> legs = new ArrayList<>();
+  private List<Leg> legs = new ArrayList<>();
 
-  public Carrier() {
-  }
+  @OneToMany(mappedBy = "carrier", cascade = CascadeType.ALL)
+  private List<FlightNumber> flightNumbers = new ArrayList<>();
 
-  public Carrier(Long carrierId, String code, String name, String imageUrl,
-      String displayCode) {
-    this.carrierId = carrierId;
-    this.code = code;
-    this.name = name;
-    this.imageUrl = imageUrl;
-    this.displayCode = displayCode;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public Long getCarrierId() {
-    return carrierId;
-  }
-
-  public void setCarrierId(Long carrierId) {
-    this.carrierId = carrierId;
-  }
-
-  public String getCode() {
-    return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getImageUrl() {
-    return imageUrl;
-  }
-
-  public void setImageUrl(String imageUrl) {
-    this.imageUrl = imageUrl;
-  }
-
-  public String getDisplayCode() {
-    return displayCode;
-  }
-
-  public void setDisplayCode(String displayCode) {
-    this.displayCode = displayCode;
-  }
-
-  public Itinerary getItinerary() {
-    return itinerary;
-  }
-
-  public void setItinerary(Itinerary itinerary) {
-    this.itinerary = itinerary;
-  }
-
-  public List<Leg> getLegs() {
-    return legs;
-  }
-
-  public void setLegs(List<Leg> legs) {
-    this.legs = legs;
-  }
+  @Column(name = "clientNumber")
+  private String clientNumber;
 }

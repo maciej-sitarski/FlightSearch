@@ -13,24 +13,36 @@ public class AgentMapper {
     Optional<AgentApi> agentApiOptional = Optional.ofNullable(agentApi);
     Agent agent = new Agent();
 
-    agent.setAgentId(agentApiOptional
+    Long agentId = agentApiOptional
         .map(AgentApi::getId)
-        .orElse(null));
-    agent.setImageUrl(agentApiOptional
+        .orElse(null);
+
+    String imageUrl = agentApiOptional
         .map(AgentApi::getImageUrl)
-        .orElse(null));
-    agent.setName(agentApiOptional
+        .orElse(null);
+
+    String name = agentApiOptional
         .map(AgentApi::getName)
-        .orElse(null));
-    agent.setStatus(agentApiOptional
+        .orElse(null);
+
+    String status = agentApiOptional
         .map(AgentApi::getStatus)
-        .orElse(null));
-    agent.setOptimisedForMobile(agentApiOptional
+        .orElse(null);
+
+    Boolean optimisedForMobile = agentApiOptional
         .map(AgentApi::getOptimisedForMobile)
-        .orElse(null));
-    agent.setType(agentApiOptional
+        .orElse(null);
+
+    String type = agentApiOptional
         .map(AgentApi::getType)
-        .orElse(null));
+        .orElse(null);
+
+    agent.setAgentId(agentId);
+    agent.setImageUrl(imageUrl);
+    agent.setName(name);
+    agent.setStatus(status);
+    agent.setOptimisedForMobile(optimisedForMobile);
+    agent.setType(type);
 
     return agent;
   }

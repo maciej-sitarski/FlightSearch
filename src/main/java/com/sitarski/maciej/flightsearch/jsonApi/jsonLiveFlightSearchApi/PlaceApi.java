@@ -1,7 +1,9 @@
 package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 public class PlaceApi {
 
   @JsonProperty("Id")
@@ -18,55 +20,4 @@ public class PlaceApi {
 
   @JsonProperty("Name")
   private String name;
-
-  public PlaceApi() {
-  }
-
-  public PlaceApi(Long id, Long parentId, String code, String type, String name) {
-    this.id = id;
-    this.parentId = parentId;
-    this.code = code;
-    this.type = type;
-    this.name = name;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public Long getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(Long parentId) {
-    this.parentId = parentId;
-  }
-
-  public String getCode() {
-    return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
 }

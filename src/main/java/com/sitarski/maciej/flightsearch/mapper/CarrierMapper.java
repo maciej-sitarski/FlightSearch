@@ -13,21 +13,31 @@ public class CarrierMapper {
     Optional<CarrierApi> carrierApiOptional = Optional.ofNullable(carrierApi);
     Carrier carrier = new Carrier();
 
-    carrier.setCarrierId(carrierApiOptional
+    Long carrierId = carrierApiOptional
         .map(CarrierApi::getId)
-        .orElse(null));
-    carrier.setCode(carrierApiOptional
+        .orElse(null);
+
+    String code = carrierApiOptional
         .map(CarrierApi::getCode)
-        .orElse(null));
-    carrier.setDisplayCode(carrierApiOptional
+        .orElse(null);
+
+    String displayCode = carrierApiOptional
         .map(CarrierApi::getDisplayCode)
-        .orElse(null));
-    carrier.setImageUrl(carrierApiOptional
+        .orElse(null);
+
+    String imageUrl = carrierApiOptional
         .map(CarrierApi::getImageUrl)
-        .orElse(null));
-    carrier.setName(carrierApiOptional
+        .orElse(null);
+
+    String name = carrierApiOptional
         .map(CarrierApi::getName)
-        .orElse(null));
+        .orElse(null);
+
+    carrier.setCarrierId(carrierId);
+    carrier.setCode(code);
+    carrier.setDisplayCode(displayCode);
+    carrier.setImageUrl(imageUrl);
+    carrier.setName(name);
 
     return carrier;
   }

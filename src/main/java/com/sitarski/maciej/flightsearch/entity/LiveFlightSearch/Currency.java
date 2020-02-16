@@ -8,8 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "currency")
 public class Currency {
 
@@ -28,43 +30,5 @@ public class Currency {
   @JoinColumn(name = "itinerary_id")
   private Itinerary itinerary;
 
-  public Currency() {
-  }
 
-  public Currency(String code, String symbol) {
-    this.code = code;
-    this.symbol = symbol;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getCode() {
-    return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-  public String getSymbol() {
-    return symbol;
-  }
-
-  public void setSymbol(String symbol) {
-    this.symbol = symbol;
-  }
-
-  public Itinerary getItinerary() {
-    return itinerary;
-  }
-
-  public void setItinerary(Itinerary itinerary) {
-    this.itinerary = itinerary;
-  }
 }

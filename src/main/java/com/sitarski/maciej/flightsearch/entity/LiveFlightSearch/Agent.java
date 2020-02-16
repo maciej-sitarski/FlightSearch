@@ -13,8 +13,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "agent")
 public class Agent {
 
@@ -41,99 +43,12 @@ public class Agent {
   @Column(name = "type")
   private String type;
 
-  @ManyToOne
-  @JoinColumn(name = "itinerary_id")
-  private Itinerary itinerary;
-
   @ManyToMany(cascade = CascadeType.ALL)
-  @JoinTable(name = "agent_priceOption",
-      joinColumns = @JoinColumn(name = "id_agent", referencedColumnName = "id"),
-      inverseJoinColumns = @JoinColumn(name = "id_priceOption", referencedColumnName = "id"))
-  List<PriceOption> priceOptions = new ArrayList<>();
+  @JoinTable(name = "priceOption_agent",
+      joinColumns = @JoinColumn(name = "id_priceOption", referencedColumnName = "id"),
+      inverseJoinColumns = @JoinColumn(name = "id_agent", referencedColumnName = "id"))
+  private List<PriceOption> priceOptions = new ArrayList<>();
 
-  public Agent() {
-  }
-
-  public Agent(Long agentId, String name, String imageUrl, String status,
-      Boolean optimisedForMobile, String type) {
-    this.agentId = agentId;
-    this.name = name;
-    this.imageUrl = imageUrl;
-    this.status = status;
-    this.optimisedForMobile = optimisedForMobile;
-    this.type = type;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public Long getAgentId() {
-    return agentId;
-  }
-
-  public void setAgentId(Long agentId) {
-    this.agentId = agentId;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getImageUrl() {
-    return imageUrl;
-  }
-
-  public void setImageUrl(String imageUrl) {
-    this.imageUrl = imageUrl;
-  }
-
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public Boolean getOptimisedForMobile() {
-    return optimisedForMobile;
-  }
-
-  public void setOptimisedForMobile(Boolean optimisedForMobile) {
-    this.optimisedForMobile = optimisedForMobile;
-  }
-
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public Itinerary getItinerary() {
-    return itinerary;
-  }
-
-  public void setItinerary(Itinerary itinerary) {
-    this.itinerary = itinerary;
-  }
-
-  public List<PriceOption> getPriceOptions() {
-    return priceOptions;
-  }
-
-  public void setPriceOptions(
-      List<PriceOption> priceOptions) {
-    this.priceOptions = priceOptions;
-  }
+  @Column(name = "clientNumber")
+  private String clientNumber;
 }

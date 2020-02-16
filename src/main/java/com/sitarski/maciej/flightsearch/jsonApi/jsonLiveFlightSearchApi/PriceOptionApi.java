@@ -3,7 +3,9 @@ package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import lombok.Data;
 
+@Data
 @JsonIgnoreProperties({"QuoteAgeInMinutes"})
 public class PriceOptionApi {
 
@@ -15,37 +17,4 @@ public class PriceOptionApi {
 
   @JsonProperty("DeeplinkUrl")
   private String linkUrl;
-
-  public PriceOptionApi() {
-  }
-
-  public PriceOptionApi(List<Long> agents, Float price, String linkUrl) {
-    this.agents = agents;
-    this.price = price;
-    this.linkUrl = linkUrl;
-  }
-
-  public List<Long> getAgents() {
-    return agents;
-  }
-
-  public void setAgents(List<Long> agents) {
-    this.agents = agents;
-  }
-
-  public Float getPrice() {
-    return price;
-  }
-
-  public void setPrice(Float price) {
-    this.price = price;
-  }
-
-  public String getLinkUrl() {
-    return linkUrl;
-  }
-
-  public void setLinkUrl(String linkUrl) {
-    this.linkUrl = linkUrl;
-  }
 }

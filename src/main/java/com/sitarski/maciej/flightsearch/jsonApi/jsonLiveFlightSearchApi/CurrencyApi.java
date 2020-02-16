@@ -2,7 +2,9 @@ package com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 @JsonIgnoreProperties({"ThousandsSeparator", "DecimalSeparator", "SymbolOnLeft", "SpaceBetweenAmountAndSymbol", "RoundingCoefficient", "DecimalDigits"})
 public class CurrencyApi {
 
@@ -11,28 +13,4 @@ public class CurrencyApi {
 
   @JsonProperty("Symbol")
   private String symbol;
-
-  public CurrencyApi() {
-  }
-
-  public CurrencyApi(String code, String symbol) {
-    this.code = code;
-    this.symbol = symbol;
-  }
-
-  public String getCode() {
-    return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-  public String getSymbol() {
-    return symbol;
-  }
-
-  public void setSymbol(String symbol) {
-    this.symbol = symbol;
-  }
 }

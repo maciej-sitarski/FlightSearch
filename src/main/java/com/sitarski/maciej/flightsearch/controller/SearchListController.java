@@ -1,19 +1,19 @@
 package com.sitarski.maciej.flightsearch.controller;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
-import com.sitarski.maciej.flightsearch.entity.ItineraryInquiry;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Itinerary;
-import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.ItineraryApi;
-import com.sitarski.maciej.flightsearch.parser.LiveFlightSearchParser;
+import com.sitarski.maciej.flightsearch.dto.DoubleCardOfFlightDto;
+import com.sitarski.maciej.flightsearch.dto.SingleCardOfFlightDto;
+import com.sitarski.maciej.flightsearch.dto.InformationCardDto;
+import com.sitarski.maciej.flightsearch.entity.FilterForm;
+import com.sitarski.maciej.flightsearch.entity.SearchForm;
 import com.sitarski.maciej.flightsearch.service.ClientAttributionService;
-import com.sitarski.maciej.flightsearch.service.ItineraryService;
-import com.sitarski.maciej.flightsearch.service.StringFormatService;
+import com.sitarski.maciej.flightsearch.service.FilterService;
+import com.sitarski.maciej.flightsearch.service.SearchListService;
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,72 +22,101 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SearchListController {
 
-  private final LiveFlightSearchParser liveFlightSearchParser;
-  private final StringFormatService stringFormatService;
   private final ClientAttributionService clientAttributionService;
-  private final ItineraryService itineraryService;
+  private final SearchListService searchListService;
+  private final FilterService filterService;
 
   @Autowired
-  public SearchListController(LiveFlightSearchParser liveFlightSearchParser,
-      StringFormatService stringFormatService,
-      ClientAttributionService clientAttributionService,
-      ItineraryService itineraryService) {
-    this.liveFlightSearchParser = liveFlightSearchParser;
-    this.stringFormatService = stringFormatService;
+  public SearchListController(ClientAttributionService clientAttributionService,
+      SearchListService searchListService,
+      FilterService filterService) {
+
     this.clientAttributionService = clientAttributionService;
-    this.itineraryService = itineraryService;
+    this.searchListService = searchListService;
+    this.filterService = filterService;
   }
 
   @GetMapping("/searchList")
-  public ModelAndView getMain(HttpServletRequest req, HttpServletResponse resp)
-      throws IOException, UnirestException, ParseException, InterruptedException {
+  public ModelAndView getSearchList(HttpServletRequest req, SearchForm searchForm, FilterForm filterForm)
+      throws IOException, UnirestException, InterruptedException {
     Map<String, Object> params = new HashMap<>();
 
-    String originPlace = stringFormatService.formatStringPlaceToParse(req.getParameter("from"));
-    String destinationPlace = stringFormatService.formatStringPlaceToParse(req.getParameter("to"));
-    String outboundDate = req.getParameter("outboundDate");
-    String inboundDate = req.getParameter("inboundDate");
-    String transportClass = req.getParameter("class");
-    String numOfAdults = req.getParameter("numberOfAdults");
-    String numOfChildren = req.getParameter("numberOfChildren");
-    String numOfInfants = req.getParameter("numberOfInfants");
+    String clientNumber = clientAttributionService.assignClientNumber(req);
+    searchListService.addItineraryToDataBase(clientNumber, searchForm);
 
-    params.put("originPlace", req.getParameter("from"));
-    params.put("destinationPlace", req.getParameter("to"));
-    params.put("outboundDate", outboundDate);
-    if (inboundDate != null) {
-      params.put("inboundDate", inboundDate);
-    }
-    params.put("transportClass", transportClass);
-    params.put("numOfAdults", numOfAdults);
-    params.put("numOfChildren", numOfChildren);
-    params.put("numOfInfants", numOfInfants);
+    if (searchForm.getInboundDate() != null) {
+      List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList = searchListService
+          .getListOfDoubleCardOfFlightDto(clientNumber);
+      InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
 
-    ItineraryInquiry itineraryInquiry = new ItineraryInquiry.Builder()
-        .originPlace(originPlace)
-        .destinationPlace(destinationPlace)
-        .outboundDate(outboundDate)
-        .inboundDate(inboundDate)
-        .transportClass(transportClass)
-        .numOfAdults(numOfAdults)
-        .numOfChildren(numOfChildren)
-        .numOfInfants(numOfInfants)
-        .build();
+      params.put("filterForm", filterForm);
+      params.put("doubleCardOfFlightList", doubleCardOfFlightDtoList);
+      params.put("informationCard", informationCardDto);
 
-    ItineraryApi itineraryApi = liveFlightSearchParser.parseItinerary(itineraryInquiry);
-//    params.put("itineraries", itineraryApi);
-
-    String clientNumber = (String)req.getSession().getAttribute("clientNumber");
-    clientAttributionService.saveItineraryToDataBase(itineraryApi,clientNumber);
-
-    Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
-    params.put("itineraries", itinerary);
-
-
-    if(inboundDate != null){
       return new ModelAndView("searchListReturnFlight", params);
-    } else{
+
+    } else {
+      List<SingleCardOfFlightDto> singleCardOfFlightDtoList = filterService
+          .sortedByOutboundDate(searchListService.getListOfSingleCardOfFlight(clientNumber));
+      InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
+
+      params.put("filterForm", filterForm);
+      params.put("singleCardOfFlightList", singleCardOfFlightDtoList);
+      params.put("informationCard", informationCardDto);
+
       return new ModelAndView("searchList", params);
     }
   }
+
+
+  @GetMapping("/oneWaySearchFilterList")
+  public ModelAndView getFilterSearchList(FilterForm filterForm) {
+    Map<String, Object> params = new HashMap<>();
+
+    String  clientNumber = filterForm.getClientNumber();
+    List<SingleCardOfFlightDto> singleCardOfFlightDtoFiltredList = searchListService.getListOfFilteredSingleCardOfFlight(clientNumber, filterForm);
+    InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
+
+    if(singleCardOfFlightDtoFiltredList.size() == 0){
+      List<SingleCardOfFlightDto> singleCardOfFlightDtoList = searchListService.getListOfSingleCardOfFlight(clientNumber);
+      params.put("filterForm", filterForm);
+      params.put("singleCardOfFlightList", singleCardOfFlightDtoList);
+      params.put("informationCard", informationCardDto);
+      return new ModelAndView("noResultTemplate", params);
+
+    } else {
+      params.put("filterForm", filterForm);
+      params.put("singleCardOfFlightList", singleCardOfFlightDtoFiltredList);
+      params.put("informationCard", informationCardDto);
+      return new ModelAndView("searchList", params);
+    }
+
+  }
+
+//  @GetMapping("/returnSearchFilterList")
+//  public ModelAndView getFilterSearchList(FilterForm filterForm) {
+//    Map<String, Object> params = new HashMap<>();
+//
+//
+//    if (searchForm.getInboundDate() != null) {
+//      List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList = searchListService.getDoubleCardOfFlightDto(clientNumber);
+//      InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
+//
+//      params.put("doubleCardOfFlightList", doubleCardOfFlightDtoList);
+//      params.put("informationCard", informationCardDto);
+//
+//      return new ModelAndView("searchListReturnFlight", params);
+//
+//    } else {
+//      List<SingleCardOfFlightDto> singleCardOfFlightDtoList = filterService
+//          .sortedByOutboundDate(searchListService.getSingleCardOfFlight(clientNumber));
+//      InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
+//
+//      params.put("singleCardOfFlightList", singleCardOfFlightDtoList);
+//      params.put("informationCard", informationCardDto);
+//
+//      return new ModelAndView("searchList", params);
+//    }
+//  }
 }
+
