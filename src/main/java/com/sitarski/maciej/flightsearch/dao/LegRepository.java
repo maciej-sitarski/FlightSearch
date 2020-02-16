@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LegRepository extends JpaRepository<Leg, String> {
 
-  Optional<Leg> findByLegId(String id);
+  List<Leg> findByLegId(String id);
 
   List<Leg> findAllByClientNumber(String clientNumber);
 

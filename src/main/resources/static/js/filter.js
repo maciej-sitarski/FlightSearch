@@ -26,7 +26,7 @@ function dynInputOutbound(cbox) {
     var input1 = document.createElement("input");
     input1.type = "time";
     input1.id = "input1";
-    input1.name = "outboundFrom";
+    input1.name = "outboundTimeFrom";
     input1.step = "900";
     input1.style.marginRight = "15px";
     input1.style.marginLeft = "5px";
@@ -42,7 +42,7 @@ function dynInputOutbound(cbox) {
     input2.type = "time";
     input2.style.marginLeft = "5px";
     input2.style.width = "32%";
-    input2.name = "outboundTo";
+    input2.name = "outboundTimeTo";
     input2.step = "900";
     input2.style.height = "40px";
     input2.style.fontSize = "22px";
@@ -78,16 +78,6 @@ $(function () {
     })
   })
 });
-// $("#dupa").click("click", function () {
-//   alert("dsdsads");
-//       // $.ajax({
-//       //   url: '/filter/' + $(this).attr('data-id-client'),
-//       //   type: "GET",
-//       //   success: function () {
-//       //     location.replace("/searchList");
-//       //   }
-//       // })
-// });
 
 
 

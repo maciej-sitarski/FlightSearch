@@ -1,5 +1,7 @@
 package com.sitarski.maciej.flightsearch.service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -16,5 +18,16 @@ public class StringFormatService {
 
   public String formatStringLocationHeaderToParse(String location){
     return StringUtils.substringAfterLast(location, "/");
+  }
+
+  public LocalDateTime formatStringDateToDate(String stringDate)  {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    String stringFormatDate = stringDate.replaceAll("T", " ");
+    return LocalDateTime.parse(stringFormatDate, formatter);
+  }
+
+  public LocalDateTime formatStringTimeToDate(String stringTime)  {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+    return LocalDateTime.parse(stringTime, formatter);
   }
 }

@@ -3,10 +3,8 @@ package com.sitarski.maciej.flightsearch.dto;
 import lombok.Data;
 
 @Data
-public class QueryDto {
+public class InformationCardDto {
 
-  private String originPlace;
-  private String destinationPlace;
   private String outboundDate;
   private String inboundDate;
   private String cabinClass;

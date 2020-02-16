@@ -4,16 +4,18 @@ import com.sitarski.maciej.flightsearch.dao.CarrierRepository;
 import com.sitarski.maciej.flightsearch.dao.PlaceRepository;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Carrier;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.FlightNumber;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.ItineraryDetail;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Leg;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Place;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.LegApi;
+import com.sitarski.maciej.flightsearch.service.StringFormatService;
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,15 +24,18 @@ public class LegMapper {
   private final FlightNumberMapper flightNumberMapper;
   private final CarrierRepository carrierRepository;
   private final PlaceRepository placeRepository;
+  private final StringFormatService stringFormatService;
 
   @Autowired
   public LegMapper(
       FlightNumberMapper flightNumberMapper,
       CarrierRepository carrierRepository,
-      PlaceRepository placeRepository){
+      PlaceRepository placeRepository,
+      StringFormatService stringFormatService){
     this.flightNumberMapper = flightNumberMapper;
     this.carrierRepository = carrierRepository;
     this.placeRepository = placeRepository;
+    this.stringFormatService = stringFormatService;
   }
 
   public Leg mapLegApiToEntity(LegApi legApi) {
@@ -38,13 +43,14 @@ public class LegMapper {
     Optional<LegApi> legApiOptional = Optional.ofNullable(legApi);
     Leg leg = new Leg();
 
-    String arrival = legApiOptional
-        .map(LegApi::getArrival)
-        .orElse(null);
+    LocalDateTime arrival = stringFormatService.formatStringDateToDate(
+        Objects.requireNonNull(legApiOptional
+            .map(LegApi::getArrival)
+            .orElse(null)));
 
-    String departure = legApiOptional
+    LocalDateTime departure = stringFormatService.formatStringDateToDate(legApiOptional
         .map(LegApi::getDeparture)
-        .orElse(null);
+        .orElse(null));
 
     String directionality = legApiOptional
         .map(LegApi::getDirectionality)

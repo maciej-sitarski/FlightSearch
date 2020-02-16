@@ -46,14 +46,14 @@ public class ItineraryDetailMapper {
         .map(ItineraryDetailApi::getOutboundLegId)
         .map(legRepository::findByLegId)
         .orElse(null)
-        .orElse(null);
+        .get(0);
 
     if(itineraryDetailApi.getInboundLegId() != null){
       Leg inboundLeg = Objects.requireNonNull(itineraryDetailApiOptional
-          .map(ItineraryDetailApi::getOutboundLegId)
+          .map(ItineraryDetailApi::getInboundLegId)
           .map(legRepository::findByLegId)
           .orElse(null))
-          .orElse(null);
+          .get(0);
       itineraryDetail.setInboundLeg(inboundLeg);
     }
 

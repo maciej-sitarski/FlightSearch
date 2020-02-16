@@ -1,5 +1,6 @@
 package com.sitarski.maciej.flightsearch.entity.LiveFlightSearch;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -38,10 +39,10 @@ public class Leg {
   private Place destinationStation;
 
   @Column(name = "departure")
-  private String departure;
+  private LocalDateTime departure;
 
   @Column(name = "arrival")
-  private String arrival;
+  private LocalDateTime arrival;
 
   @Column(name = "duration")
   private Long duration;
