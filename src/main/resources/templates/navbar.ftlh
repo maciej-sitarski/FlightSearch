@@ -39,6 +39,7 @@
       Search
     </strong>
   </p>
+
   <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse"
           data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false"
           aria-label="Przełącznik nawigacji">
