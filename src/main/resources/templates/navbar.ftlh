@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/searchList.css">
+  <link rel="stylesheet" href="css/selectList.css">
+  <link rel="stylesheet" href="css/button.css">
   <title>FlightSearch</title>
 
   <link rel="stylesheet" href="/font/map.css" type="text/css">
@@ -26,13 +28,13 @@
 
 <body>
 <nav class="navbar navbar-expand-md ">
-  <p class="navbar-brand" style="margin-left: 15%; font-family: 'Tonto', serif; font-size: 50px">
+  <p class="navbar-brand" style="margin-left: 15%; font-family:sans-serif; font-size: 50px">
     <strong>
       Flight
     </strong>
   </p>
   <h1><span class="icon-flight-1"></span></h1>
-  <p class="navbar-brand ml-2" style=" font-family: 'Tonto', serif; font-size: 50px;">
+  <p class="navbar-brand ml-2" style=" font-family: sans-serif; font-size: 50px;">
     <strong>
       Search
     </strong>

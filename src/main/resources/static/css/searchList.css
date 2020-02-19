@@ -25,15 +25,20 @@
 }
 
 .resultFlightHeading {
-  height: 380px;
+  height: 250px;
   margin-top: 30px;
   background-color: #03002E;
   color: white;
+  font-family: sans-serif;
 }
 
 .resultFlightFilters {
-  height: 380px;
+  height: 630px;
   margin-top: 30px;
-  background-color: #005E32;
+  background-color: #2F4F4F;
   color: black;
+  font-family: sans-serif;
 }
+
+
+

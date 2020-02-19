@@ -24,7 +24,8 @@ public class SearchListService {
   private final InformationCardMapper informationCardMapper;
   private final ItineraryService itineraryService;
   private final DataService dataService;
-  private final FilterService filterService;
+  private final FilterOneWayService filterOneWayService;
+  private final FilterMultipleService filterMultipleService;
 
   @Autowired
   public SearchListService(
@@ -32,13 +33,15 @@ public class SearchListService {
       DoubleCardOfFlightMapper doubleCardOfFlightMapper,
       InformationCardMapper informationCardMapper,
       ItineraryService itineraryService,
-      DataService dataService, FilterService filterService) {
+      DataService dataService, FilterOneWayService filterOneWayService,
+      FilterMultipleService filterMultipleService) {
     this.singleCardOfFlightMapper = singleCardOfFlightMapper;
     this.doubleCardOfFlightMapper = doubleCardOfFlightMapper;
     this.informationCardMapper = informationCardMapper;
     this.itineraryService = itineraryService;
     this.dataService = dataService;
-    this.filterService = filterService;
+    this.filterOneWayService = filterOneWayService;
+    this.filterMultipleService = filterMultipleService;
   }
 
   public List<SingleCardOfFlightDto> getListOfSingleCardOfFlight(String clientNumber) {
@@ -70,6 +73,14 @@ public class SearchListService {
     List<SingleCardOfFlightDto> unfiltredList = itinerary.getLeg().stream().map(
         singleCardOfFlightMapper::mapLegToDto).collect(
         Collectors.toList());
-    return filterService.filtrResult(unfiltredList,filterForm);
+    return filterOneWayService.filtrResult(unfiltredList,filterForm);
+  }
+
+  public List<DoubleCardOfFlightDto> getListOfFilteredDoubleCardOfFlight(String clientNumber, FilterForm filterForm) {
+    Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
+    List<DoubleCardOfFlightDto> unfiltredList = itinerary.getItineraryDetail().stream().map(
+        doubleCardOfFlightMapper::mapItineraryDetailToDto).collect(
+        Collectors.toList());
+    return filterMultipleService.filtrResult(unfiltredList,filterForm);
   }
 }

@@ -18,6 +18,8 @@ function dynInputDuration(cbox) {
   }
 }
 
+
+
 function dynInputOutbound(cbox) {
   if (cbox.checked) {
     var label1 = document.createElement("label");
@@ -60,24 +62,8 @@ function dynInputOutbound(cbox) {
   }
 }
 
-$(function () {
-  $(document).ready(function () {
-    $("#dupa").click(function (event) {
-      alert($(this).attr('data-id-client'));
-      $.ajax({
-        url: '/filter/' + $(this).attr('data-id-client'),
-        type: "GET",
-        success: function () {
 
-          location.replace("/searchList");
-        },
-        error: function(){
 
-        }
-      })
-    })
-  })
-});
 
 
 

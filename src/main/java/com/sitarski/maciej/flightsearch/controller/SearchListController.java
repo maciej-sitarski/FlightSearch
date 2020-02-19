@@ -7,7 +7,7 @@ import com.sitarski.maciej.flightsearch.dto.InformationCardDto;
 import com.sitarski.maciej.flightsearch.entity.FilterForm;
 import com.sitarski.maciej.flightsearch.entity.SearchForm;
 import com.sitarski.maciej.flightsearch.service.ClientAttributionService;
-import com.sitarski.maciej.flightsearch.service.FilterService;
+import com.sitarski.maciej.flightsearch.service.FilterOneWayService;
 import com.sitarski.maciej.flightsearch.service.SearchListService;
 import java.io.IOException;
 import java.util.HashMap;
@@ -24,16 +24,16 @@ public class SearchListController {
 
   private final ClientAttributionService clientAttributionService;
   private final SearchListService searchListService;
-  private final FilterService filterService;
+  private final FilterOneWayService filterOneWayService;
 
   @Autowired
   public SearchListController(ClientAttributionService clientAttributionService,
       SearchListService searchListService,
-      FilterService filterService) {
+      FilterOneWayService filterOneWayService) {
 
     this.clientAttributionService = clientAttributionService;
     this.searchListService = searchListService;
-    this.filterService = filterService;
+    this.filterOneWayService = filterOneWayService;
   }
 
   @GetMapping("/searchList")
@@ -43,6 +43,10 @@ public class SearchListController {
 
     String clientNumber = clientAttributionService.assignClientNumber(req);
     searchListService.addItineraryToDataBase(clientNumber, searchForm);
+
+    filterForm.setDirect("on");
+    filterForm.setOneStop("on");
+    filterForm.setMoreStops("on");
 
     if (searchForm.getInboundDate() != null) {
       List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList = searchListService
@@ -56,7 +60,7 @@ public class SearchListController {
       return new ModelAndView("searchListReturnFlight", params);
 
     } else {
-      List<SingleCardOfFlightDto> singleCardOfFlightDtoList = filterService
+      List<SingleCardOfFlightDto> singleCardOfFlightDtoList = filterOneWayService
           .sortedByOutboundDate(searchListService.getListOfSingleCardOfFlight(clientNumber));
       InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
 
@@ -82,7 +86,7 @@ public class SearchListController {
       params.put("filterForm", filterForm);
       params.put("singleCardOfFlightList", singleCardOfFlightDtoList);
       params.put("informationCard", informationCardDto);
-      return new ModelAndView("noResultTemplate", params);
+      return new ModelAndView("searchListNoResult", params);
 
     } else {
       params.put("filterForm", filterForm);
@@ -93,30 +97,28 @@ public class SearchListController {
 
   }
 
-//  @GetMapping("/returnSearchFilterList")
-//  public ModelAndView getFilterSearchList(FilterForm filterForm) {
-//    Map<String, Object> params = new HashMap<>();
-//
-//
-//    if (searchForm.getInboundDate() != null) {
-//      List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList = searchListService.getDoubleCardOfFlightDto(clientNumber);
-//      InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
-//
-//      params.put("doubleCardOfFlightList", doubleCardOfFlightDtoList);
-//      params.put("informationCard", informationCardDto);
-//
-//      return new ModelAndView("searchListReturnFlight", params);
-//
-//    } else {
-//      List<SingleCardOfFlightDto> singleCardOfFlightDtoList = filterService
-//          .sortedByOutboundDate(searchListService.getSingleCardOfFlight(clientNumber));
-//      InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
-//
-//      params.put("singleCardOfFlightList", singleCardOfFlightDtoList);
-//      params.put("informationCard", informationCardDto);
-//
-//      return new ModelAndView("searchList", params);
-//    }
-//  }
+  @GetMapping("/returnSearchFilterList")
+  public ModelAndView getFilterSearchListReturned(FilterForm filterForm) {
+    Map<String, Object> params = new HashMap<>();
+
+    String  clientNumber = filterForm.getClientNumber();
+    List<DoubleCardOfFlightDto> doubleCardOfFlightDtoFiltredList = searchListService
+        .getListOfFilteredDoubleCardOfFlight(clientNumber, filterForm);
+    InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
+
+    if(doubleCardOfFlightDtoFiltredList.size() == 0){
+      List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList = searchListService.getListOfDoubleCardOfFlightDto(clientNumber);
+      params.put("filterForm", filterForm);
+      params.put("doubleCardOfFlightList", doubleCardOfFlightDtoList);
+      params.put("informationCard", informationCardDto);
+      return new ModelAndView("searchListReturnFlightNoResult", params);
+
+    } else {
+      params.put("filterForm", filterForm);
+      params.put("doubleCardOfFlightList", doubleCardOfFlightDtoFiltredList);
+      params.put("informationCard", informationCardDto);
+      return new ModelAndView("searchListReturnFlight", params);
+    }
+  }
 }
 
