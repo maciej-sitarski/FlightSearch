@@ -10,11 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
 @Service
-@Scope(value = WebApplicationContext.SCOPE_REQUEST)
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class PlaceParser {
 
   private ObjectMapper objectMapper = new ObjectMapper();
@@ -27,13 +28,13 @@ public class PlaceParser {
   @Value("${API_Key}")
   private String API_Key;
 
-  public PlaceList parsePlaces(String city, String currency) throws UnirestException, IOException {
+  public PlaceList parsePlaces(String city) throws UnirestException, IOException {
 
     logger.info("Parse places to objects");
 
     HttpResponse<String> response = Unirest.get(String.format(
-        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/PL/%s/en-PL/?query=%s",
-        currency, city))
+        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=%s",
+         city))
         .header(firstHeaderName, firstHeaderValue)
         .header(secondHeaderName, API_Key)
         .asString();

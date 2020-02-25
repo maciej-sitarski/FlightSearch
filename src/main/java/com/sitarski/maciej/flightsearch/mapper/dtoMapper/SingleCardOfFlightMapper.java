@@ -45,7 +45,8 @@ public class SingleCardOfFlightMapper {
 
     if(itineraryDetailsRepository.findAllByClientNumber(clientNumber).get(0).getInboundLeg() == null){
       List<PriceOption> priceOptions = itineraryDetailsRepository.findByOutboundLegId(leg.getId())
-          .get().getPriceOptions();
+          .get()
+          .getPriceOptions();
       Float price = priceFilter(priceOptions);
       singleCardOfFlightDto.setPrice(price);
     }

@@ -9,3 +9,17 @@ function secondCheckOneWayFlight(radio) {
     document.getElementById("backFlight").disabled = true;
   }
 }
+
+$(function() {
+  $("#originAutocompletePlace").autocomplete({
+    source: "originPlaceAutocomplete",
+    minLength: 2,
+  });
+});
+
+$(function() {
+  $("#destinationAutocompletePlace").autocomplete({
+    source: "destinationPlaceAutocomplete",
+    minLength: 2
+  });
+});

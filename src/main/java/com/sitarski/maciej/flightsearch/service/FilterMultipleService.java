@@ -86,6 +86,11 @@ public class FilterMultipleService {
           .filter(doubleCardOfFlightDto -> doubleCardOfFlightDto.getOutboundLeg().getStops().size() != 3)
           .filter(doubleCardOfFlightDto -> doubleCardOfFlightDto.getInboundLeg().getStops().size() != 3)
           .collect(Collectors.toList());
+
+      resultList = resultList.stream()
+          .filter(doubleCardOfFlightDto -> doubleCardOfFlightDto.getOutboundLeg().getStops().size() != 4)
+          .filter(doubleCardOfFlightDto -> doubleCardOfFlightDto.getInboundLeg().getStops().size() != 4)
+          .collect(Collectors.toList());
     }
     return resultList;
   }

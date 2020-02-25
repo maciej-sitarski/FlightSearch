@@ -26,8 +26,7 @@ public class StringFormatService {
     return LocalDateTime.parse(stringFormatDate, formatter);
   }
 
-  public LocalDateTime formatStringTimeToDate(String stringTime)  {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-    return LocalDateTime.parse(stringTime, formatter);
+  public String formatStringPlace(String place){
+    return StringUtils.substringBefore(place, "-");
   }
 }

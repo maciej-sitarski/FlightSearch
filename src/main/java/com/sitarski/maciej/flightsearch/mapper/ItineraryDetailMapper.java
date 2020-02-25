@@ -47,6 +47,7 @@ public class ItineraryDetailMapper {
         .map(legRepository::findByLegId)
         .orElse(null)
         .get(0);
+    outboundLeg.getOutboundLegs().add(itineraryDetail);
 
     if(itineraryDetailApi.getInboundLegId() != null){
       Leg inboundLeg = Objects.requireNonNull(itineraryDetailApiOptional
