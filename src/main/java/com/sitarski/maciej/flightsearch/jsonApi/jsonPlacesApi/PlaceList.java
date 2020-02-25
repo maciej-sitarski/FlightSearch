@@ -1,25 +1,14 @@
 package com.sitarski.maciej.flightsearch.jsonApi.jsonPlacesApi;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import lombok.Data;
 
+@Data
+@JsonIgnoreProperties({"ValidationErrors"})
 public class PlaceList {
 
   @JsonProperty("Places")
   private List<Place> places;
-
-  public PlaceList() {
-  }
-
-  public PlaceList(List<Place> places) {
-    this.places = places;
-  }
-
-  public List<Place> getPlaces() {
-    return places;
-  }
-
-  public void setPlaces(List<Place> places) {
-    this.places = places;
-  }
 }

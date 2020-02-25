@@ -81,6 +81,9 @@ public class FilterOneWayService {
       resultList = resultList.stream()
           .filter(singleCardOfFlightDto -> singleCardOfFlightDto.getStops().size() != 3).collect(
               Collectors.toList());
+      resultList = resultList.stream()
+          .filter(singleCardOfFlightDto -> singleCardOfFlightDto.getStops().size() != 4).collect(
+              Collectors.toList());
     }
     return resultList;
   }

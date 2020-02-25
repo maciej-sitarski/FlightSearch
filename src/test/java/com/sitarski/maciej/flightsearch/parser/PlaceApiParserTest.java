@@ -15,7 +15,7 @@ class PlaceApiParserTest {
     PlaceParser placeParser = new PlaceParser();
 
     //when
-    PlaceList placeList = placeParser.parsePlaces("Gdansk", "PLN");
+    PlaceList placeList = placeParser.parsePlaces("Gdansk");
     String placeName = placeList.getPlaces().get(0).getPlaceName();
     String countryName = placeList.getPlaces().get(0).getCountryName();
 

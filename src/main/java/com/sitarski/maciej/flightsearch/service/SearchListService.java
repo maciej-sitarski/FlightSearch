@@ -6,6 +6,7 @@ import com.sitarski.maciej.flightsearch.dto.SingleCardOfFlightDto;
 import com.sitarski.maciej.flightsearch.dto.InformationCardDto;
 import com.sitarski.maciej.flightsearch.entity.FilterForm;
 import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Itinerary;
+import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Leg;
 import com.sitarski.maciej.flightsearch.entity.SearchForm;
 import com.sitarski.maciej.flightsearch.mapper.dtoMapper.DoubleCardOfFlightMapper;
 import com.sitarski.maciej.flightsearch.mapper.dtoMapper.InformationCardMapper;
@@ -46,8 +47,9 @@ public class SearchListService {
 
   public List<SingleCardOfFlightDto> getListOfSingleCardOfFlight(String clientNumber) {
     Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
-    return itinerary.getLeg().stream().map(
-        singleCardOfFlightMapper::mapLegToDto).collect(
+    return itinerary.getLeg().stream()
+        .filter(leg -> leg.getOutboundLegs().size() !=0)
+        .map(singleCardOfFlightMapper::mapLegToDto).collect(
         Collectors.toList());
   }
 
@@ -70,8 +72,10 @@ public class SearchListService {
 
   public List<SingleCardOfFlightDto> getListOfFilteredSingleCardOfFlight(String clientNumber, FilterForm filterForm) {
     Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
-    List<SingleCardOfFlightDto> unfiltredList = itinerary.getLeg().stream().map(
-        singleCardOfFlightMapper::mapLegToDto).collect(
+    List<SingleCardOfFlightDto> unfiltredList = itinerary.getLeg().stream()
+        .filter(leg -> leg.getOutboundLegs().size() !=0)
+        .map(singleCardOfFlightMapper::mapLegToDto)
+        .collect(
         Collectors.toList());
     return filterOneWayService.filtrResult(unfiltredList,filterForm);
   }

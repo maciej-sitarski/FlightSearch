@@ -28,7 +28,7 @@ public class PriceOption {
   @Column(name = "price")
   private Float price;
 
-  @Column(name = "linkUrl", length = 1500)
+  @Column(name = "linkUrl", length = 2000)
   private String linkUrl;
 
   @ManyToMany(mappedBy = "priceOptions", cascade = CascadeType.ALL)
