@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Service
-public class FilterService {
+public class FilterOneWayService {
 
   public List<SingleCardOfFlightDto> filtrResult(List<SingleCardOfFlightDto> unfiltredList,
       FilterForm filterForm) {
@@ -101,16 +101,16 @@ public class FilterService {
             >= outboundHourFrom)
         .collect(Collectors.toList());
 
-    List<SingleCardOfFlightDto> dupa = resultList.stream().filter(singleCardOfFlightDto -> singleCardOfFlightDto.getDepartureTime().getHour() == outboundHourFrom)
+    List<SingleCardOfFlightDto> cardsToRemove = resultList.stream().filter(singleCardOfFlightDto -> singleCardOfFlightDto.getDepartureTime().getHour() == outboundHourFrom)
         .filter(singleCardOfFlightDto -> singleCardOfFlightDto.getDepartureTime().getMinute()
             >= outboundMinutesFrom)
         .collect(Collectors.toList());
-    resultList.removeAll(dupa);
+    resultList.removeAll(cardsToRemove);
 
 
     resultList = resultList.stream()
         .filter(singleCardOfFlightDto -> singleCardOfFlightDto.getDepartureTime().getHour()
-            <= outboundHourTo)
+            < outboundHourTo)
         .collect(Collectors.toList());
 
     return resultList;
