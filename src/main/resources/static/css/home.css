@@ -2,11 +2,12 @@
   background-color: #E6FAF8;
   color: #0F076A;
   width: 100%;
+
 }
 
 .home {
   background-image: url(../img/plane.jpg);
-  height: 970px;
+  height: 1000px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,7 +32,7 @@
 ul.ui-autocomplete {
   font-size: 20px;
   float: left;
-  padding-left: 0px;
+  padding-left: 0;
   list-style: none;
   background-color: white;
   border-color: #ccc;
@@ -51,12 +52,11 @@ ul.ui-autocomplete {
   *border-bottom-width: 2px;
 }
 
-/*li.ui-menu-item{*/
-
-/*}*/
-
 ul.ui-state-hover, .ui-state-active {
   color: black;
   background-color: #60a3bc;
 }
 
+.ui-helper-hidden-accessible{
+  display:none !important;
+}

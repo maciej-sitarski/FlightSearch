@@ -60,7 +60,7 @@ public class ItineraryService {
     ItineraryApi itineraryApi = null;
     do {
       if (itineraryApi != null) {
-        Thread.sleep(1000);
+        Thread.sleep(400);
       }
       itineraryApi = liveFlightSearchParser.parseItinerary(itineraryInquiry);
     } while (itineraryApi.getItineraryDetailApi() == null || itineraryApi.getItineraryDetailApi()

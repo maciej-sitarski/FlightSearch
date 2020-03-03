@@ -22,7 +22,7 @@
             | Number of infants: ${informationCard.infants}
           </#if>
       </h3>
-      <a href="/home" class="btn" id="button" style="margin-top: 15px"> Return </a>
+      <a href="/home" class="btn" id="button" style="margin-top: 15px; width: 20%"> Return </a>
     </div>
   </div>
 
@@ -246,7 +246,7 @@
                           ${singleCardOfFlight.price}
                     </strong> zł
                   </h3>
-                  <a href="#" class="btn btn-success btn-lg" style="font-size: 25px">
+                  <a href="/flightDetails?id=${singleCardOfFlight.legId}&cn=${singleCardOfFlight.clientNumber}&origin=${singleCardOfFlight.originPlace}&destination=${singleCardOfFlight.destinationPlace}" class="btn btn-success btn-lg" style="font-size: 25px">
                     Select </a>
                 </div>
               </div>

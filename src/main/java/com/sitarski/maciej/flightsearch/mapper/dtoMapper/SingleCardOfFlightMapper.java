@@ -29,6 +29,7 @@ public class SingleCardOfFlightMapper {
 
     SingleCardOfFlightDto singleCardOfFlightDto = new SingleCardOfFlightDto();
 
+    Long legId = leg.getId();
     String clientNumber = leg.getClientNumber();
     List<String> carrierImgUrls = leg.getCarriers().stream().map(Carrier::getImageUrl).collect(
         Collectors.toList());
@@ -51,6 +52,7 @@ public class SingleCardOfFlightMapper {
       singleCardOfFlightDto.setPrice(price);
     }
 
+    singleCardOfFlightDto.setLegId(legId);
     singleCardOfFlightDto.setClientNumber(clientNumber);
     singleCardOfFlightDto.setCarrierImageUrl(carrierImgUrls);
     singleCardOfFlightDto.setCarrierName(carrierNames);

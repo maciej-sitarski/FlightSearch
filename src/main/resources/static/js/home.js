@@ -23,3 +23,4 @@ $(function() {
     minLength: 2
   });
 });
+

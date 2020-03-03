@@ -25,7 +25,7 @@
             | Number of infants: ${informationCard.infants}
           </#if>
       </h4>
-      <a href="/home" class="btn" id="button" > Return </a>
+      <a href="/home" class="btn" id="button"  style=" width: 20%"> Return </a>
     </div>
   </div>
 

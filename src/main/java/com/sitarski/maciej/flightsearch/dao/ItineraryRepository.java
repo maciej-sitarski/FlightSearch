@@ -9,5 +9,4 @@ public interface ItineraryRepository extends JpaRepository<Itinerary, Long> {
 
   Optional<Itinerary> findByClientNumber(Long clientNumber);
 
-  Optional<Itinerary> findByTime(LocalDateTime time);
 }
