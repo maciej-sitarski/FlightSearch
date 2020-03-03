@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-@JsonIgnoreProperties({"ValidationErrors", "Segments"})
+@JsonIgnoreProperties({"ValidationErrors", "Segments", "message"})
 public class ItineraryApi {
 
   @JsonProperty("SessionKey")

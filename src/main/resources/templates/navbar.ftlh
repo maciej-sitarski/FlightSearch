@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/searchList.css">
   <link rel="stylesheet" href="css/selectList.css">
   <link rel="stylesheet" href="css/button.css">
+
   <title>FlightSearch</title>
 
   <link rel="stylesheet" href="/font/map.css" type="text/css">
@@ -23,8 +24,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
   <script src="/js/home.js"></script>
   <script src="/js/filter.js"></script>
+
 </head>
 
 <body>
@@ -52,41 +55,61 @@
       <li class="nav-item mr-5">
         <a class="nav-link" href="/home"> <strong>Main site </strong></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="modal" data-target="#loginModal"><strong>Log
-            in</strong></a>
+      <li class="nav-item mr-5 favourite" style="display: none">
+        <a class="nav-link" href="#"> <strong>Your flight </strong></a>
       </li>
+
+      <li class="nav-item">
+        <div class="loginButton">
+          <button class="border-0 innerButton"
+                  style="background-color: #E6FAF8; color: #0F076A; margin-top: 7px"
+                  data-toggle="modal" data-target="#loginModal"><strong>Log
+              in</strong></button>
+        </div>
+
+        <div class="logOutButton" style="display: none">
+          <button onClick="logout()" class="innerButton border-0"
+                  style="background-color: #E6FAF8; color: #0F076A; margin-top: 7px"><strong>Log
+              out</strong></button>
+        </div>
+      </li>
+
     </ul>
   </div>
 </nav>
 
-<#--<form id="form-login" role="form">-->
-<#--  <div class="modal fade" id="loginModal" role="dialog">-->
-<#--    <div class="modal-dialog">-->
-<#--      <div class="modal-content">-->
-<#--        <div class="modal-header">-->
-<#--          <h4 class="modal-title">Prosimy o zalogowanie się </h4>-->
-<#--        </div>-->
-<#--        <div class="modal-body">-->
-<#--          <label><strong>Adres email: </strong></label><br/>-->
-<#--          <input name="email" id="email" type="text"><br/>-->
-<#--          <label><strong>Hasło: </strong></label><br/>-->
-<#--          <input name="password" id="password" type="password">-->
-<#--        </div>-->
-<#--        <div class="modal-footer">-->
-<#--          <button type="button" id="login" class="btn btn-success"-->
-<#--                  style="position: absolute; left: 20px;">Zaloguj się-->
-<#--          </button>-->
-<#--          <p style="position: absolute; left: 130px;">lub-->
-<#--            <a class="registration" href="/registration">Utwórz konto </a>-->
-<#--          </p>-->
-<#--          <button type="button" class="btn btn-danger" data-dismiss="modal">Zamknij</button>-->
-<#--        </div>-->
-<#--      </div>-->
-<#--    </div>-->
-<#--  </div>-->
-<#--</form>-->
+<form id="form-login" role="form">
+  <div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content" style="margin-top: 200px">
+        <div class="modal-header" style="background-color: #60a3bc">
+          <h2 class="modal-title" style="margin-left: auto; margin-right: auto; color: black" ;>Sign
+            in, to manage your travel </h2>
+        </div>
+        <div class="modal-body" style="background-color:  #D6D7D7">
+          <div class="unauthenticated">
+            <a href="/login" class="fb btn" style="margin-top: 20px">
+              <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+            </a>
+          </div>
+          <div class="unauthenticated">
+            <a href="#" class="google btn" style="margin-top: 20px">
+              <i class="fa fa-google fa-fw"></i> Login with Google+
+            </a>
+          </div>
+        </div>
+        <div class="modal-footer" style="background-color: #D6D7D7;">
+          <button data-dismiss="modal" type="button" class="btn" id="button"
+                  style="margin-top: 15px; font-size: 17px; width: 30%; margin-left: auto; margin-right: auto">
+            Return
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
 
-
+<script src="/js/oauth.js"></script>
 </body>
 </html>
+

@@ -26,3 +26,7 @@
   padding: 0 10px 0 10px;
   font-family: sans-serif;
 }
+
+.innerButton:focus {
+  outline: none;
+}

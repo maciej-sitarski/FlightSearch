@@ -23,17 +23,17 @@ public class SearchForm {
   @NotBlank(message="Entering the transport class is mandatory.")
   private String transportClass;
 
-  @NotNull(message="Entering the number of adults is mandatory.")
+  @NotBlank(message="Entering the number of adults is mandatory.")
   @Min(1)
   @Max(9)
   private String numberOfAdults;
 
-  @NotNull(message="Entering the number of children is mandatory.")
+  @NotBlank(message="Entering the number of children is mandatory.")
   @Min(0)
   @Max(9)
   private String numberOfChildren;
 
-  @NotNull(message="Entering the number of infants is mandatory.")
+  @NotBlank(message="Entering the number of infants is mandatory.")
   @Min(0)
   @Max(9)
   private String numberOfInfants;

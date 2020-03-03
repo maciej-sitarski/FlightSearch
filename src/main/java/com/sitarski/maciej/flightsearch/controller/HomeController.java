@@ -32,6 +32,12 @@ public class HomeController {
     return new ModelAndView("home", params);
   }
 
+  @GetMapping("/")
+  public ModelAndView getAutentication() {
+    Map<String, Object> params = new HashMap<>();
+    return new ModelAndView("home", params);
+  }
+
 
   @RequestMapping(value="/originPlaceAutocomplete")
   public @ResponseBody

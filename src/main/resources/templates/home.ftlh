@@ -1,5 +1,5 @@
 <#include "navbar.ftlh">
-<div class="container-fluid">
+<div class="container-fluid" >
   <div class="row home" style="font-family: fantasy ">
     <div class="col-md-7 " style="margin-top: 11%; margin-left: auto; margin-right: auto;">
       <h1 style=" font-size: 90px; color: #0F076A"><strong>

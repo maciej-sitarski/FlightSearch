@@ -51,7 +51,7 @@ public class SearchListController {
       params.put("errors", errors);
       return new ModelAndView("home", params);
     } else {
-      
+
       Map<String, Object> params = new HashMap<>();
       String clientNumber = clientAttributionService.assignClientNumber(req);
       searchListService.addItineraryToDataBase(clientNumber, searchForm);

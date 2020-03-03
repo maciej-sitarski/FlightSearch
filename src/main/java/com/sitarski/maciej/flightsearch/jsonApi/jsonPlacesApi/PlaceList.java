@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-@JsonIgnoreProperties({"ValidationErrors"})
+@JsonIgnoreProperties({"ValidationErrors", "message"})
 public class PlaceList {
 
   @JsonProperty("Places")
