@@ -30,6 +30,7 @@ public class SingleCardOfFlightMapper {
     SingleCardOfFlightDto singleCardOfFlightDto = new SingleCardOfFlightDto();
 
     Long legId = leg.getId();
+    String legItineraryId = leg.getLegId();
     String clientNumber = leg.getClientNumber();
     List<String> carrierImgUrls = leg.getCarriers().stream().map(Carrier::getImageUrl).collect(
         Collectors.toList());
@@ -45,14 +46,16 @@ public class SingleCardOfFlightMapper {
     List<Place> stops = leg.getStops();
 
     if(itineraryDetailsRepository.findAllByClientNumber(clientNumber).get(0).getInboundLeg() == null){
-      List<PriceOption> priceOptions = itineraryDetailsRepository.findByOutboundLegId(leg.getId())
-          .get()
+      List<PriceOption> priceOptions = itineraryDetailsRepository
+          .findAllByOutboundLegId(leg.getId())
+          .get(0)
           .getPriceOptions();
       Float price = priceFilter(priceOptions);
       singleCardOfFlightDto.setPrice(price);
     }
 
     singleCardOfFlightDto.setLegId(legId);
+    singleCardOfFlightDto.setLegItineraryId(legItineraryId);
     singleCardOfFlightDto.setClientNumber(clientNumber);
     singleCardOfFlightDto.setCarrierImageUrl(carrierImgUrls);
     singleCardOfFlightDto.setCarrierName(carrierNames);

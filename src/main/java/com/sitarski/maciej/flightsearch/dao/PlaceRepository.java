@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PlaceRepository extends JpaRepository<Place, Long> {
 
-  Optional<Place> findByPlaceId(Long id);
+  List<Place> findAllByPlaceId(Long id);
 
   List<Place> findAllByClientNumber(String clientNumber);
 }

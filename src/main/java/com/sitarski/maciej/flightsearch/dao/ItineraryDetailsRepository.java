@@ -11,5 +11,7 @@ public interface ItineraryDetailsRepository extends JpaRepository<ItineraryDetai
 
   List<ItineraryDetail> findAllByClientNumber(String clientNumber);
 
+  List<ItineraryDetail> findAllByOutboundLegId(Long legId);
 
+  List<ItineraryDetail> findAllByOutboundLegIdAndInboundLegId(Long ouboundLegId, Long inboundLegId);
 }

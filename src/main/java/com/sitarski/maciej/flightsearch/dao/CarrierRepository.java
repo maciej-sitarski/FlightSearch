@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CarrierRepository extends JpaRepository<Carrier, Long> {
 
-  Optional<Carrier> findByCarrierId(Long id);
+  List<Carrier> findAllByCarrierId(Long id);
 
   List<Carrier> findAllByClientNumber(String clientNumber);
 }

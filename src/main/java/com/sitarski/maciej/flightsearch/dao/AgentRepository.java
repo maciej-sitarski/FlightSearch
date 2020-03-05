@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AgentRepository extends JpaRepository<Agent, Long> {
 
-  Optional<Agent> findByAgentId(Long id);
+  List<Agent> findAllByAgentId(Long id);
 
   List<Agent> findAllByClientNumber(String clientNumber);
 }

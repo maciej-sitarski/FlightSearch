@@ -5,14 +5,19 @@ import com.sitarski.maciej.flightsearch.entity.FilterForm;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class FilterMultipleService {
 
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
   public List<DoubleCardOfFlightDto> filtrResult(List<DoubleCardOfFlightDto> unfiltredList,
       FilterForm filterForm) {
 
+    logger.info("Start filter result");
     List<DoubleCardOfFlightDto> resultList = unfiltredList;
     String outboundTimeFrom = filterForm.getOutboundTimeFrom();
     String duration = filterForm.getDuration();
@@ -39,6 +44,7 @@ public class FilterMultipleService {
 
   public List<DoubleCardOfFlightDto> sortedByOutboundDate(
       List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList) {
+    logger.info("Sorted by outbound date");
     return doubleCardOfFlightDtoList.stream()
         .sorted(Comparator.comparing(doubleCardOfFlightDto -> doubleCardOfFlightDto.getOutboundLeg().getDepartureTime())).collect(
             Collectors.toList());
@@ -46,6 +52,7 @@ public class FilterMultipleService {
 
   private List<DoubleCardOfFlightDto> sortedByPrice(
       List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList) {
+    logger.info("Sorted by price");
     return doubleCardOfFlightDtoList.stream()
         .sorted(Comparator.comparing(DoubleCardOfFlightDto::getPrice)).collect(
             Collectors.toList());
@@ -53,6 +60,7 @@ public class FilterMultipleService {
 
   private List<DoubleCardOfFlightDto> sortedByTime(
       List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList) {
+    logger.info("Sorted by time");
     return doubleCardOfFlightDtoList.stream()
         .sorted(Comparator.comparing(doubleCardOfFlightDto -> doubleCardOfFlightDto.getOutboundLeg().getDuration()+doubleCardOfFlightDto.getInboundLeg().getDuration())).collect(
             Collectors.toList());
@@ -60,6 +68,7 @@ public class FilterMultipleService {
 
   private List<DoubleCardOfFlightDto> filterByNumberOfStops(
       List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList, FilterForm filterForm) {
+    logger.info("Filter by number of stops");
     String direct = filterForm.getDirect();
     String oneStop = filterForm.getOneStop();
     String moreStops = filterForm.getMoreStops();
@@ -97,6 +106,7 @@ public class FilterMultipleService {
 
   private List<DoubleCardOfFlightDto> filterByOutboundTime(
       List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList, FilterForm filterForm) {
+    logger.info("Filter by outbound time");
     String outboundTimeStringFrom = filterForm.getOutboundTimeFrom();
     String outboundTimeStringTo = filterForm.getOutboundTimeTo();
 
@@ -127,6 +137,7 @@ public class FilterMultipleService {
 
   private List<DoubleCardOfFlightDto> filterByDuration(
       List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList, FilterForm filterForm) {
+    logger.info("Filter by duration");
 
     Integer duration = Integer.valueOf(filterForm.getDuration());
     List<DoubleCardOfFlightDto> resultList = doubleCardOfFlightDtoList;

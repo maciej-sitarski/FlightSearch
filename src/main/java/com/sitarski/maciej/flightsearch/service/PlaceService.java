@@ -6,6 +6,8 @@ import com.sitarski.maciej.flightsearch.parser.PlaceParser;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ public class PlaceService {
 
   private final PlaceParser placeParser;
   private final StringFormatService stringFormatService;
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
   @Autowired
   public PlaceService(PlaceParser placeParser,
@@ -24,6 +27,7 @@ public class PlaceService {
 
   public List<String> getSelectedAutocompletePlacesList(String place)
       throws IOException, UnirestException {
+    logger.info("Get selected autocomplete places list");
     PlaceList placeList = placeParser.parsePlaces(place);
     return  placeList.getPlaces()
         .stream()
@@ -33,5 +37,4 @@ public class PlaceService {
             stringFormatService.formatStringPlace(place1.getPlaceId())))
         .collect(Collectors.toList());
   }
-
 }

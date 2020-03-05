@@ -5,14 +5,19 @@ import com.sitarski.maciej.flightsearch.entity.FilterForm;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class FilterOneWayService {
 
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
   public List<SingleCardOfFlightDto> filtrResult(List<SingleCardOfFlightDto> unfiltredList,
       FilterForm filterForm) {
 
+    logger.info("Start filter result");
     List<SingleCardOfFlightDto> resultList = unfiltredList;
     String outboundTimeFrom = filterForm.getOutboundTimeFrom();
     String duration = filterForm.getDuration();
@@ -39,6 +44,7 @@ public class FilterOneWayService {
 
   public List<SingleCardOfFlightDto> sortedByOutboundDate(
       List<SingleCardOfFlightDto> singleCardOfFlightDtoList) {
+    logger.info("Sorted by outbound date");
     return singleCardOfFlightDtoList.stream()
         .sorted(Comparator.comparing(SingleCardOfFlightDto::getDepartureTime)).collect(
             Collectors.toList());
@@ -46,6 +52,7 @@ public class FilterOneWayService {
 
   private List<SingleCardOfFlightDto> sortedByPrice(
       List<SingleCardOfFlightDto> singleCardOfFlightDtoList) {
+    logger.info("Sorted by price");
     return singleCardOfFlightDtoList.stream()
         .sorted(Comparator.comparing(SingleCardOfFlightDto::getPrice)).collect(
             Collectors.toList());
@@ -53,6 +60,7 @@ public class FilterOneWayService {
 
   private List<SingleCardOfFlightDto> sortedByTime(
       List<SingleCardOfFlightDto> singleCardOfFlightDtoList) {
+    logger.info("Sorted by time");
     return singleCardOfFlightDtoList.stream()
         .sorted(Comparator.comparing(SingleCardOfFlightDto::getDuration)).collect(
             Collectors.toList());
@@ -60,6 +68,7 @@ public class FilterOneWayService {
 
   private List<SingleCardOfFlightDto> filterByNumberOfStops(
       List<SingleCardOfFlightDto> singleCardOfFlightDtoList, FilterForm filterForm) {
+    logger.info("Filter by number of stops");
     String direct = filterForm.getDirect();
     String oneStop = filterForm.getOneStop();
     String moreStops = filterForm.getMoreStops();
@@ -90,6 +99,7 @@ public class FilterOneWayService {
 
   private List<SingleCardOfFlightDto> filterByOutboundTime(
       List<SingleCardOfFlightDto> singleCardOfFlightDtoList, FilterForm filterForm) {
+    logger.info("Filter by outbound time");
     String outboundTimeStringFrom = filterForm.getOutboundTimeFrom();
     String outboundTimeStringTo = filterForm.getOutboundTimeTo();
 
@@ -121,6 +131,8 @@ public class FilterOneWayService {
 
   private List<SingleCardOfFlightDto> filterByDuration(
       List<SingleCardOfFlightDto> singleCardOfFlightDtoList, FilterForm filterForm) {
+    logger.info("Filter by duration");
+
 
     Integer duration = Integer.valueOf(filterForm.getDuration());
     List<SingleCardOfFlightDto> resultList = singleCardOfFlightDtoList;

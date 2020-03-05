@@ -32,9 +32,9 @@ public class FlightNumberMapper {
 
     Carrier carrier = Objects.requireNonNull(flightNumberApiOptional
         .map(FlightNumberApi::getCarrierId)
-        .map(carrierRepository::findByCarrierId)
+        .map(carrierRepository::findAllByCarrierId)
         .orElse(null))
-        .orElse(null);
+        .get(0);
 
     flightNumber.setCarrier(carrier);
     flightNumber.setFlightNumber(flightNumberDetail);

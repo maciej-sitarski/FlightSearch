@@ -26,6 +26,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,12 +78,17 @@ public class DataService {
     this.itineraryService = itineraryService;
   }
 
-  public void saveItineraryToDataBase(String clientNumber,  SearchForm searchForm)
+  public Boolean saveItineraryToDataBase(String clientNumber,  SearchForm searchForm)
       throws InterruptedException, UnirestException, IOException {
 
     logger.info("Itineraty save in data base");
 
+    Boolean correctFinding = true;
     ItineraryApi itineraryApi = itineraryService.getItineraryApi(searchForm);
+    if(itineraryApi == null){
+      correctFinding = false;
+      return correctFinding;
+    }
 
     saveDataToDataBase(itineraryApi, clientNumber);
 
@@ -91,8 +97,8 @@ public class DataService {
     itinerary.setClientNumber(Long.valueOf(clientNumber));
     LocalDateTime now = LocalDateTime.now();
     itinerary.setTime(now);
-
     itineraryRepository.save(itinerary);
+    return correctFinding;
   }
 
   private void saveDataToDataBase(ItineraryApi itineraryApi, String clientNumber) {

@@ -38,8 +38,8 @@ public class PriceOptionMapper {
         .map(PriceOptionApi::getAgents)
         .orElse(Collections.emptyList())
         .stream()
-        .map(agentRepository::findByAgentId)
-        .map(e->e.orElse(null))
+        .map(agentRepository::findAllByAgentId)
+        .map(agents1 -> agents1.get(0))
         .collect(Collectors.toList());
     agents.forEach(agent -> agent.getPriceOptions().add(priceOption));
 

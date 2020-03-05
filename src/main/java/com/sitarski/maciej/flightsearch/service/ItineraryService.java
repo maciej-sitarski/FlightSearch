@@ -8,6 +8,7 @@ import com.sitarski.maciej.flightsearch.entity.SearchForm;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.ItineraryApi;
 import com.sitarski.maciej.flightsearch.parser.LiveFlightSearchParser;
 import java.io.IOException;
+import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,7 @@ public class ItineraryService {
     String destinationFormatPlace = stringFormatService.formatStringPlaceToParse(searchForm.getDestinationPlace());
 
     return new ItineraryInquiry.Builder()
+
         .originPlace(originFormatPlace)
         .destinationPlace(destinationFormatPlace)
         .outboundDate(searchForm.getOutboundDate())
@@ -54,13 +56,19 @@ public class ItineraryService {
         .build();
   }
 
-  ItineraryApi getItineraryApi(SearchForm searchForm)
+  public ItineraryApi getItineraryApi(SearchForm searchForm)
       throws InterruptedException, IOException, UnirestException {
+    logger.info("Get itinerary api");
     ItineraryInquiry itineraryInquiry = getItineraryInquiry(searchForm);
     ItineraryApi itineraryApi = null;
+    int counter = 0;
     do {
       if (itineraryApi != null) {
-        Thread.sleep(400);
+        counter = counter + 1;
+        if(counter>3){
+          return null;
+        }
+        Thread.sleep(500);
       }
       itineraryApi = liveFlightSearchParser.parseItinerary(itineraryInquiry);
     } while (itineraryApi.getItineraryDetailApi() == null || itineraryApi.getItineraryDetailApi()

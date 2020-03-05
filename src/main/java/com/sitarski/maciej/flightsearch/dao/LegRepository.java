@@ -14,6 +14,7 @@ public interface LegRepository extends JpaRepository<Leg, Long> {
 
   List<Leg> findAllByItinerary(Itinerary itinerary);
 
-  Optional<Leg> findById(Long id);
+  List<Leg> findAllById(Long id);
+
 
 }

@@ -38,10 +38,20 @@ public class ClientAttributionService {
     } else {
       long randomNumber = 0;
       do {
-        randomNumber = (long) (Math.random() * 20000) + 1;
+        randomNumber = (long) (Math.random() * 50000) + 1;
       } while (itineraryRepository.findByClientNumber(randomNumber).isPresent());
       req.getSession().setAttribute("clientNumber", randomNumber);
       return String.valueOf(randomNumber);
     }
   }
+
+  public String assignFavouriteClientNumber() {
+    logger.info("Client number to show favourite flights assigned");
+    long randomNumber;
+      do {
+        randomNumber = (long) (Math.random() * 50000) + 1;
+      } while (itineraryRepository.findByClientNumber(randomNumber).isPresent());
+      return String.valueOf(randomNumber);
+    }
+
 }

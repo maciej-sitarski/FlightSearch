@@ -322,7 +322,7 @@
                   </h5>
                 </div>
                 <div class="col-md-3 text-center">
-                  <a href="#" class="btn btn-success btn-lg" style="font-size: 25px">
+                  <a href="/flightReturnDetails?outboundLegId=${doubleCardOfFlight.outboundLegId}&inboundLegId=${doubleCardOfFlight.inboundLegId}" class="btn btn-success btn-lg" style="font-size: 25px">
                     Select </a>
                 </div>
               </div>
