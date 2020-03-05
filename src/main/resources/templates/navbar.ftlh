@@ -27,6 +27,10 @@
 
   <script src="/js/home.js"></script>
   <script src="/js/filter.js"></script>
+  <script src="/js/filter.js"></script>
+  <script src="/js/oauth.js"></script>
+  <script src="/js/favouriteFlights.js"></script>
+
 
 </head>
 
@@ -56,7 +60,7 @@
         <a class="nav-link" href="/home"> <strong>Main site </strong></a>
       </li>
       <li class="nav-item mr-5 favourite" style="display: none">
-        <a class="nav-link" href="#"> <strong>Your flight </strong></a>
+        <a class="nav-link" href="/favouriteFlights"> <strong>Your flight </strong></a>
       </li>
 
       <li class="nav-item">
@@ -109,7 +113,7 @@
   </div>
 </form>
 
-<script src="/js/oauth.js"></script>
+
 </body>
 </html>
 

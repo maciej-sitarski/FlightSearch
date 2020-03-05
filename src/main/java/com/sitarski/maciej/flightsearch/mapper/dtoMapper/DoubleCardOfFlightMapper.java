@@ -27,12 +27,16 @@ public class DoubleCardOfFlightMapper {
 
     SingleCardOfFlightDto outboundLeg = singleCardOfFlightMapper.mapLegToDto(itineraryDetail.getOutboundLeg());
     SingleCardOfFlightDto inboundLeg = singleCardOfFlightMapper.mapLegToDto(itineraryDetail.getInboundLeg());
+    Long outboundLegId = itineraryDetail.getOutboundLeg().getId();
+    Long inboundLegId = itineraryDetail.getInboundLeg().getId();
     String clientNumber = itineraryDetail.getClientNumber();
     List<PriceOption> priceOptions = itineraryDetail.getPriceOptions();
     Float price = priceFilter(priceOptions);
 
     doubleCardOfFlightDto.setOutboundLeg(outboundLeg);
     doubleCardOfFlightDto.setInboundLeg(inboundLeg);
+    doubleCardOfFlightDto.setOutboundLegId(outboundLegId);
+    doubleCardOfFlightDto.setInboundLegId(inboundLegId);
     doubleCardOfFlightDto.setPriceOptions(priceOptions);
     doubleCardOfFlightDto.setClientNumber(clientNumber);
     doubleCardOfFlightDto.setPrice(price);

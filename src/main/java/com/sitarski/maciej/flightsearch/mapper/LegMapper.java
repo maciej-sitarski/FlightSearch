@@ -70,15 +70,15 @@ public class LegMapper {
 
     Place destinationStation = Objects.requireNonNull(legApiOptional
         .map(LegApi::getDestinationStation)
-        .map(placeRepository::findByPlaceId)
+        .map(placeRepository::findAllByPlaceId)
         .orElse(null))
-        .orElse(null);
+        .get(0);
 
     Place originStation = Objects.requireNonNull(legApiOptional
         .map(LegApi::getOriginStation)
-        .map(placeRepository::findByPlaceId)
+        .map(placeRepository::findAllByPlaceId)
         .orElse(null))
-        .orElse(null);
+        .get(0);
 
     List<FlightNumber> flightNumbers = legApiOptional
         .map(LegApi::getFlightNumberApis)
@@ -92,8 +92,8 @@ public class LegMapper {
         .map(LegApi::getLegCarriers)
         .orElse(Collections.emptyList())
         .stream()
-        .map(carrierRepository::findByCarrierId)
-        .map(carrier -> carrier.orElse(null))
+        .map(carrierRepository::findAllByCarrierId)
+        .map(carriers1 -> carriers1.get(0))
         .collect(Collectors.toList());
     carriers.forEach(carrier -> carrier.getLegs().add(leg));
 
@@ -101,8 +101,8 @@ public class LegMapper {
         .map(LegApi::getStops)
         .orElse(Collections.emptyList())
         .stream()
-        .map(placeRepository::findByPlaceId)
-        .map(e->e.orElse(null))
+        .map(placeRepository::findAllByPlaceId)
+        .map(places1 -> places1.get(0))
         .collect(Collectors.toList());
     places.forEach(place -> place.getLegs().add(leg));
 

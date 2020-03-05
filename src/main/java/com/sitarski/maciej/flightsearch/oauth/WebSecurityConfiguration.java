@@ -16,6 +16,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         .csrf().disable()
         .antMatcher("/**")
         .authorizeRequests()
+        .antMatchers("/favouriteFlights")
+        .hasRole("USER")
         .antMatchers("/**", "/login**", "/webjars/**")
         .permitAll()
         .anyRequest()

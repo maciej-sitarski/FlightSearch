@@ -10,6 +10,8 @@ public class DoubleCardOfFlightDto {
   private String clientNumber;
   private SingleCardOfFlightDto outboundLeg;
   private SingleCardOfFlightDto inboundLeg;
+  private Long outboundLegId;
+  private Long inboundLegId;
   private List<PriceOption> priceOptions;
   private Float price;
 

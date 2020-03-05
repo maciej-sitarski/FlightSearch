@@ -14,5 +14,4 @@ public class FilterForm {
   private String duration;
   private String sortOrder;
 
-
 }

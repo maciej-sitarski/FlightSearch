@@ -1,7 +1,7 @@
 <#include "navbar.ftlh">
-<div class="container-fluid" >
+<div class="container-fluid"  style="background-color: #D2FEFA">
   <div class="row home" style="font-family: fantasy ">
-    <div class="col-md-7 " style="margin-top: 11%; margin-left: auto; margin-right: auto;">
+    <div class="col-md-7 " style="margin-top: 7%; margin-left: auto; margin-right: auto;">
       <h1 style=" font-size: 90px; color: #0F076A"><strong>
           Where do you want to fly?
         </strong></h1>
@@ -60,7 +60,7 @@
                  style="height: 50px; font-size: 25px; color: black" disabled>
         </div>
         <div class="col-md-2">
-          <label style="color: white; font-size: 20px; ">Class</label>
+          <label style="color: white; font-size: 20px; margin-bottom: 13px ">Class</label>
           <select class="form-control" id="class" name="transportClass"
                   style="font-size: 24px; color: black ">
             <option selected>economy</option>
@@ -73,7 +73,7 @@
         <div class="col-md-1">
           <label style="color: white; font-size: 18px">Adults</label>
           <input type="number" min="1" max="10" value="1" class="form-control" name="numberOfAdults"
-                 style="height: 50px; font-size: 25px; color: black" required>
+                 style="height: 50px; font-size: 25px; color: black;" required>
             <#if errors?has_content && errors.fieldError.field == "numberOfAdults">
               <span style="color: black; background-color: #FF8C00; font-size: 18px; padding: 3px 5px 3px 5px; margin-top: 5px">
                  Please enter a valid number.

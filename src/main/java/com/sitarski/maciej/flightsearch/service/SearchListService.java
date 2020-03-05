@@ -1,6 +1,7 @@
 package com.sitarski.maciej.flightsearch.service;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
+import com.sitarski.maciej.flightsearch.dao.LegRepository;
 import com.sitarski.maciej.flightsearch.dto.DoubleCardOfFlightDto;
 import com.sitarski.maciej.flightsearch.dto.SingleCardOfFlightDto;
 import com.sitarski.maciej.flightsearch.dto.InformationCardDto;
@@ -14,6 +15,9 @@ import com.sitarski.maciej.flightsearch.mapper.dtoMapper.SingleCardOfFlightMappe
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +31,9 @@ public class SearchListService {
   private final DataService dataService;
   private final FilterOneWayService filterOneWayService;
   private final FilterMultipleService filterMultipleService;
+  private final UserService userService;
+  private final LegRepository legRepository;
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
   @Autowired
   public SearchListService(
@@ -35,7 +42,8 @@ public class SearchListService {
       InformationCardMapper informationCardMapper,
       ItineraryService itineraryService,
       DataService dataService, FilterOneWayService filterOneWayService,
-      FilterMultipleService filterMultipleService) {
+      FilterMultipleService filterMultipleService,
+      UserService userService, LegRepository legRepository) {
     this.singleCardOfFlightMapper = singleCardOfFlightMapper;
     this.doubleCardOfFlightMapper = doubleCardOfFlightMapper;
     this.informationCardMapper = informationCardMapper;
@@ -43,9 +51,12 @@ public class SearchListService {
     this.dataService = dataService;
     this.filterOneWayService = filterOneWayService;
     this.filterMultipleService = filterMultipleService;
+    this.userService = userService;
+    this.legRepository = legRepository;
   }
 
   public List<SingleCardOfFlightDto> getListOfSingleCardOfFlight(String clientNumber) {
+    logger.info("Get list of single card of flight");
     Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
     return itinerary.getLeg().stream()
         .filter(leg -> leg.getOutboundLegs().size() !=0)
@@ -53,7 +64,14 @@ public class SearchListService {
         Collectors.toList());
   }
 
+  public SingleCardOfFlightDto getSingleCardOfFlight(String legId) {
+    logger.info("Get single card of flight");
+    Leg leg = legRepository.findByLegId(legId).get(0);
+    return singleCardOfFlightMapper.mapLegToDto(leg);
+  }
+
   public List<DoubleCardOfFlightDto> getListOfDoubleCardOfFlightDto(String clientNumber) {
+    logger.info("Get list of double card of flight dto");
     Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
     return itinerary.getItineraryDetail().stream().map(
         doubleCardOfFlightMapper::mapItineraryDetailToDto).collect(
@@ -61,16 +79,20 @@ public class SearchListService {
   }
 
   public InformationCardDto getInformationCard(String clientNumber){
+    logger.info("Get information card");
     Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
     return informationCardMapper.mapQueryToDto(itinerary.getQuery());
   }
 
-  public void addItineraryToDataBase(String clientNumber, SearchForm searchForm)
+  public Boolean addItineraryToDataBase(String clientNumber, SearchForm searchForm)
       throws InterruptedException, UnirestException, IOException {
-    dataService.saveItineraryToDataBase(clientNumber, searchForm);
+    logger.info("Add itinerary to data base");
+    return dataService.saveItineraryToDataBase(clientNumber, searchForm);
+
   }
 
   public List<SingleCardOfFlightDto> getListOfFilteredSingleCardOfFlight(String clientNumber, FilterForm filterForm) {
+    logger.info("Get list of filtered single card of flight");
     Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
     List<SingleCardOfFlightDto> unfiltredList = itinerary.getLeg().stream()
         .filter(leg -> leg.getOutboundLegs().size() !=0)
@@ -81,10 +103,16 @@ public class SearchListService {
   }
 
   public List<DoubleCardOfFlightDto> getListOfFilteredDoubleCardOfFlight(String clientNumber, FilterForm filterForm) {
+    logger.info("Get list of filtered double card of flight");
     Itinerary itinerary = itineraryService.findItineraryByClientNumber(clientNumber);
     List<DoubleCardOfFlightDto> unfiltredList = itinerary.getItineraryDetail().stream().map(
         doubleCardOfFlightMapper::mapItineraryDetailToDto).collect(
         Collectors.toList());
     return filterMultipleService.filtrResult(unfiltredList,filterForm);
+  }
+
+  public List<String> getListOfUserFavouriteFlights(String userId){
+    logger.info("Get list of user favourite flights");
+    return userService.showListOfUserFavouriteFlights(userId);
   }
 }

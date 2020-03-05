@@ -10,6 +10,7 @@ import lombok.Data;
 public class SingleCardOfFlightDto {
 
   private Long legId;
+  private String legItineraryId;
   private String clientNumber;
   private List<String> carrierImageUrl;
   private List<String> carrierName;

@@ -33,8 +33,21 @@
            style="text-align: center; font-family: sans-serif;">
         <form action="/oneWaySearchFilterList"
               method="get" id="form">
-          <input type="hidden"  name="clientNumber" value=${singleCardOfFlightList[0].clientNumber}>
+          <input type="hidden"  name="clientNumber" value="${singleCardOfFlightList[0].clientNumber}">
+          <#if searchForm?has_content>
+                <input type="hidden"  id="searchForm"
+                 data-originPlace="${searchForm.originPlace}"
+                 data-destinationPlace="${searchForm.destinationPlace}"
+                 data-outboundDate="${searchForm.outboundDate}"
+                 data-transportClass="${searchForm.transportClass}"
+                 data-numberOfInfants="${searchForm.numberOfInfants}"
+                 data-numberOfChildren="${searchForm.numberOfChildren}"
+                 data-numberOfAdults="${searchForm.numberOfAdults}">
+          </#if>
 
+            <#if principal?has_content>
+              <input type="hidden"  id="principal" data-value="${principal.name}">
+            </#if>
           <h1 style="margin-top: 20px; padding-top: 20px">
             <strong>Filters</strong>
           </h1>
@@ -172,6 +185,7 @@
     <div class="col-md-6">
       <div class="row">
           <#list singleCardOfFlightList as singleCardOfFlight>
+
             <div class="col-md-12  resultFlight rounded-lg">
               <div class="row" style="height: 200px;">
                 <div class="col-md-2">
@@ -246,8 +260,15 @@
                           ${singleCardOfFlight.price}
                     </strong> zł
                   </h3>
-                  <a href="/flightDetails?id=${singleCardOfFlight.legId}&cn=${singleCardOfFlight.clientNumber}&origin=${singleCardOfFlight.originPlace}&destination=${singleCardOfFlight.destinationPlace}" class="btn btn-success btn-lg" style="font-size: 25px">
+                  <a href="/flightDetails?id=${singleCardOfFlight.legId}" class="btn btn-success btn-lg" style="font-size: 25px">
                     Select </a>
+                  <#if principal?has_content>
+                          <#if favouriteFlights?seq_contains(singleCardOfFlight.legItineraryId)>
+                              <button onclick="deleteFavouriteFlight('${singleCardOfFlight.legItineraryId}')" id="buttonDeleteFavourite" >Delete from your flights</button>
+                          <#else>
+                              <button onclick="saveFavouriteFlight('${singleCardOfFlight.legItineraryId}')" id="buttonSaveFavourite" >Add to your flights</button>
+                          </#if>
+                  </#if>
                 </div>
               </div>
             </div>

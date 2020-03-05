@@ -10,6 +10,8 @@ import com.sitarski.maciej.flightsearch.mapper.dtoMapper.DetailCardDtoMapper;
 import com.sitarski.maciej.flightsearch.mapper.dtoMapper.InformationDetailCardDtoMapper;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,7 @@ public class DetailsService {
   private final LegRepository legRepository;
   private final DetailCardDtoMapper detailCardDtoMapper;
   private final InformationDetailCardDtoMapper informationDetailCardDtoMapper;
+  private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
   @Autowired
@@ -35,14 +38,24 @@ public class DetailsService {
   }
 
   public List<DetailCardDto> getListOfDetailCardDto(Long legId){
-    ItineraryDetail itineraryDetail = itineraryDetailsRepository.findByOutboundLegId(legId).orElse(null);
+    logger.info("Get list of detail card dto");
+    ItineraryDetail itineraryDetail = itineraryDetailsRepository.findAllByOutboundLegId(legId).get(0);
+    return itineraryDetail.getPriceOptions().stream().map(
+        detailCardDtoMapper::mapPricingOptionToDto).collect(
+        Collectors.toList());
+  }
+
+  public List<DetailCardDto> getListOfReturnFlightDetailCardDto(Long outboundlegId, Long inboundLegId){
+    logger.info("Get list of return flight detail card dto");
+    ItineraryDetail itineraryDetail = itineraryDetailsRepository.findAllByOutboundLegIdAndInboundLegId(outboundlegId, inboundLegId).get(0);
     return itineraryDetail.getPriceOptions().stream().map(
         detailCardDtoMapper::mapPricingOptionToDto).collect(
         Collectors.toList());
   }
 
   public InformationDetailCardDto getInformationDetailCardDto(Long legId){
-    Leg leg = legRepository.findById(legId).orElse(null);
+    logger.info("Get information detail card dto");
+    Leg leg = legRepository.findAllById(legId).get(0);
     return informationDetailCardDtoMapper.getInformationDetailCardDto(leg);
   }
 }
