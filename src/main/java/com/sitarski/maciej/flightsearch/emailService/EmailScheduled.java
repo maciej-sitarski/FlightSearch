@@ -57,7 +57,7 @@ public class EmailScheduled {
           })
           .collect(Collectors.toList());
       String content = prepareContent(singleCardOfFlightDtoList);
-      mailService.sendEmail(user.getEmail(), content);
+      mailService.sendHtmlEmail(user.getEmail(), content);
       try {
         Thread.sleep(2000);
       } catch (InterruptedException e) {
@@ -70,18 +70,18 @@ public class EmailScheduled {
     logger.info("Prepare content");
     StringBuilder content = new StringBuilder();
     content.append(
-        "Dear user, \nHere are your selected flights from flight search and their current price. Go to our site and manage your favourite flights. \n\n");
+        "<p>Dear user, <p> <p>Here are your selected flights from flight search and their current price. Go to our site and manage your favourite flights. <p><br />");
     singleCardOfFlightDtoList.forEach(singleCardOfFlightDto ->
         content.append(String
             .format(
-                "From: %s,   To: %s,   Outbound date: %s,   Inbound time: %s,   Best price: %s zl \nLink to best price: %s \n\n",
+                "<p>From: %s,&nbsp;To: %s,&nbsp;Outbound date: %s,&nbsp;Inbound time: %s,&nbsp;Best price: %s zl <a href='%s'>link</a></p> ",
                 singleCardOfFlightDto.getOriginPlace(),
                 singleCardOfFlightDto.getDestinationPlace(),
                 singleCardOfFlightDto.getDepartureTime().toString().replaceAll("T", " "),
                 singleCardOfFlightDto.getArrivalTime().toString().replaceAll("T", " "),
                 singleCardOfFlightDto.getPrice().toString(),
                 singleCardOfFlightDto.getUrl())));
-    content.append("Regards, \nFlight Search MS");
+    content.append("<br /><p>Regards, <p> <p>Flight Search MS<p>");
     return content.toString();
   }
 }

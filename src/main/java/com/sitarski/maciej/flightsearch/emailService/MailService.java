@@ -17,22 +17,13 @@ public class MailService {
     this.javaMailSender = javaMailSender;
   }
 
-  public void sendEmail(String to, String content) {
-    SimpleMailMessage msg = new SimpleMailMessage();
-    msg.setTo(to);
-    msg.setFrom("Flight search MS <flightsearchms@gmail.com>");
-    msg.setSubject("Flight price update");
-    msg.setText(content);
-    javaMailSender.send(msg);
-  }
-
-  public void sendHtmlEmail(String to, String subject, String content) {
+  public void sendHtmlEmail(String to, String content) {
     MimeMessage mail = javaMailSender.createMimeMessage();
     try {
       MimeMessageHelper helper = new MimeMessageHelper(mail, true);
       helper.setTo(to);
-      helper.setFrom("Blog example <from@email.com>");
-      helper.setSubject(subject);
+      helper.setFrom("Flight search MS <flightsearchms@gmail.com>");
+      helper.setSubject("Flight price update");
       helper.setText(content, true);
     } catch (MessagingException e) {
       e.printStackTrace();
