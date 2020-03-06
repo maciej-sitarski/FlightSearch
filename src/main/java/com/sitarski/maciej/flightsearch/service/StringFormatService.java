@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
 @Service
-@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
+//@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class StringFormatService {
 
   public String formatStringPlaceToParse(String place){
@@ -28,5 +28,11 @@ public class StringFormatService {
 
   public String formatStringPlace(String place){
     return StringUtils.substringBefore(place, "-");
+  }
+
+  public LocalDateTime formatStringDateToLocalDate(String stringDate)  {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    String stringFormatDate = stringDate.replaceAll("T", " ");
+    return LocalDateTime.parse(stringFormatDate, formatter);
   }
 }

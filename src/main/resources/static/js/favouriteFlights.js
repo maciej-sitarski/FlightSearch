@@ -1,4 +1,4 @@
-function saveFavouriteFlight(legId) {
+function saveFavouriteFlight(legId, outboundDate) {
   var userFavouriteSearchForm = {
     userId: document.getElementById("principal").getAttribute('data-value'),
     legId: legId,
@@ -7,8 +7,7 @@ function saveFavouriteFlight(legId) {
           'data-originPlace'),
       destinationPlace: document.getElementById("searchForm").getAttribute(
           'data-destinationPlace'),
-      outboundDate: document.getElementById("searchForm").getAttribute(
-          'data-outboundDate'),
+      outboundDate: outboundDate,
       transportClass: document.getElementById("searchForm").getAttribute(
           'data-transportClass'),
       numberOfAdults: document.getElementById("searchForm").getAttribute(

@@ -51,7 +51,9 @@ public class SingleCardOfFlightMapper {
           .get(0)
           .getPriceOptions();
       Float price = priceFilter(priceOptions);
+      String url = priceUrlFilter(priceOptions);
       singleCardOfFlightDto.setPrice(price);
+      singleCardOfFlightDto.setUrl(url);
     }
 
     singleCardOfFlightDto.setLegId(legId);
@@ -74,6 +76,11 @@ public class SingleCardOfFlightMapper {
   private Float priceFilter(List<PriceOption> priceOptions) {
     return priceOptions.stream().sorted(Comparator.comparing(PriceOption::getPrice))
         .collect(Collectors.toList()).get(0).getPrice();
+  }
+
+  private String priceUrlFilter(List<PriceOption> priceOptions) {
+    return priceOptions.stream().sorted(Comparator.comparing(PriceOption::getPrice))
+        .collect(Collectors.toList()).get(0).getLinkUrl();
   }
 
 }

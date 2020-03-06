@@ -23,4 +23,5 @@ public class SingleCardOfFlightDto {
   private Long duration;
   private List<Place> stops;
   private Float price;
+  private String url;
 }
