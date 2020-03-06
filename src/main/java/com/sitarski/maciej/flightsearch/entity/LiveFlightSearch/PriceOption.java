@@ -31,7 +31,7 @@ public class PriceOption {
   @Column(name = "linkUrl", length = 2000)
   private String linkUrl;
 
-  @ManyToMany(mappedBy = "priceOptions", cascade = CascadeType.ALL)
+  @ManyToMany(mappedBy = "priceOptions", cascade = CascadeType.MERGE)
   List<Agent> agents;
 
   @ManyToOne

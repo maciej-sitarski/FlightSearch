@@ -65,7 +65,7 @@ public class ItineraryService {
     do {
       if (itineraryApi != null) {
         counter = counter + 1;
-        if(counter>3){
+        if(counter>10){
           return null;
         }
         Thread.sleep(500);

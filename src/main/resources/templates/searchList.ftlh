@@ -38,7 +38,6 @@
                 <input type="hidden"  id="searchForm"
                  data-originPlace="${searchForm.originPlace}"
                  data-destinationPlace="${searchForm.destinationPlace}"
-                 data-outboundDate="${searchForm.outboundDate}"
                  data-transportClass="${searchForm.transportClass}"
                  data-numberOfInfants="${searchForm.numberOfInfants}"
                  data-numberOfChildren="${searchForm.numberOfChildren}"
@@ -100,13 +99,13 @@
                       <input type="time" required
                              id="outboundCheckbox"
                              name="outboundTimeFrom" step="900"
-                             style="font-size: 22px; width: 100px; height: 40px; "
+                             style="font-size: 22px; width: 120px; height: 40px; "
                              value=${filterForm.outboundTimeFrom}></label>
                     <label style="font-size: 20px;">To:
                       <input type="time" required
                              id="outboundCheckbox"
                              name="outboundTimeTo" step="900"
-                             style="font-size: 22px; width: 100px; height: 40px; "
+                             style="font-size: 22px; width: 120px; height: 40px; "
                              value=${filterForm.outboundTimeTo}></label>
                   </label>
                 </label>
@@ -266,7 +265,7 @@
                           <#if favouriteFlights?seq_contains(singleCardOfFlight.legItineraryId)>
                               <button onclick="deleteFavouriteFlight('${singleCardOfFlight.legItineraryId}')" id="buttonDeleteFavourite" >Delete from your flights</button>
                           <#else>
-                              <button onclick="saveFavouriteFlight('${singleCardOfFlight.legItineraryId}')" id="buttonSaveFavourite" >Add to your flights</button>
+                              <button onclick="saveFavouriteFlight('${singleCardOfFlight.legItineraryId}', '${singleCardOfFlight.departureTime}')" id="buttonSaveFavourite" >Add to your flights</button>
                           </#if>
                   </#if>
                 </div>

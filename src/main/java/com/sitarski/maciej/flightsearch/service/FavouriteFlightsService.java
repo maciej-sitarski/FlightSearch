@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,9 +52,10 @@ public class FavouriteFlightsService {
   public SearchForm getSearchForm(UserFavouriteFlight userFavouriteFlight) {
     logger.info("Get search form");
     SearchForm searchForm = new SearchForm();
+    String outboundDateFormat = userFavouriteFlight.getOutboundDate().substring(0,10);
     searchForm.setOriginPlace(userFavouriteFlight.getOriginPlace());
     searchForm.setDestinationPlace(userFavouriteFlight.getDestinationPlace());
-    searchForm.setOutboundDate(userFavouriteFlight.getOutboundDate());
+    searchForm.setOutboundDate(outboundDateFormat);
     searchForm.setTransportClass(userFavouriteFlight.getTransportClass());
     searchForm.setNumberOfAdults(userFavouriteFlight.getNumberOfAdults());
     searchForm.setNumberOfChildren(userFavouriteFlight.getNumberOfChildren());
@@ -68,12 +68,12 @@ public class FavouriteFlightsService {
     LocalDateTime now = LocalDateTime.now();
     List<UserFavouriteFlight> listFavouriteUsersFlightsToShow = userFavouriteFlightList.stream().filter(
         userFavouriteFlight -> stringFormatService
-            .formatStringDateToDate(userFavouriteFlight.getOutboundDate()).isAfter(now)).collect(
+            .formatStringDateToLocalDate(userFavouriteFlight.getOutboundDate()).isAfter(now)).collect(
         Collectors.toList());
 
     List<UserFavouriteFlight> listFavouriteUsersFlightsToDelete = userFavouriteFlightList.stream().filter(
         userFavouriteFlight -> stringFormatService
-            .formatStringDateToDate(userFavouriteFlight.getOutboundDate()).isBefore(now)).collect(
+            .formatStringDateToLocalDate(userFavouriteFlight.getOutboundDate()).isBefore(now)).collect(
         Collectors.toList());
     listFavouriteUsersFlightsToDelete.forEach(userFavouriteFlightRepository::delete);
     return listFavouriteUsersFlightsToShow;

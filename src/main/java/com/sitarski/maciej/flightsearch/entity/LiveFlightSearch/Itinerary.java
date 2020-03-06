@@ -36,10 +36,10 @@ public class Itinerary {
   @JoinColumn(name = "query_id", unique = true)
   private Query query;
 
-  @OneToMany(mappedBy = "itinerary", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "itinerary", cascade = CascadeType.MERGE)
   private List<ItineraryDetail> itineraryDetail = new ArrayList<>();
 
-  @OneToMany(mappedBy = "itinerary", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "itinerary", cascade = CascadeType.MERGE)
   private List<Leg> leg = new ArrayList<>();
 
   @OneToMany(mappedBy = "itinerary", cascade = CascadeType.ALL)

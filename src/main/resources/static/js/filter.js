@@ -32,7 +32,7 @@ function dynInputOutbound(cbox) {
     input1.step = "900";
     input1.style.marginRight = "15px";
     input1.style.marginLeft = "5px";
-    input1.style.width = "32%";
+    input1.style.width = "34%";
     input1.style.height = "40px";
     input1.style.fontSize = "22px";
     input1.required;
@@ -43,7 +43,7 @@ function dynInputOutbound(cbox) {
     var input2 = document.createElement("input");
     input2.type = "time";
     input2.style.marginLeft = "5px";
-    input2.style.width = "32%";
+    input2.style.width = "34%";
     input2.name = "outboundTimeTo";
     input2.step = "900";
     input2.style.height = "40px";
