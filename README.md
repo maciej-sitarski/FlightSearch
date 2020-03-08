@@ -15,61 +15,79 @@ Logged users can add single flights to their favourite flights, which causes tha
 ## Features
 
 ### Home search page
-![Guest view](./docs/guest_main.png) 
-> An unregistered user has the ability to check available cars, departments and have the option of register and sign in. 
+![Guest view](./docs/homeSite.png) 
+>  Home page where the user completes the form with the details of his journey. 
+>Users should provide origin place, destination place, outbound date, class of transport and the number of adults, children and babies. 
+>Optionally, the user can indicate that he wants to search for a return flight and provide a return date.
 
-![Guest view](./docs/guest_cars.png) 
->User has the ability to view available cars by segments.
+![Guest view](./docs/autocomplete.png) 
+>When the user types origin place and destination place, uses live search, which starts after entering at least two characters in a given text field 
 
-![Guest view](./docs/guest_departments.png) 
->User has the ability to view available departments.
+### List of itineraries
+> After complete the form, when user click search flight, he receives a list of all available connections. 
+>The list contains specific flights, where the user sees the basic details of the flight, including the name of the carrier, 
+>departure and arrival times, length of the flight, information whether the flight has a change and the best price available to buy the ticket.
 
-### Users view
->The logged in user, in addition to functionalities regarding guests, also have additional features. One of them is the ability to reservation cars.
-![Users view](./docs/reservation_1.png) 
-> The first step of the booking is to choose the place, date and time of booking. All data is checked and only after checking the correctness of completing the form can you proceed to the next step
+![Users view](./docs/oneWayListOfFlightsView.png) 
 
-![Users view](./docs/reservation_2.png) 
-> The second step of booking is to choose a car from the list of available cars in a given time and in a given department.
+![Users view](./docs/multipleFlightsListView.png) 
 
-![Users view](./docs/reservation_3.png) 
-> The third step of booking is the optional selection of additional equipment and the number of, for example child seats.
+### Sorting and filtering
 
-![Users view](./docs/reservation_4.png) 
-> The last step of the reservation is its summary with the simultaneous calculation of the total price of the reservation takes into account all the elements of the reservation that the user has entered
+>Moreover, users can sort and filter search results. You can filter the results for the number of transfers, departure time and flight duration. 
+>By default, search results are sorted by departure time. 
+>The user can change the sorting type to sort by trip length and sort by the cheapest prices.
 
-![Users view](./docs/user_reservationsList.png) 
->  When the user has made a reservation, he can check the list of reservations, see the details and delete the reservation.
+![Users view](./docs/filerWorking2.png) 
 
-### Worker view
-![Worker view](./docs/worker.png)
-> Employees have access to orders assigned to them.
+![Users view](./docs/filterWorking.png) 
 
->### Coordinator view
- ![Coordinator view](./docs/coordinator.png)
- > Coordinators have the option of assigning orders to employees in a given branch.
+![Users view](./docs/noResultView.png) 
 
->>### Admin view
-  ![Admin view](./docs/admin_users.png)
-  > Administrators have access to the list of all users and the ability to grant employee rights to users.
+### Details view
 
->![Admin view](./docs/admin_privilages.png)
-   > In addition, they have the option of changing the department and changing employees positions.
->
->### User authentication 
- ![Guest view](./docs/guest_registration.png) 
- ![Guest view](./docs/guest_signIn.png) 
- > Access to individual functionalities depends on the user's authorization, the application has three levels of authorization: 
- guest, user, worker, coordinator and administrator. All data is validated and checked. 
- By logging in, the user is checked the authorization level and access to individual functionalities.
+>Users can also check a details of flights when he click on "Select" button. 
+in this view, in addition to all flight information, the user gets a list of agents and the prices they offer. 
+>After clicking on a specific agent, the user is automatically redirected to the agent's website, where he can buy a ticket for a particular flight.
+
+![Users view](./docs/detailsView.png) 
+
+### Oauth2
+
+> The user can log in to the application via oatuh facebook or google.
+> After logging in, the user gets the opportunity to use the functionality to manage favorite flights. 
+
+![Users view](./docs/modalView.png) 
+
+### List of itineraries after login
+
+>  After logging in, when the user searches for a list of available flights on a given route, he is able to add and remove them from his favorite flights.
+
+![Users view](./docs/listOfFlightsAfterLogIn.png) 
+
+![Users view](./docs/viewAfterAddingToFavourite.png) 
+
+### Favourite flights 
+
+>  After adding specific flights to your favorite flights, the user has the option of entering the view with a list of flight data along with all flight information
+
+![Users view](./docs/favouriteFlightsView.png) 
+
+### Sending email service 
+
+>  When the user already has a list of his or her favorite flights, the application automatically sends the user an email once a day with the current cheapest ticket purchase option. 
+In addition, the user is shown a direct link to the agent, where he can buy the ticket. 
+
+![Users view](./docs/emailView.png) 
+ 
 
 ## Technologies
 * Java SE 12
-* Java EE 8
+* Spring boot
 * Hibernate ORM 5.4.2
 * REST API
 * Docker
-* Wildfly 17.0.1
+* Tomcat
 * Maven 3.3.9
 * Freemarker 2.3.29
 * Bootstrap 4.3.1
@@ -77,7 +95,7 @@ Logged users can add single flights to their favourite flights, which causes tha
 * jQuery, AJAX
 
 ## Status
-Project is: _finished_.
+Project is: _in the process of making_.
 
 ## Inspiration
 Own idea.

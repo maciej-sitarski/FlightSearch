@@ -45,24 +45,32 @@ public class EmailScheduled {
     List<UserFavouriteFlight> userFavouriteFlightListAfterCheckingStatus = favouriteFlightsService
         .getListOfFavouriteFlightsAfterCheckingStatus(userFavouriteFlightList);
     if (userFavouriteFlightListAfterCheckingStatus.size() != 0) {
-      List<SingleCardOfFlightDto> singleCardOfFlightDtoList = userFavouriteFlightListAfterCheckingStatus
-          .stream()
-          .map(userFavouriteFlight -> {
-            try {
-              return favouriteFlightsService.getSingleCardOfFavouriteFlightDto(userFavouriteFlight);
-            } catch (InterruptedException | UnirestException | IOException e) {
-              e.printStackTrace();
-              return null;
-            }
-          })
-          .collect(Collectors.toList());
+      List<SingleCardOfFlightDto> singleCardOfFlightDtoList = getFavouriteSingleCardOfFlightDto(userFavouriteFlightListAfterCheckingStatus);
       String content = prepareContent(singleCardOfFlightDtoList);
       mailService.sendHtmlEmail(user.getEmail(), content);
-      try {
-        Thread.sleep(2000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
+      getBreakTimeAfterUser();
+    }
+  }
+
+  private List<SingleCardOfFlightDto> getFavouriteSingleCardOfFlightDto (List<UserFavouriteFlight> userFavouriteFlightListAfterCheckingStatus){
+    return userFavouriteFlightListAfterCheckingStatus
+        .stream()
+        .map(userFavouriteFlight -> {
+          try {
+            return favouriteFlightsService.getSingleCardOfFavouriteFlightDto(userFavouriteFlight);
+          } catch (InterruptedException | UnirestException | IOException e) {
+            e.printStackTrace();
+            return null;
+          }
+        })
+        .collect(Collectors.toList());
+  }
+
+  private void getBreakTimeAfterUser(){
+    try {
+      Thread.sleep(2000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
     }
   }
 
@@ -72,16 +80,21 @@ public class EmailScheduled {
     content.append(
         "<p>Dear user, <p> <p>Here are your selected flights from flight search and their current price. Go to our site and manage your favourite flights. <p><br />");
     singleCardOfFlightDtoList.forEach(singleCardOfFlightDto ->
-        content.append(String
-            .format(
-                "<p>From: %s,&nbsp;To: %s,&nbsp;Outbound date: %s,&nbsp;Inbound time: %s,&nbsp;Best price: %s zl <a href='%s'>link</a></p> ",
-                singleCardOfFlightDto.getOriginPlace(),
-                singleCardOfFlightDto.getDestinationPlace(),
-                singleCardOfFlightDto.getDepartureTime().toString().replaceAll("T", " "),
-                singleCardOfFlightDto.getArrivalTime().toString().replaceAll("T", " "),
-                singleCardOfFlightDto.getPrice().toString(),
-                singleCardOfFlightDto.getUrl())));
+        content.append(preparePersonalContent(singleCardOfFlightDto)));
     content.append("<br /><p>Regards, <p> <p>Flight Search MS<p>");
     return content.toString();
+  }
+
+  private String preparePersonalContent(SingleCardOfFlightDto singleCardOfFlightDto){
+   return String
+        .format(
+            "<p>From: %s,&nbsp;To: %s,&nbsp;Outbound date: %s,&nbsp;Inbound time: %s,&nbsp;Best price: %s zl <a href='%s'>link</a></p> ",
+            singleCardOfFlightDto.getOriginPlace(),
+            singleCardOfFlightDto.getDestinationPlace(),
+            singleCardOfFlightDto.getDepartureTime().toString().replaceAll("T", " "),
+            singleCardOfFlightDto.getArrivalTime().toString().replaceAll("T", " "),
+            singleCardOfFlightDto.getPrice().toString(),
+            singleCardOfFlightDto.getUrl());
+
   }
 }
