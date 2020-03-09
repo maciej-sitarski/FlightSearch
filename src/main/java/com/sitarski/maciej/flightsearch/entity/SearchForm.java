@@ -1,10 +1,14 @@
 package com.sitarski.maciej.flightsearch.entity;
 
+import java.time.LocalDate;
+import java.util.Date;
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 public class SearchForm {
@@ -15,27 +19,28 @@ public class SearchForm {
   @NotBlank(message="Entering the destination place name is mandatory.")
   private String destinationPlace;
 
-  @NotBlank(message="Entering the outbound date is mandatory.")
-  private String outboundDate;
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  @FutureOrPresent
+  private LocalDate outboundDate;
 
-  private String inboundDate;
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  @FutureOrPresent
+  private LocalDate inboundDate;
 
   @NotBlank(message="Entering the transport class is mandatory.")
   private String transportClass;
 
-  @NotBlank(message="Entering the number of adults is mandatory.")
-  @Min(1)
-  @Max(9)
-  private String numberOfAdults;
+  @Min(value = 1, message = "Number of adults should not be less than 1")
+  @Max(value = 9, message = "Number of adults should not be more than 9")
+  private Integer numberOfAdults;
 
-  @NotBlank(message="Entering the number of children is mandatory.")
-  @Min(0)
-  @Max(9)
-  private String numberOfChildren;
+  @Min(value = 0, message = "Number of children should not be less than 0")
+  @Max(value = 9, message = "Number of children should not be more than 9")
+  private Integer numberOfChildren;
 
-  @NotBlank(message="Entering the number of infants is mandatory.")
-  @Min(0)
-  @Max(9)
-  private String numberOfInfants;
+
+  @Min(value = 0, message = "Number of infants should not be less than 0")
+  @Max(value = 9, message = "Number of infants should not be more than 9")
+  private Integer numberOfInfants;
 
 }

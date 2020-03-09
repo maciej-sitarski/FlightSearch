@@ -1,6 +1,9 @@
 package com.sitarski.maciej.flightsearch.entity.userManage;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,22 +34,22 @@ public class UserFavouriteFlight {
   private String destinationPlace;
 
   @Column(name = "outboundDate")
-  private String outboundDate;
+  private LocalDateTime outboundDate;
 
   @Column(name = "inboundDate")
-  private String inboundDate;
+  private LocalDate inboundDate;
 
   @Column(name = "transportClass")
   private String transportClass;
 
   @Column(name = "numberOfAdults")
-  private String numberOfAdults;
+  private Integer numberOfAdults;
 
   @Column(name = "numberOfChildren")
-  private String numberOfChildren;
+  private Integer numberOfChildren;
 
   @Column(name = "numberOfInfants")
-  private String numberOfInfants;
+  private Integer numberOfInfants;
 
   @ManyToMany(mappedBy = "userFavouriteFlights")
   private List<User> users = new ArrayList<>();

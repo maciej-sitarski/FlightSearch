@@ -8,8 +8,8 @@
       </h1>
       <h3 style="margin-top: 15px">
           ${singleCardOfFlightList[0].originPlace} - ${singleCardOfFlightList[0].destinationPlace}
-        &nbsp;&nbsp;&nbsp;
-        Date: ${informationCard.outboundDate}
+        &nbsp;&nbsp;&nbsp; &nbsp;
+        <a href="/searchListChangeDate?day=previous" class="btn" id="buttonDay" style="width: 5%"> &laquo; </a>Date: ${informationCard.outboundDate}<a href="/searchListChangeDate?day=next" class="btn" id="buttonDay" style=" width: 5%"> &raquo;</a>
       </h3>
       <h3 style="margin-top: 15px">
         Class: ${informationCard.cabinClass}
@@ -23,7 +23,6 @@
           </#if>
       </h3>
       <a href="/home" class="btn" id="button" style="margin-top: 15px; width: 20%"> Return </a>
-    </div>
   </div>
 
 

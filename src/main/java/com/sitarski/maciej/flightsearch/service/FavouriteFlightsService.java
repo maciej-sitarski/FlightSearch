@@ -6,6 +6,7 @@ import com.sitarski.maciej.flightsearch.dto.SingleCardOfFlightDto;
 import com.sitarski.maciej.flightsearch.entity.SearchForm;
 import com.sitarski.maciej.flightsearch.entity.userManage.UserFavouriteFlight;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -52,10 +53,9 @@ public class FavouriteFlightsService {
   public SearchForm getSearchForm(UserFavouriteFlight userFavouriteFlight) {
     logger.info("Get search form");
     SearchForm searchForm = new SearchForm();
-    String outboundDateFormat = userFavouriteFlight.getOutboundDate().substring(0,10);
     searchForm.setOriginPlace(userFavouriteFlight.getOriginPlace());
     searchForm.setDestinationPlace(userFavouriteFlight.getDestinationPlace());
-    searchForm.setOutboundDate(outboundDateFormat);
+    searchForm.setOutboundDate(userFavouriteFlight.getOutboundDate().toLocalDate());
     searchForm.setTransportClass(userFavouriteFlight.getTransportClass());
     searchForm.setNumberOfAdults(userFavouriteFlight.getNumberOfAdults());
     searchForm.setNumberOfChildren(userFavouriteFlight.getNumberOfChildren());
@@ -67,13 +67,11 @@ public class FavouriteFlightsService {
       List<UserFavouriteFlight> userFavouriteFlightList) {
     LocalDateTime now = LocalDateTime.now();
     List<UserFavouriteFlight> listFavouriteUsersFlightsToShow = userFavouriteFlightList.stream().filter(
-        userFavouriteFlight -> stringFormatService
-            .formatStringDateToLocalDate(userFavouriteFlight.getOutboundDate()).isAfter(now)).collect(
+        userFavouriteFlight -> userFavouriteFlight.getOutboundDate().isAfter(now)).collect(
         Collectors.toList());
 
     List<UserFavouriteFlight> listFavouriteUsersFlightsToDelete = userFavouriteFlightList.stream().filter(
-        userFavouriteFlight -> stringFormatService
-            .formatStringDateToLocalDate(userFavouriteFlight.getOutboundDate()).isBefore(now)).collect(
+        userFavouriteFlight -> userFavouriteFlight.getOutboundDate().isBefore(now)).collect(
         Collectors.toList());
     listFavouriteUsersFlightsToDelete.forEach(userFavouriteFlightRepository::delete);
     return listFavouriteUsersFlightsToShow;

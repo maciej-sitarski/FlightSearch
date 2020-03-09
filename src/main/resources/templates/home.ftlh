@@ -73,7 +73,7 @@
         <div class="col-md-1">
           <label style="color: white; font-size: 18px">Adults</label>
           <input type="number" min="1" max="10" value="1" class="form-control" name="numberOfAdults"
-                 style="height: 50px; font-size: 25px; color: black;" required>
+                 style="height: 50px; font-size: 25px; color: black;" >
             <#if errors?has_content && errors.fieldError.field == "numberOfAdults">
               <span style="color: black; background-color: #FF8C00; font-size: 18px; padding: 3px 5px 3px 5px; margin-top: 5px">
                  Please enter a valid number.

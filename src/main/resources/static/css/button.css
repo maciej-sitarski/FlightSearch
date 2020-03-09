@@ -18,6 +18,19 @@
   transition: all 0.4s ease 0s;
 }
 
+#buttonDay {
+  color: #fff !important;
+  padding: 0;
+  font-size: 40px;
+}
+
+#buttonDay:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.4s ease 0s;
+}
+
 #buttonSaveFavourite {
   color: #fff !important;
   text-transform: uppercase;

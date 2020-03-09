@@ -16,16 +16,16 @@ class LiveFlightSearchParserTest {
 
     //given
     LocalDate today = LocalDate.now();
-    String tomorrow = today.plusDays(1).toString();
+    LocalDate tomorrow = today.plusDays(1);
     ItineraryInquiry itineraryInquiry = new ItineraryInquiry.Builder()
         .originPlace("GDN")
         .destinationPlace("WAW")
         .outboundDate(tomorrow)
         .inboundDate(null)
         .transportClass("economy")
-        .numOfAdults("1")
-        .numOfChildren("0")
-        .numOfInfants("0")
+        .numOfAdults(1)
+        .numOfChildren(0)
+        .numOfInfants(0)
         .build();
     StringFormatService stringFormatService = new StringFormatService();
     LiveFlightSearchParser liveFlightSearchParser = new LiveFlightSearchParser(stringFormatService);

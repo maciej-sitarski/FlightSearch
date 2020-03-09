@@ -1,26 +1,29 @@
 package com.sitarski.maciej.flightsearch.entity;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class ItineraryInquiry {
 
   private String originPlace;
   private String destinationPlace;
-  private String outboundDate;
-  private String inboundDate;
+  private LocalDate outboundDate;
+  private LocalDate inboundDate;
   private String transportClass;
-  private String numOfAdults;
-  private String numOfChildren;
-  private String numOfInfants;
+  private Integer numOfAdults;
+  private Integer numOfChildren;
+  private Integer numOfInfants;
 
   public static final class Builder {
 
     private String originPlace;
     private String destinationPlace;
-    private String outboundDate;
-    private String inboundDate;
+    private LocalDate outboundDate;
+    private LocalDate inboundDate;
     private String transportClass;
-    private String numOfAdults;
-    private String numOfChildren;
-    private String numOfInfants;
+    private Integer numOfAdults;
+    private Integer numOfChildren;
+    private Integer numOfInfants;
 
     public Builder originPlace(String originPlace) {
       this.originPlace = originPlace;
@@ -32,12 +35,12 @@ public class ItineraryInquiry {
       return this;
     }
 
-    public Builder outboundDate(String outboundDate) {
+    public Builder outboundDate(LocalDate outboundDate) {
       this.outboundDate = outboundDate;
       return this;
     }
 
-    public Builder inboundDate(String inboundDate) {
+    public Builder inboundDate(LocalDate inboundDate) {
       this.inboundDate = inboundDate;
       return this;
     }
@@ -47,17 +50,17 @@ public class ItineraryInquiry {
       return this;
     }
 
-    public Builder numOfAdults(String numOfAdults) {
+    public Builder numOfAdults(Integer numOfAdults) {
       this.numOfAdults = numOfAdults;
       return this;
     }
 
-    public Builder numOfChildren(String numOfChildren) {
+    public Builder numOfChildren(Integer numOfChildren) {
       this.numOfChildren = numOfChildren;
       return this;
     }
 
-    public Builder numOfInfants(String numOfInfants) {
+    public Builder numOfInfants(Integer numOfInfants) {
       this.numOfInfants = numOfInfants;
       return this;
     }
