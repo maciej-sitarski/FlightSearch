@@ -21,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -53,6 +54,7 @@ public class SearchListController {
       req.getSession().setAttribute("searchForm", searchForm);
       Map<String, Object> params = new HashMap<>();
       String clientNumber = clientAttributionService.assignClientNumber(req);
+
       if(searchListService.addItineraryToDataBase(clientNumber, searchForm)){
         filterForm.setDirect("on");
         filterForm.setOneStop("on");
@@ -157,6 +159,60 @@ public class SearchListController {
   public ModelAndView getNoFlightsSite(FilterForm filterForm) {
     Map<String, Object> params = new HashMap<>();
     return new ModelAndView("noFlightsToShow", params);
+  }
+
+  @GetMapping("/searchListChangeDate")
+  public ModelAndView getSearchListOnOtherDay(HttpServletRequest req, FilterForm filterForm, Principal principal)
+      throws IOException, UnirestException, InterruptedException {
+    SearchForm searchForm =(SearchForm) req.getSession().getAttribute("searchForm");
+    String day = (String) req.getParameter("day");
+    if(day.equals("previous")){
+      searchForm.setOutboundDate(searchForm.getOutboundDate().minusDays(1));
+    }else{
+      searchForm.setOutboundDate(searchForm.getOutboundDate().plusDays(1));
+    }
+
+    req.getSession().setAttribute("searchForm", searchForm);
+    Map<String, Object> params = new HashMap<>();
+    String clientNumber = clientAttributionService.assignClientNumber(req);
+
+    if(searchListService.addItineraryToDataBase(clientNumber, searchForm)){
+      filterForm.setDirect("on");
+      filterForm.setOneStop("on");
+      filterForm.setMoreStops("on");
+
+      if (principal != null) {
+        List<String> favouriteLegs = searchListService
+            .getListOfUserFavouriteFlights(principal.getName());
+        params.put("favouriteFlights", favouriteLegs);
+        params.put("principal", principal);
+      }
+
+      if (searchForm.getInboundDate() != null) {
+        List<DoubleCardOfFlightDto> doubleCardOfFlightDtoList = searchListService
+            .getListOfDoubleCardOfFlightDto(clientNumber);
+        InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
+
+        params.put("filterForm", filterForm);
+        params.put("doubleCardOfFlightList", doubleCardOfFlightDtoList);
+        params.put("informationCard", informationCardDto);
+
+        return new ModelAndView("searchListReturnFlight", params);
+
+      } else {
+        List<SingleCardOfFlightDto> singleCardOfFlightDtoList = filterOneWayService
+            .sortedByOutboundDate(searchListService.getListOfSingleCardOfFlight(clientNumber));
+        InformationCardDto informationCardDto = searchListService.getInformationCard(clientNumber);
+        params.put("filterForm", filterForm);
+        params.put("singleCardOfFlightList", singleCardOfFlightDtoList);
+        params.put("informationCard", informationCardDto);
+        params.put("searchForm", searchForm);
+
+        return new ModelAndView("searchList", params);
+      }
+    } else {
+      return new ModelAndView("noFlightsToShow", params);
+    }
   }
 }
 

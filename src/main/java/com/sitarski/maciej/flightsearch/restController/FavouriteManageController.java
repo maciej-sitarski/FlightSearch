@@ -5,6 +5,9 @@ import com.sitarski.maciej.flightsearch.dao.UserRepository;
 import com.sitarski.maciej.flightsearch.entity.UserFavouriteSearchForm;
 import com.sitarski.maciej.flightsearch.entity.userManage.User;
 import com.sitarski.maciej.flightsearch.entity.userManage.UserFavouriteFlight;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import javax.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,11 +42,13 @@ public class FavouriteManageController {
 
     UserFavouriteFlight userFavouriteFlight = new UserFavouriteFlight();
 
+    LocalDateTime outboundDateLocalDateTime = userFavouriteSearchForm.getSearchForm().getOutboundDate().atTime(LocalTime.now());
+
     userFavouriteFlight.setLegId(userFavouriteSearchForm.getLegId());
     userFavouriteFlight.setOriginPlace(userFavouriteSearchForm.getSearchForm().getOriginPlace());
     userFavouriteFlight
         .setDestinationPlace(userFavouriteSearchForm.getSearchForm().getDestinationPlace());
-    userFavouriteFlight.setOutboundDate(userFavouriteSearchForm.getSearchForm().getOutboundDate());
+    userFavouriteFlight.setOutboundDate(outboundDateLocalDateTime);
     userFavouriteFlight.setInboundDate(userFavouriteSearchForm.getSearchForm().getInboundDate());
     userFavouriteFlight
         .setTransportClass(userFavouriteSearchForm.getSearchForm().getTransportClass());
