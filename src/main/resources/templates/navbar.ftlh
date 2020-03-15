@@ -96,11 +96,6 @@
               <i class="fa fa-facebook fa-fw"></i> Login with Facebook
             </a>
           </div>
-          <div class="unauthenticated">
-            <a href="#" class="google btn" style="margin-top: 20px">
-              <i class="fa fa-google fa-fw"></i> Login with Google+
-            </a>
-          </div>
         </div>
         <div class="modal-footer" style="background-color: #D6D7D7;">
           <button data-dismiss="modal" type="button" class="btn" id="button"
@@ -112,8 +107,6 @@
     </div>
   </div>
 </form>
-
-
 </body>
 </html>
 
