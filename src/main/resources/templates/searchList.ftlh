@@ -67,8 +67,7 @@
                     </#if>
                    name="oneStop"
                    style="margin-right: 10px">
-            <label class="form-check-label" for="1stop" style="color: black; margin-right: 35px ">1
-              stop</label>
+            <label class="form-check-label" for="1stop" style="color: black; margin-right: 35px ">1 stop</label>
             <input type="checkbox" class="form-check-input" id="2stops"
                    onchange="$('#form').submit();"
                     <#if filterForm.moreStops?has_content>
