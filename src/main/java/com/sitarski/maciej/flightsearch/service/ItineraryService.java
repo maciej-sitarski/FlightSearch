@@ -1,5 +1,6 @@
 package com.sitarski.maciej.flightsearch.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.sitarski.maciej.flightsearch.dao.ItineraryRepository;
 import com.sitarski.maciej.flightsearch.entity.ItineraryInquiry;
@@ -7,6 +8,8 @@ import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Itinerary;
 import com.sitarski.maciej.flightsearch.entity.SearchForm;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.ItineraryApi;
 import com.sitarski.maciej.flightsearch.parser.LiveFlightSearchParser;
+
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
@@ -74,6 +77,12 @@ public class ItineraryService {
     } while (itineraryApi.getItineraryDetailApi() == null || itineraryApi.getItineraryDetailApi()
         .isEmpty());
 
+    return itineraryApi;
+  }
+
+  public ItineraryApi getItineraryApiFromJsonFile() throws IOException {
+    ObjectMapper objectMapper = new ObjectMapper();
+    ItineraryApi itineraryApi = objectMapper.readValue(new File("test.json"), ItineraryApi.class);
     return itineraryApi;
   }
 }

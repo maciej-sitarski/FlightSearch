@@ -1,32 +1,17 @@
 package com.sitarski.maciej.flightsearch.service;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
-import com.sitarski.maciej.flightsearch.dao.AgentRepository;
-import com.sitarski.maciej.flightsearch.dao.CarrierRepository;
-import com.sitarski.maciej.flightsearch.dao.ItineraryDetailsRepository;
-import com.sitarski.maciej.flightsearch.dao.ItineraryRepository;
-import com.sitarski.maciej.flightsearch.dao.LegRepository;
-import com.sitarski.maciej.flightsearch.dao.PlaceRepository;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Agent;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Carrier;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Itinerary;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.ItineraryDetail;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Leg;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Place;
+import com.sitarski.maciej.flightsearch.dao.*;
+import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.*;
 import com.sitarski.maciej.flightsearch.entity.SearchForm;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.ItineraryApi;
-import com.sitarski.maciej.flightsearch.mapper.AgentMapper;
-import com.sitarski.maciej.flightsearch.mapper.CarrierMapper;
-import com.sitarski.maciej.flightsearch.mapper.ItineraryDetailMapper;
-import com.sitarski.maciej.flightsearch.mapper.ItineraryMapper;
-import com.sitarski.maciej.flightsearch.mapper.LegMapper;
-import com.sitarski.maciej.flightsearch.mapper.PlaceMapper;
+import com.sitarski.maciej.flightsearch.mapper.*;
+
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +24,11 @@ public class DataService {
   private final AgentMapper agentMapper;
   private final CarrierMapper carrierMapper;
   private final PlaceMapper placeMapper;
+  private final SegmentMapper segmentMapper;
   private final AgentRepository agentRepository;
   private final PlaceRepository placeRepository;
   private final CarrierRepository carrierRepository;
+  private final SegmentRepository segmentRepository;
   private final ItineraryMapper itineraryMapper;
   private final ItineraryDetailMapper itineraryDetailMapper;
   private final ItineraryDetailsRepository itineraryDetailsRepository;
@@ -53,23 +40,25 @@ public class DataService {
 
   @Autowired
   public DataService(ItineraryRepository itineraryRepository,
-      AgentMapper agentMapper,
-      CarrierMapper carrierMapper, PlaceMapper placeMapper,
-      AgentRepository agentRepository,
-      PlaceRepository placeRepository,
-      CarrierRepository carrierRepository,
-      ItineraryMapper itineraryMapper,
-      ItineraryDetailMapper itineraryDetailMapper,
-      ItineraryDetailsRepository itineraryDetailsRepository,
-      LegMapper legMapper, LegRepository legRepository,
-      ItineraryService itineraryService) {
+                     AgentMapper agentMapper,
+                     CarrierMapper carrierMapper, PlaceMapper placeMapper,
+                     SegmentMapper segmentMapper, AgentRepository agentRepository,
+                     PlaceRepository placeRepository,
+                     CarrierRepository carrierRepository,
+                     SegmentRepository segmentRepository, ItineraryMapper itineraryMapper,
+                     ItineraryDetailMapper itineraryDetailMapper,
+                     ItineraryDetailsRepository itineraryDetailsRepository,
+                     LegMapper legMapper, LegRepository legRepository,
+                     ItineraryService itineraryService) {
     this.itineraryRepository = itineraryRepository;
     this.agentMapper = agentMapper;
     this.carrierMapper = carrierMapper;
     this.placeMapper = placeMapper;
+    this.segmentMapper = segmentMapper;
     this.agentRepository = agentRepository;
     this.placeRepository = placeRepository;
     this.carrierRepository = carrierRepository;
+    this.segmentRepository = segmentRepository;
     this.itineraryMapper = itineraryMapper;
     this.itineraryDetailMapper = itineraryDetailMapper;
     this.itineraryDetailsRepository = itineraryDetailsRepository;
@@ -84,7 +73,7 @@ public class DataService {
     logger.info("Itineraty save in data base");
 
     Boolean correctFinding = true;
-    ItineraryApi itineraryApi = itineraryService.getItineraryApi(searchForm);
+    ItineraryApi itineraryApi = itineraryService.getItineraryApiFromJsonFile();
     if(itineraryApi == null){
       correctFinding = false;
       return correctFinding;
@@ -114,6 +103,11 @@ public class DataService {
             Collectors.toList());
     carriers.forEach(carrier -> carrier.setClientNumber(clientNumber));
     carrierRepository.saveAll(carriers);
+
+    List<Segment> segments = itineraryApi.getSegmentApi().stream()
+            .map(segmentMapper::mapSegmentApiToEntity).collect(
+                    Collectors.toList());
+    segmentRepository.saveAll(segments);
 
     List<Place> places = itineraryApi.getPlaceApi().stream().map(placeMapper::mapPlaceApiToEntity)
         .collect(

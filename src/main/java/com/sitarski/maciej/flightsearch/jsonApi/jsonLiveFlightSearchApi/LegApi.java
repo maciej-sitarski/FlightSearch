@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-@JsonIgnoreProperties({"SegmentIds","OperatingCarriers"})
+@JsonIgnoreProperties({"OperatingCarriers"})
 public class LegApi {
 
   @JsonProperty("Id")
@@ -41,4 +41,7 @@ public class LegApi {
 
   @JsonProperty("Stops")
   private List<Long> stops;
+
+  @JsonProperty("SegmentIds")
+  private List<Long> segmentApis;
 }

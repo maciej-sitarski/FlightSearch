@@ -20,7 +20,8 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "leg")
-public class Leg {
+public class
+Leg {
 
   @Id
   @Column(name = "id")
@@ -74,4 +75,7 @@ public class Leg {
 
   @Column(name = "clientNumber")
   private String clientNumber;
+
+  @ManyToMany(mappedBy = "legs", cascade = CascadeType.MERGE)
+  private List<Segment> segments;
 }
