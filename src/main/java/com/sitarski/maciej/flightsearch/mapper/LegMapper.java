@@ -2,10 +2,8 @@ package com.sitarski.maciej.flightsearch.mapper;
 
 import com.sitarski.maciej.flightsearch.dao.CarrierRepository;
 import com.sitarski.maciej.flightsearch.dao.PlaceRepository;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Carrier;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.FlightNumber;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Leg;
-import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Place;
+import com.sitarski.maciej.flightsearch.dao.SegmentRepository;
+import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.*;
 import com.sitarski.maciej.flightsearch.jsonApi.jsonLiveFlightSearchApi.LegApi;
 import com.sitarski.maciej.flightsearch.service.StringFormatService;
 import java.time.LocalDateTime;
@@ -15,7 +13,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -23,17 +20,19 @@ public class LegMapper {
 
   private final FlightNumberMapper flightNumberMapper;
   private final CarrierRepository carrierRepository;
+  private final SegmentRepository segmentRepository;
   private final PlaceRepository placeRepository;
   private final StringFormatService stringFormatService;
 
   @Autowired
   public LegMapper(
-      FlightNumberMapper flightNumberMapper,
-      CarrierRepository carrierRepository,
-      PlaceRepository placeRepository,
-      StringFormatService stringFormatService){
+          FlightNumberMapper flightNumberMapper,
+          CarrierRepository carrierRepository,
+          SegmentRepository segmentRepository, PlaceRepository placeRepository,
+          StringFormatService stringFormatService){
     this.flightNumberMapper = flightNumberMapper;
     this.carrierRepository = carrierRepository;
+    this.segmentRepository = segmentRepository;
     this.placeRepository = placeRepository;
     this.stringFormatService = stringFormatService;
   }
@@ -96,6 +95,15 @@ public class LegMapper {
         .map(carriers1 -> carriers1.get(0))
         .collect(Collectors.toList());
     carriers.forEach(carrier -> carrier.getLegs().add(leg));
+
+    List<Segment> segments = legApiOptional
+            .map(LegApi::getSegmentApis)
+            .orElse(Collections.emptyList())
+            .stream()
+            .map(segmentRepository::findAllBySegmentId)
+            .map(segments1 -> segments1.get(0))
+            .collect(Collectors.toList());
+    segments.forEach(segment -> segment.getLegs().add(leg));
 
     List<Place> places = legApiOptional
         .map(LegApi::getStops)

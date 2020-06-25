@@ -86,10 +86,13 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <h2 style="margin-top: 30px; margin-bottom: 10px">
-        Book your tickets
-      </h2>
+    <div class="col-md-5 offset-md-1">
+        <div style="text-align: center">
+            <h2 style="margin-top: 30px; margin-bottom: 10px;">
+                Book your tickets
+            </h2>
+        </div>
+
         <#list detailsList as detail>
           <div class="col-md-12  border border-primary detailCard rounded-lg">
             <div class="row">
@@ -108,12 +111,34 @@
         </#list>
       <div class="w-100"></div>
     </div>
+      <div class="col-md-6">
+          <div id="mapid"></div>
+          <input type="hidden"  id="airportsInfo"
+                 <#list airportList as airport>
+                     data-placeLatitude${airport_index}="${airport.latitude}"
+                     data-placeLongitude${airport_index}="${airport.longitude}"
+                     data-placeName${airport_index}="${airport.name}"
+                 </#list>
+                 data-duration="${informationCard.duration}"
+                 data-departureTime="${informationCard.departureTime}"
+                 data-arrivalTime="${informationCard.arrivalTime}"
+                 data-pointNumbers="${airportList?size}"
+                 <#list informationCard.durations as durations>
+                     data-poliline${durations_index}="${durations}"
+                 </#list>
+                  <#list informationCard.departureDateTime as departureDateTime>
+                      data-departureDateTime${departureDateTime_index}="${departureDateTime}"
+                  </#list>
+                  <#list informationCard.arrivalDateTime as arrivalDateTime>
+                      data-arrivalDateTime${arrivalDateTime_index}="${arrivalDateTime}"
+                  </#list>
+          >
 
+      </div>
   </div>
-  <div style="height: 400px">
-
-  </div>
+  <div style="height: 400px"></div>
 </div>
+<script src="/js/map.js"></script>
 
 
 

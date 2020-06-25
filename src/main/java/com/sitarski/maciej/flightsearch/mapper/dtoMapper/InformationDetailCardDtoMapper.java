@@ -7,6 +7,8 @@ import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Place;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.Segment;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -31,6 +33,9 @@ public class InformationDetailCardDtoMapper {
     Long duration = leg.getDuration();
     List<Place> stops = leg.getStops();
     String directionality =  leg.getDirectionality();
+    List<Long> durations = leg.getSegments().stream().map(Segment::getDuration).collect(Collectors.toList());
+    List<String> departureDateTime = leg.getSegments().stream().map(Segment::getDepartureDateTime).collect(Collectors.toList());
+    List<String> arrivalDateTime = leg.getSegments().stream().map(Segment::getArrivalDateTime).collect(Collectors.toList());
 
 
     informationDetailCardDto.setClientNumber(clientNumber);
@@ -45,6 +50,9 @@ public class InformationDetailCardDtoMapper {
     informationDetailCardDto.setDuration(duration);
     informationDetailCardDto.setStops(stops);
     informationDetailCardDto.setDirectionality(directionality);
+    informationDetailCardDto.setDurations(durations);
+    informationDetailCardDto.setDepartureDateTime(departureDateTime);
+    informationDetailCardDto.setArrivalDateTime(arrivalDateTime);
 
     return informationDetailCardDto;
   }

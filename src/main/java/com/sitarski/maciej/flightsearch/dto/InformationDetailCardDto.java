@@ -18,6 +18,9 @@ public class InformationDetailCardDto {
   private String originPlace;
   private String destinationPlace;
   private Long duration;
+  private List<Long> durations;
+  private List<String> departureDateTime;
+  private List<String> arrivalDateTime;
   private List<Place> stops;
   private String directionality;
 

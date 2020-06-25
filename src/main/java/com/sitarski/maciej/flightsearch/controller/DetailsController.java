@@ -1,8 +1,14 @@
 package com.sitarski.maciej.flightsearch.controller;
 
+import com.mashape.unirest.http.exceptions.UnirestException;
 import com.sitarski.maciej.flightsearch.dto.DetailCardDto;
 import com.sitarski.maciej.flightsearch.dto.InformationDetailCardDto;
+import com.sitarski.maciej.flightsearch.jsonApi.jasonAirportInfoApi.AirportApi;
+import com.sitarski.maciej.flightsearch.service.AirportInfoService;
 import com.sitarski.maciej.flightsearch.service.DetailsService;
+
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,15 +22,17 @@ import org.springframework.web.servlet.ModelAndView;
 public class DetailsController {
 
   private final DetailsService detailsService;
+  private final AirportInfoService airportInfoService;
 
   @Autowired
   public DetailsController(
-      DetailsService detailsService) {
+          DetailsService detailsService, AirportInfoService airportInfoService) {
     this.detailsService = detailsService;
+    this.airportInfoService = airportInfoService;
   }
 
   @GetMapping("/flightDetails")
-  public ModelAndView getFlightDetails(HttpServletRequest req) {
+  public ModelAndView getFlightDetails(HttpServletRequest req) throws IOException, UnirestException {
     Map<String, Object> params = new HashMap<>();
 
     Long legId = Long.valueOf(req.getParameter("id"));
@@ -32,7 +40,21 @@ public class DetailsController {
     InformationDetailCardDto informationDetailCardDto = detailsService
         .getInformationDetailCardDto(legId);
     List<DetailCardDto> detailCardDtoList = detailsService.getListOfDetailCardDto(legId);
-
+    List<AirportApi> airportInfoList = new ArrayList<>();
+    airportInfoList.add(airportInfoService.getAirportInfo(informationDetailCardDto.getOriginPlaceCode()));
+    informationDetailCardDto.getStops().forEach(stop-> {
+      try {
+        airportInfoList.add(airportInfoService.getAirportInfo(stop.getCode()));
+      } catch (IOException | UnirestException e) {
+        e.printStackTrace();
+      }
+    });
+    airportInfoList.add(airportInfoService.getAirportInfo(informationDetailCardDto.getDestinationPlaceCode()));
+    params.put("airportList", airportInfoList);
+//    AirportApi airportOriginInfo = airportInfoService.getAirportInfo(informationDetailCardDto.getOriginPlaceCode());
+//    AirportApi airportDestinationInfo = airportInfoService.getAirportInfo(informationDetailCardDto.getDestinationPlaceCode());
+//    params.put("originAirportInfo", airportOriginInfo);
+//    params.put("destinationAirportInfo", airportDestinationInfo);
     params.put("informationCard", informationDetailCardDto);
     params.put("detailsList", detailCardDtoList);
     return new ModelAndView("details", params);

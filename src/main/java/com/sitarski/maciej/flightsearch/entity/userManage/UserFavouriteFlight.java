@@ -5,13 +5,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
+
+import com.sitarski.maciej.flightsearch.entity.LiveFlightSearch.ItineraryDetail;
 import lombok.Data;
 
 @Entity
@@ -53,5 +49,8 @@ public class UserFavouriteFlight {
 
   @ManyToMany(mappedBy = "userFavouriteFlights")
   private List<User> users = new ArrayList<>();
+
+//  @OneToMany(mappedBy = "userFavouriteFlight", cascade = CascadeType.ALL)
+//  private List<HistoryOfPricesFlights> historyOfPricesFlightsList = new ArrayList<>();
 
 }

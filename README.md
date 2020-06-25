@@ -9,7 +9,7 @@
 * [Inspiration](#inspiration)
 
 ## General info
->The main feature of the application is flight search system. Not authenticated users has the ability to search one way or multiple flights between two cities, filter them and sign in with facebook or google by oAuth2. 
+>The main feature of the application is flight search system. Not authenticated users has the ability to search one way or multiple flights between two cities, filter them and sign in with facebook by oAuth2. 
 Logged users can add single flights to their favourite flights, which causes that they will get email with changing price of flight every day.
 
 ## Features
@@ -54,7 +54,7 @@ in this view, in addition to all flight information, the user gets a list of age
 
 ### Oauth2
 
-> The user can log in to the application via oatuh facebook or google.
+> The user can log in to the application via oatuh facebook.
 > After logging in, the user gets the opportunity to use the functionality to manage favorite flights. 
 
 ![Users view](./docs/modalView.png) 
